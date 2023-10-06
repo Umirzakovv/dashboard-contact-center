@@ -1,0 +1,41 @@
+.card {
+  background-color: #fff;
+  width: max-content;
+  border-radius: 0.8rem;
+  padding-bottom: 2.4rem;
+  padding: 2.4rem;
+  margin: 10rem;
+
+  .card-title {
+    font-size: 2.4rem;
+    color: #25282b;
+    margin-bottom: 1rem;
+  }
+
+  .card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1.2rem 0;
+
+    .card-info__title {
+      font-size: 1.6rem;
+      color: #52575C  ;
+    }
+
+    .card-indo__content {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+  }
+  hr {
+    margin: 1.2rem 0;
+    color: #e8e8e8;
+  }
+
+  .more-btn {
+    width: 100%;
+
+  }
+}

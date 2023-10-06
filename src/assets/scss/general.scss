@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f8fb;
+  font-family: "Inter Tight", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
