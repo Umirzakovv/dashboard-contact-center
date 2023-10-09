@@ -1,8 +1,8 @@
 @import "../../assets/scss/variables.scss";
 
 .header {
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 3rem 0;
 }

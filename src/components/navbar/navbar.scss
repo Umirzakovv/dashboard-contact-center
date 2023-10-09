@@ -1,0 +1,33 @@
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  
+
+  li {
+    float: left;
+    padding: 1.4rem 0;
+    margin-right: 3.3rem;
+
+    .nav-link {
+      display: block;
+      color: #52575c;
+      text-align: center;
+      text-decoration: none;
+
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; 
+      letter-spacing: 0.1px;
+
+      &:hover:not(.active) {
+        color: #52575c81;
+      }
+    }
+
+    .active {
+        color: #336CFB;
+    }
+  }
+}
