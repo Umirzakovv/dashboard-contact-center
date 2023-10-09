@@ -1,11 +1,13 @@
-import Card from "../../components/card/Card"
+import Card from "../../components/card/Card";
+import Header from "../../components/header/header";
 
 const Home = () => {
   return (
     <div>
-        <Card />
+      <Header />
+      <Card />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
