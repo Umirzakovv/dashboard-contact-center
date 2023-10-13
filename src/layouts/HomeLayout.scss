@@ -1,9 +1,13 @@
 .home-layout {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    .home-content {
-        width: 100%;
-        border: 1px solid red;
-    }
+  .home-content {
+    width: 80%;
+    border: 1px solid red;
+  }
+
+  .modal-open {
+    width: 100%;
+  }
 }

@@ -1,7 +1,7 @@
 const Container = (props) => {
   const containerStyle = {
     // border: "1px solid blue",
-    margin: "0 50px",
+    padding: "0 50px",
   };
   return (
     <div
