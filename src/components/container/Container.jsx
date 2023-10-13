@@ -1,6 +1,6 @@
 const Container = (props) => {
   const containerStyle = {
-    // border: "1px solid red",
+    // border: "1px solid blue",
     margin: "0 50px",
   };
   return (

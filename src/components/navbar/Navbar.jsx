@@ -14,26 +14,6 @@ const Navbar = () => {
       title: "Услуги",
       href: "/services",
     },
-    {
-        id: 1,
-        title: "Дашбоард",
-        href: "/",
-      },
-      {
-        id: 2,
-        title: "Услуги",
-        href: "/services",
-      },
-      {
-        id: 1,
-        title: "Дашбоард",
-        href: "/",
-      },
-      {
-        id: 2,
-        title: "Услуги",
-        href: "/services",
-      },
   ];
 
   return (

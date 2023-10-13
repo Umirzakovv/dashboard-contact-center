@@ -6,18 +6,13 @@ import "./home.scss";
 
 const Home = () => {
   return (
-    <Container>
-      <Header />
-      <Navbar />
-      <div className="common-statistics__card-wrapper">
+    <div className="home">
+      <Container>
+        <Header />
+        <Navbar />
         <CommonStatisticsCard />
-        <CommonStatisticsCard />
-        <CommonStatisticsCard />
-        <CommonStatisticsCard />
-        <CommonStatisticsCard />
-      </div>
-      
-    </Container>
+      </Container>
+    </div>
   );
 };
 

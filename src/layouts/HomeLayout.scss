@@ -1,0 +1,9 @@
+.home-layout {
+    display: flex;
+    justify-content: space-between;
+
+    .home-content {
+        width: 100%;
+        border: 1px solid red;
+    }
+}
