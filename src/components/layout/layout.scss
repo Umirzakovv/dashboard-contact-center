@@ -1,0 +1,19 @@
+.layout {
+    display: flex;
+    justify-content: space-between;
+  
+    .layout-content {
+      width: 80%;
+  
+      .common-statistics__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  
+    .sidebar-open {
+      width: 100%;
+    }
+  }
+  
