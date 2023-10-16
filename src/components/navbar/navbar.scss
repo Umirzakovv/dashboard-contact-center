@@ -20,14 +20,11 @@
       font-weight: 700;
       line-height: 20px; 
       letter-spacing: 0.1px;
-
-      &:hover:not(.active) {
-        color: #52575c81;
+      &:active {
+        color: #51575c80;
       }
     }
 
-    .active {
-        color: #336CFB;
-    }
   }
 }
+

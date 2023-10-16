@@ -1,12 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home";
-import HomeLayout from "./layouts/HomeLayout";
+import Dashboard from "./pages/home/Home";
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/layout" element={<HomeLayout />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 };

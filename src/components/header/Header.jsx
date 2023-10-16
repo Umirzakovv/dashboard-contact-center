@@ -4,6 +4,7 @@ import "./header.scss";
 import Notification from "../notifiaction-btn/NotificationBtn";
 
 const Header = () => {
+  console.log("header render");
   return (
     <div className="header">
       <div style={{ display: "flex", alignItems: "center" }}>

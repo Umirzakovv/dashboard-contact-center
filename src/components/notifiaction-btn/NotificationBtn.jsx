@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import notificationImg from "../../assets/icons/notification.svg";
-import { NotificationContext } from "../../layouts/HomeLayout";
 import "./notification-btn.scss";
+import { NotificationContext } from "../../pages/home/Home";
 
 const Notification = () => {
   const { isOpen, setIsOpen } = useContext(NotificationContext);
-  console.log(isOpen);
 
   return (
     <div className="notification" onClick={() => setIsOpen(!isOpen)}>

@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 const Navbar = () => {
-
   const navbarData = [
     {
       id: 1,
       title: "Дашбоард",
-      href: "/",
+      href: "/dashboard",
     },
     {
       id: 2,
@@ -21,7 +20,14 @@ const Navbar = () => {
       {navbarData.map((item) => {
         return (
           <li key={item?.id}>
-            <Link className="nav-link" href={item?.href}>{item?.title}</Link>
+            <Link
+              className="nav-link"
+              activeClassName="active"
+              activeStyle={{ color: "blue" }}
+              to={item?.href}
+            >
+              {item?.title}
+            </Link>
           </li>
         );
       })}
