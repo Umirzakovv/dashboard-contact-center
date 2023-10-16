@@ -2,7 +2,6 @@
   list-style-type: none;
   padding: 0;
   overflow: hidden;
-  
 
   li {
     float: left;
@@ -18,13 +17,16 @@
       font-size: 14px;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px; 
+      line-height: 20px;
       letter-spacing: 0.1px;
       &:active {
         color: #51575c80;
       }
     }
 
+    // NavLink active
+    .nav-link__active {
+      color: #558eff;
+    }
   }
 }
-

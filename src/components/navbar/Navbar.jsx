@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 
 const Navbar = () => {
@@ -13,6 +13,11 @@ const Navbar = () => {
       title: "Услуги",
       href: "/services",
     },
+    {
+      id: 3,
+      title: "График работы",
+      href: "/schedule",
+    },
   ];
 
   return (
@@ -20,12 +25,14 @@ const Navbar = () => {
       {navbarData.map((item) => {
         return (
           <li key={item?.id}>
-            <Link
-              className="nav-link"
+            <NavLink
+              className={({isActive}) => {
+                return "nav-link " + (!isActive ? "" : "nav-link__active")
+               }}
               to={item?.href}
             >
               {item?.title}
-            </Link>
+            </NavLink>
           </li>
         );
       })}

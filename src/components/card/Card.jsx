@@ -1,9 +1,13 @@
-import Button from "../button/Button";
+import { Link } from "react-router-dom";
 import "./card.scss";
+import { useState } from "react";
+
 const Card = () => {
+  const [hasQueue, setHasQueue] = useState(true);
+
   return (
-    <div className="card">
-      <h4 className="card-title"> Что то на русском</h4>
+    <div className={`card ${hasQueue ? "has-queue" : ""}`}>
+      <h4 className="card-title"> 1000 UZ</h4>
       <div className="card-info">
         <p className="card-info__title">В очереди</p>
         <p className="card-indo__content">2</p>
@@ -24,7 +28,9 @@ const Card = () => {
         <p className="card-info__title">Заблокированные</p>
         <p className="card-indo__content">2</p>
       </div>
-      <Button className="more-btn" title="Подробно"></Button>
+      <Link className="more-link" to="single-service">
+        Подробно
+      </Link>
     </div>
   );
 };
