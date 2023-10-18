@@ -15,8 +15,9 @@ const Services = () => {
     setInterval(() => {
       socket.emit("data", (receivedData) => {
         setData(receivedData);
-        setSortedData(data?.sort((a, b) => b?.queue - a?.queue));
-        console.log(sortedData);
+        console.log(data);
+        //  setSortedData(data?.sort((a, b) => b?.queue - a?.queue));
+        // console.log(sortedData);
       });
     }, 5000);
   }, []);
@@ -24,7 +25,7 @@ const Services = () => {
   return (
     <Layout>
       <div className="services">
-        {sortedData?.map((item) => {
+        {data?.map((item) => {
           return <Card key={item?.goup_id} item={item} />;
         })}
       </div>

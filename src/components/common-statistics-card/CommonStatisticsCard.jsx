@@ -1,3 +1,4 @@
+import { setSpaceEveryThirdPlace } from "../../consts";
 import "./common-statistics-card.scss";
 import { FaUsers } from "react-icons/fa";
 
@@ -7,7 +8,7 @@ const CommonStatisticsCard = (props) => {
       <FaUsers className="common-statistics__icon" />
       <div>
         <h4>{props?.title}</h4>
-        <p>{props?.statistics}</p>
+        <p>{setSpaceEveryThirdPlace(String(props?.statistics))}</p>
       </div>
     </div>
   );

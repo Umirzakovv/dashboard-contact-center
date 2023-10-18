@@ -6,8 +6,7 @@ import { NotificationContext } from "../../components/layout/Layout";
 const Notification = () => {
   const { isOpen, setIsOpen } = useContext(NotificationContext);
   const handleNotificationClick = () => {
-    console.log(localStorage.setItem("sidebar_status", !isOpen));
-    // setIsOpen(!localStorage.getItem("sidebar_status"))
+    setIsOpen(localStorage.setItem("sidebar_status", false))
   };
 
   return (
