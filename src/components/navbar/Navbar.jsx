@@ -6,7 +6,7 @@ const Navbar = () => {
     {
       id: 1,
       title: "Дашбоард",
-      href: "/dashboard",
+      href: "/",
     },
     {
       id: 2,

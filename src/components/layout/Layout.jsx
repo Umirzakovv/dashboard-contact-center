@@ -9,7 +9,7 @@ import "./layout.scss";
 export const NotificationContext = createContext();
 
 const Layout = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(localStorage.getItem("sidebar_status"));
 
   return (
     <NotificationContext.Provider value={{ isOpen, setIsOpen }}>

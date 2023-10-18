@@ -9,21 +9,23 @@ const socket = io.connect("http://192.168.0.167:2004/");
 
 const Services = () => {
   const [data, setData] = useState();
+  const [sortedData, setSortedData] = useState();
+
   useEffect(() => {
-    socket.emit("data", (receivedData) => {
-      setData(receivedData);
-    });
+    setInterval(() => {
+      socket.emit("data", (receivedData) => {
+        setData(receivedData);
+        setSortedData(data?.sort((a, b) => b?.queue - a?.queue));
+        console.log(sortedData);
+      });
+    }, 5000);
   }, []);
+
   return (
     <Layout>
       <div className="services">
-        {data?.map((item) => {
-          return (
-            <Card
-              key={item?.goup_id}
-              item={item}
-            />
-          );
+        {sortedData?.map((item) => {
+          return <Card key={item?.goup_id} item={item} />;
         })}
       </div>
     </Layout>
