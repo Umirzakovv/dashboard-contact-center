@@ -15,7 +15,6 @@ const Services = () => {
     setInterval(() => {
       socket.emit("data", (receivedData) => {
         setData(receivedData);
-        console.log(data);
         //  setSortedData(data?.sort((a, b) => b?.queue - a?.queue));
         // console.log(sortedData);
       });

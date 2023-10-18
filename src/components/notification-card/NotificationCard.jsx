@@ -1,20 +1,19 @@
 import { GiCigarette } from "react-icons/gi";
-
+import { BiSolidUser } from "react-icons/bi";
 import "./notification-card.scss";
+import { formatSecondsToTime } from "../../consts";
 
-const NotificationCard = () => {
+const NotificationCard = (props) => {
   return (
     <div className="notification-card">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU"
-        alt="man img"
-      />
+      <BiSolidUser className="operator-icon" />
       <div className="operator-info">
-        <h2>Иванов Иван Иванович</h2>
-        <p>Названия услуги</p>
+        <h2>
+          {props?.operator?.lastName} {props?.operator?.firstName}{" "}
+          {props?.operator?.secondName}
+        </h2>
         <p style={{ display: "flex", alignItems: "center" }}>
-          <GiCigarette />
-          11:32
+          {formatSecondsToTime(+props?.operator?.lastAgentStateDuration)}
         </p>
       </div>
     </div>

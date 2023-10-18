@@ -11,7 +11,6 @@ export const NotificationContext = createContext();
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(localStorage.getItem("sidebar_status"));
 
-  console.log(isOpen + " from main context");
   return (
     <NotificationContext.Provider value={{ isOpen, setIsOpen }}>
       <Container className="layout">

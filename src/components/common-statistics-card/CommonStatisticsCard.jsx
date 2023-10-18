@@ -1,14 +1,18 @@
-import { setSpaceEveryThirdPlace } from "../../consts";
+import { setSpaceEveryNFromEnd } from "../../consts";
 import "./common-statistics-card.scss";
 import { FaUsers } from "react-icons/fa";
 
 const CommonStatisticsCard = (props) => {
   return (
     <div className="common-statistics">
-      <FaUsers className="common-statistics__icon" />
+      <img
+        src={props?.img}
+        alt="statistics icon"
+        className="common-statistics__icon"
+      />
       <div>
         <h4>{props?.title}</h4>
-        <p>{setSpaceEveryThirdPlace(String(props?.statistics))}</p>
+        <p>{setSpaceEveryNFromEnd(String(props?.statistics), 3)}</p>
       </div>
     </div>
   );

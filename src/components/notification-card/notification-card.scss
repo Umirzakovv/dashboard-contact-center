@@ -3,13 +3,15 @@
   border-radius: 0.5rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
   display: flex;
+  align-items: center;
   background-color: #fff;
   
-  img {
-    width: 7rem;
-    height: 7rem;
-    object-fit: cover;
-    border-radius: 10rem;
+  .operator-icon {
+    border: 3px solid #52575C;
+    padding: .5rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
   }
 
   .operator-info {
