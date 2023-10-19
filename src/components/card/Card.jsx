@@ -6,7 +6,7 @@ const Card = (props) => {
 
   return (
     <div className={`card ${+props?.item?.queue > 0 ? "has-queue" : ""}`}>
-      <h4 className="card-title">{props?.item?.title || "Названия услуги"}</h4>
+      <h4 className="card-title">{props?.item?.title}</h4>
       <div className="card-info">
         <p className="card-info__title">В очереди</p>
         <p className="card-indo__content">{props?.item?.queue}</p>

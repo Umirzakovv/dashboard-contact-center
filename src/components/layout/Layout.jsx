@@ -5,23 +5,27 @@ import Header from "../header/Header";
 import Navbar from "../navbar/Navbar";
 import SideBar from "../sidebar/SideBar";
 import "./layout.scss";
-import { io } from "socket.io-client";
+import io from "socket.io-client";
 
 export const NotificationContext = createContext();
 export const OverBreakDataContext = createContext();
 
-const Layout = ({ children }) => {
-  const socket = io.connect("http://192.168.0.167:2004/");
+const socket = io.connect("http://192.168.0.167:2004/");
 
-  const [isOpen, setIsOpen] = useState(localStorage.getItem("sidebar_status"));
+const Layout = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  localStorage.setItem("sidebar_status", isOpen);
+
+  // console.log(isOpen + " from main context");
   const [overBreakData, setOverBreakData] = useState();
+
   useEffect(() => {
     setInterval(() => {
-      socket.emit("agentsLock", (receivedData) => {
+      socket.emit("agentsLockAtTheMoment", (receivedData) => {
         setOverBreakData(receivedData);
+        console.log(receivedData);
       });
     }, 5000);
-    console.log(overBreakData);
   }, []);
 
   return (

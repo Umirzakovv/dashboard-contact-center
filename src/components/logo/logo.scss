@@ -1,7 +1,14 @@
 .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #336CFB;
     margin-right: 3.2rem;
     img {
         width: 4rem;
         border-radius: 50%;
+    }
+    h1 {
+        margin-left: 1.2rem;
     }
 }

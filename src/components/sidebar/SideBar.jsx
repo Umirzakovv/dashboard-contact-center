@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import NotificationCard from "../notification-card/NotificationCard";
-import "./sidebar.scss";
-import { io } from "socket.io-client";
 import { OverBreakDataContext } from "../layout/Layout";
-
+import "./sidebar.scss";
 
 const SideBar = () => {
-  const {overBreakData} = useContext(OverBreakDataContext);
-
+  const { overBreakData } = useContext(OverBreakDataContext);
+  console.log(overBreakData);
   return (
     <div className="sidebar">
       <div className="sidebar-header">

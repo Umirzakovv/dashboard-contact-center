@@ -5,6 +5,8 @@ import io from "socket.io-client";
 import acceptedIcon from "../../assets/icons/phone-incoming (1).svg";
 import presentedIcon from "../../assets/icons/phone-call.svg";
 import lostIcon from "../../assets/icons/phone-missed (1).svg";
+import queueDispatchedIcon from "../../assets/icons/phone-off (2).svg";
+
 
 import "./dashboard.scss";
 import { useEffect, useState } from "react";
@@ -41,7 +43,7 @@ const Dashboard = () => {
             statistics={statistics?.sumLostCallCount}
           />
           <CommonStatisticsCard
-            // img={lorem}
+            img={queueDispatchedIcon}
             title="Отбывшихся в очереди"
             statistics={statistics?.sumQueueDispatchedCallCoun}
           />
