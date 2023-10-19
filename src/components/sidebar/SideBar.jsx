@@ -1,31 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import NotificationCard from "../notification-card/NotificationCard";
 import "./sidebar.scss";
 import { io } from "socket.io-client";
+import { OverBreakDataContext } from "../layout/Layout";
 
-const socket = io.connect("http://192.168.0.167:2004/");
 
 const SideBar = () => {
-  const [data, setData] = useState();
-  useEffect(() => {
+  const {overBreakData} = useContext(OverBreakDataContext);
 
-    setInterval(() => {
-
-      socket.emit("agentsLock", (receivedData) => {
-        setData(receivedData);
-      });
-      
-    }, 5000);
-    console.log(data);
-
-  }, []);
   return (
     <div className="sidebar">
       <div className="sidebar-header">
         <h4 className="sidebar-title">Превышение перерыва</h4>
       </div>
       <div className="notification-cards">
-        {data?.map((operator) => {
+        {overBreakData?.map((operator) => {
           return (
             <NotificationCard key={operator?.agent_id} operator={operator} />
           );

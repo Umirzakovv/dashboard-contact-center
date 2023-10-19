@@ -62,15 +62,31 @@
 
 .has-queue {
   color: #fff;
-  background-color: #ff6760;
+  background-color: #ff000080;
+  animation: pulse 1.2s infinite ease-in-out;
 
   .card-title {
     color: #fff;
+    
   }
 
   .card-info {
     .card-info__title {
       color: #fff;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #ff000080;
+  }
+
+  50% {
+    background-color: white;
+  }
+
+  100% {
+    background-color: #ff000080;
   }
 }
