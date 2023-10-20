@@ -6,12 +6,12 @@
   align-items: center;
   background-color: #fff;
   
-  .operator-icon {
-    border: 3px solid #52575C;
+  .operator-img {
     padding: .5rem;
     width: 6rem;
     height: 6rem;
-    border-radius: 50%;
+    border-radius: 5rem;
+    color: #558eff;
   }
 
   .operator-info {
@@ -20,11 +20,19 @@
     gap: .5rem;
     margin-left: 1rem;
 
-    h2 {
+    .operator-title {
       font-size: 1.8rem;
+      color: #25282B;
     }
-    p {
-      font-size: 1.4rem;
+
+    .over-break__icon {
+      font-size: 2rem;
+      color: #558eff;
+    }
+
+    .over-break__time {
+      font-size: 1.2rem;
+      color: #558eff;
     }
   }
 }

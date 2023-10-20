@@ -1,11 +1,19 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import "./card.scss";
+import NotificationSound from "../../assets/sound/notification.ogg";
+import { useRef } from "react";
 
 const Card = (props) => {
+  const audioRef = useRef();
+
+  if (+props?.item?.queue > 0) {
+    // audioRef?.current?.play();
+  }
 
   return (
     <div className={`card ${+props?.item?.queue > 0 ? "has-queue" : ""}`}>
+      <audio ref={audioRef} src={NotificationSound} />
       <h4 className="card-title">{props?.item?.title}</h4>
       <div className="card-info">
         <p className="card-info__title">В очереди</p>

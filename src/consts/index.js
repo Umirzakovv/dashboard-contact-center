@@ -34,4 +34,27 @@ export const formatSecondsToTime = (seconds) => {
   return formattedTime;
 };
 
-export const 
+export const switchStatus = (status) => {
+  switch (status) {
+    case "2":
+      "perekur";
+      break;
+    case "3":
+      "call chef";
+      break;
+    case "4":
+      "technique problem";
+      break;
+    case "5":
+      "dinner";
+      break;
+    case "6":
+      "toilet";
+      break;
+    case "7":
+      "learing";
+      break;
+    default:
+      "";
+  }
+};

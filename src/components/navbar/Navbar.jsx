@@ -18,6 +18,11 @@ const Navbar = () => {
       title: "График работы",
       href: "/schedule",
     },
+    {
+      id: 4,
+      title: "Отчёт по опозданиям",
+      href: "/report-latecomers",
+    },
   ];
 
   return (
@@ -26,9 +31,9 @@ const Navbar = () => {
         return (
           <li key={item?.id}>
             <NavLink
-              className={({isActive}) => {
-                return "nav-link " + (!isActive ? "" : "nav-link__active")
-               }}
+              className={({ isActive }) => {
+                return "nav-link " + (!isActive ? "" : "nav-link__active");
+              }}
               to={item?.href}
             >
               {item?.title}
