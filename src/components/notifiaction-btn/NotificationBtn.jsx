@@ -6,14 +6,13 @@ import {
   OverBreakDataContext,
 } from "../../components/layout/Layout";
 
-const Notification = () => {
+const NotificationBtn = () => {
   const { isOpen, setIsOpen } = useContext(NotificationContext);
   const { overBreakData } = useContext(OverBreakDataContext);
   const handleNotificationClick = () => {
     setIsOpen(!isOpen);
     localStorage.setItem("sidebar_status", isOpen);
   };
-  console.log(overBreakData);
   return (
     <div className="notification" onClick={handleNotificationClick}>
       <img src={notificationImg} alt="notification" />
@@ -24,4 +23,4 @@ const Notification = () => {
   );
 };
 
-export default Notification;
+export default NotificationBtn;

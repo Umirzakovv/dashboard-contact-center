@@ -16,14 +16,16 @@ const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   localStorage.setItem("sidebar_status", isOpen);
 
-  // console.log(isOpen + " from main context");
   const [overBreakData, setOverBreakData] = useState();
 
   useEffect(() => {
+    socket.emit("agentsLockAtTheMoment", (receivedData) => {
+      setOverBreakData(receivedData);
+    });
+
     setInterval(() => {
       socket.emit("agentsLockAtTheMoment", (receivedData) => {
         setOverBreakData(receivedData);
-        console.log(receivedData);
       });
     }, 5000);
   }, []);

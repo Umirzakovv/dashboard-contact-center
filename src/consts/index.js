@@ -26,7 +26,12 @@ export const formatSecondsToTime = (seconds) => {
 
   const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes
     .toString()
-    .padStart(2, "0")}:${remainingSeconds.toString().padStart(6, "0")}`;
+    .padStart(2, "0")}:${remainingSeconds
+    .toString()
+    .padStart(6, "0")
+    .slice(0, 2)}`;
 
   return formattedTime;
 };
+
+export const 
