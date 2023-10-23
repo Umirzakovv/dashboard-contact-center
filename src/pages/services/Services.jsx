@@ -19,9 +19,8 @@ const Services = () => {
       socket.emit("data", (receivedData) => {
         setData(receivedData);
       });
-    }, 5000);
+    }, 10_000);
   }, []);
-  console.log(data);
 
   return (
     <Layout>

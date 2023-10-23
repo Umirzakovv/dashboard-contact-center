@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import searchIcon from "../../assets/icons/search.svg";
 import "./search-bar.scss";
 

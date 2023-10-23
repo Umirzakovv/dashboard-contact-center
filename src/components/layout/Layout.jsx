@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
       socket.emit("agentsLockAtTheMoment", (receivedData) => {
         setOverBreakData(receivedData);
       });
-    }, 5000);
+    }, 10_000);
   }, []);
 
   return (

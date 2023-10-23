@@ -3,7 +3,7 @@ import Layout from "../../components/layout/Layout";
 const Schedule = () => {
   return (
     <Layout>
-      <div>Скоро появится график работы операторов... </div>
+      <div>Здесь появится график работы операторов </div>
     </Layout>
   );
 };
