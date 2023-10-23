@@ -7,7 +7,7 @@ import Wheather from "../wheather/Wheather";
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <div style={{ display: "flex", alignItems: "center" }}>
         <Logo />
         <SearchBar placeholder="Поиск" />
@@ -17,7 +17,7 @@ const Header = () => {
         <Clock />
         <NotificationBtn />
       </div>
-    </div>
+    </header>
   );
 };
 

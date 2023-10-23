@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { setSpaceEveryNFromEnd } from "../../consts";
 import "./common-statistics-card.scss";
-import { FaUsers } from "react-icons/fa";
 
 const CommonStatisticsCard = (props) => {
   return (
