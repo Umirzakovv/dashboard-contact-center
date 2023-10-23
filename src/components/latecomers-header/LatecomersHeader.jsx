@@ -1,3 +1,4 @@
+import ExcelBtn from "../excel-btn/ExcelBtn";
 import SearchBar from "../search-bar/SearchBar";
 import Sorting from "../sorting/Sorting";
 
@@ -9,10 +10,10 @@ const LatecomersHeader = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        marginBottom: "3rem"
+        marginBottom: "3rem",
       }}
     >
-      <p></p>
+      <ExcelBtn />
       <SearchBar placeholder="Поиск по И.Ф.О и номер" />
       <Sorting />
     </div>

@@ -9,6 +9,7 @@ const LatecomersTable = () => {
     fetch("http://192.168.0.167:2004/api/v1/agents/all")
       .then((res) => res.json())
       .then((data) => setLatecomers(data));
+      console.log("latecomers list render");
   }, []);
 
   return (
