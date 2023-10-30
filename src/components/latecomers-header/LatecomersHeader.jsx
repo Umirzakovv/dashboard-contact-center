@@ -14,7 +14,7 @@ const LatecomersHeader = () => {
       }}
     >
       <ExcelBtn />
-      <SearchBar placeholder="Поиск по И.Ф.О и номер" />
+      <SearchBar placeholder="Поиск по ФИО и ID РМО" />
       <Sorting />
     </div>
   );

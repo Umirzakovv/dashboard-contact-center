@@ -1,31 +1,38 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
 import "./latecomers-table.scss";
 import { AiFillLock } from "react-icons/ai";
 import { formatSecondsToTime } from "../../consts";
+import { useEffect, useState } from "react";
 
 const LatecomersTable = () => {
   const [latecomers, setLatecomers] = useState();
+  const [err, setError] = useState();
+  const [laoding, setLoading] = useState()
   useEffect(() => {
     fetch("http://192.168.0.167:2004/api/v1/agents/all")
       .then((res) => res.json())
-      .then((data) => setLatecomers(data));
-      console.log("latecomers list render");
+      .then((data) => setLatecomers(data))
+      .catch((err) => setError(err));
+      console.log(latecomers);``
   }, []);
-
   return (
     <table className="latecomers-table">
       <tr>
         <th>№</th>
         <th>Ф.И.О</th>
-        <th>Номер</th>
+        <th>ID РМО</th>
         <th>Причина</th>
         <th>Длительность</th>
+        <th>Время</th>
       </tr>
+      <h2>{err}</h2>
       {latecomers?.map((item, index) => {
         return (
           <tr key={item?.agent_id}>
             <td>{index + 1}</td>
-            <td>{item?.lastName} {item?.firstName} {item?.secondName}</td>
+            <td>
+              {item?.lastName} {item?.firstName} {item?.secondName}
+            </td>
             <td>{item?.login}</td>
             <td
               style={{
@@ -38,6 +45,7 @@ const LatecomersTable = () => {
               <AiFillLock />
             </td>
             <td>{formatSecondsToTime(+item?.agentStateDuration)}</td>
+            <td>{item?.create_data.slice(0, 10)}</td>
           </tr>
         );
       })}

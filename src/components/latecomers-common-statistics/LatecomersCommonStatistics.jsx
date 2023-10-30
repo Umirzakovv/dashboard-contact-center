@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
 import CommonStatisticsCard from "../common-statistics-card/CommonStatisticsCard";
 
 const LatecomersCommonStatistics = () => {
+
+
   const data = [
     {
       id: 1,

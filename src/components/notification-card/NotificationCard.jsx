@@ -22,8 +22,7 @@ const NotificationCard = (props) => {
       />
       <div className="operator-info">
         <h2 className="operator-title">
-          {props?.operator?.lastName} {props?.operator?.firstName}{" "}
-          {props?.operator?.secondName}
+          {props?.operator?.lastName} {props?.operator?.firstName} {props?.operator?.secondName}
         </h2>
         <div
           style={{ display: "flex", alignItems: "center" }}
