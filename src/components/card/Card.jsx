@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./card.scss";
 import NotificationSound from "../../assets/sound/notification.ogg";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Card = (props) => {
+  const [id] = useState(props?.item?.goup_id)
   const audioRef = useRef();
 
   if (+props?.item?.queue > 0) {
@@ -35,7 +36,7 @@ const Card = (props) => {
         <p className="card-info__title">Заблокированные</p>
         <p className="card-indo__content">{props?.item?.locked}</p>
       </div>
-      <Link className="more-link" to="single-service">
+      <Link className="more-link" to={`single-service/${id}`}>
         Подробно
       </Link>
     </div>

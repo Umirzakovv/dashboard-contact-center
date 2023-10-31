@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Chart as ChartJS,
   LineElement,
@@ -20,7 +21,7 @@ ChartJS.register(
 );
 
 const Chart = ({ statistics }) => {
-
+  console.log(statistics);
   const data = {
     labels: statistics?.arrdate,
     datasets: [
