@@ -16,13 +16,11 @@ const SingleService = () => {
   useEffect(() => {
     socket.emit("statictikGroup", { group_id: id }, (receivedData) => {
       setCurrentStatistics(receivedData);
-      console.log(currentStatistics);
     });
 
     setInterval(() => {
       socket.emit("statictikGroup", { group_id: id }, (receivedData) => {
         setCurrentStatistics(receivedData);
-        console.log(currentStatistics);
       });
     }, 10_000);
   // eslint-disable-next-line react-hooks/exhaustive-deps

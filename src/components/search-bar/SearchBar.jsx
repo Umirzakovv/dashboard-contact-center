@@ -19,7 +19,6 @@ const SearchBar = (props) => {
 
   const handleChange = (e) => {
     setInputValue(e.target?.value);
-    console.log(inputValue);
   };
 
   const handleSearchSubmit = async (e) => {

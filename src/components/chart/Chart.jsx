@@ -21,7 +21,6 @@ ChartJS.register(
 );
 
 const Chart = ({ statistics }) => {
-  console.log(statistics);
   const data = {
     labels: statistics?.arrdate,
     datasets: [

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "./sorting.scss";
 import { LateComersListContext, LoadingContext } from "../layout/Layout";
 
