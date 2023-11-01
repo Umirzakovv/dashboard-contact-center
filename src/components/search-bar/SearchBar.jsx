@@ -10,11 +10,16 @@ const SearchBar = (props) => {
   const { setLatecomers } = useContext(LateComersListContext);
   const { setLoading } = useContext(LoadingContext);
 
-  const filterById = `http://192.168.0.167:2004/api/v1/agents/findByFilter?name=null&operator_number=${inputValue?.trim()}&status=null`;
-  const filterByName = `http://192.168.0.167:2004/api/v1/agents/findByFilter?name=${inputValue?.trim()}&operator_number=null&status=null`;
+  const filterById = `http://192.168.0.167:2004/api/v1/agents/findByFilter?name=null&operator_number=${
+    inputValue?.trim() || null
+  }&status=null`;
+  const filterByName = `http://192.168.0.167:2004/api/v1/agents/findByFilter?name=${
+    inputValue?.trim() || null
+  }&operator_number=null&status=null`;
 
   const handleChange = (e) => {
     setInputValue(e.target?.value);
+    console.log(inputValue);
   };
 
   const handleSearchSubmit = async (e) => {

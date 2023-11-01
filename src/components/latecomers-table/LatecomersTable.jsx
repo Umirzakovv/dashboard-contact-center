@@ -42,7 +42,7 @@ const LatecomersTable = () => {
               {item?.lastName} {item?.firstName} {item?.secondName}
             </td>
             <td>{item?.login}</td>
-            <td
+            {/* <td
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -51,7 +51,8 @@ const LatecomersTable = () => {
             >
               <AiFillLock /> &rarr;
               <AiFillLock />
-            </td>
+            </td> */}
+            <td>{item?.banInfo}</td>
             <td>{formatSecondsToTime(+item?.agentStateDuration)}</td>
             <td>{item?.create_data.slice(0, 10)}</td>
           </tr>
