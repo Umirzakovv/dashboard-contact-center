@@ -9,6 +9,7 @@ import io from "socket.io-client";
 
 export const NotificationContext = createContext();
 export const OverBreakDataContext = createContext();
+export const LateComersListContext = createContext();
 
 const socket = io.connect("http://192.168.0.167:2004/");
 
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
   localStorage.setItem("sidebar_status", isOpen);
 
   const [overBreakData, setOverBreakData] = useState();
+  const [latecomers, setLatecomers] = useState();
 
   useEffect(() => {
     socket.emit("agentsLockAtTheMoment", (receivedData) => {
@@ -35,14 +37,16 @@ const Layout = ({ children }) => {
       <OverBreakDataContext.Provider
         value={{ overBreakData, setOverBreakData }}
       >
-        <Container className="layout">
-          <div className={`layout-content ${!isOpen ? "sidebar-open" : ""}`}>
-            <Header />
-            <Navbar />
-            <div>{children}</div>
-          </div>
-          {isOpen ? <SideBar /> : null}
-        </Container>
+        <LateComersListContext.Provider value={{ latecomers, setLatecomers }}>
+          <Container className="layout">
+            <div className={`layout-content ${!isOpen ? "sidebar-open" : ""}`}>
+              <Header />
+              <Navbar />
+              <div>{children}</div>
+            </div>
+            {isOpen ? <SideBar /> : null}
+          </Container>
+        </LateComersListContext.Provider>
       </OverBreakDataContext.Provider>
     </NotificationContext.Provider>
   );

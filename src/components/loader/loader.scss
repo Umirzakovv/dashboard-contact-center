@@ -1,0 +1,40 @@
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .loader {
+    border: 1rem solid #fff;
+    border-radius: 50%;
+    border-top: 1rem solid #558eff;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 0.8s linear infinite;
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #558eff;
+    width: 100%;
+  }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

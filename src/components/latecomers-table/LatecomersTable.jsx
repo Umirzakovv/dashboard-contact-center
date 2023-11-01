@@ -2,20 +2,32 @@
 import "./latecomers-table.scss";
 import { AiFillLock } from "react-icons/ai";
 import { formatSecondsToTime } from "../../consts";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { LateComersListContext } from "../layout/Layout";
+import Loader from "../loader/Loader";
 
 const LatecomersTable = () => {
-  const [latecomers, setLatecomers] = useState();
+
+
+  const { latecomers, setLatecomers } = useContext(LateComersListContext);
   const [err, setError] = useState();
-  const [laoding, setLoading] = useState()
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     fetch("http://192.168.0.167:2004/api/v1/agents/all")
-      .then((res) => res.json())
-      .then((data) => setLatecomers(data))
-      .catch((err) => setError(err));
-      console.log(latecomers);``
+    .then((res) => res.json())
+    .then((data) => {
+      setLatecomers(data)
+      setLoading(false)
+    })
+    .catch((err) => setError(err));
+    // setLoading(false);
   }, []);
-  return (
+
+
+  return loading ? (
+    <Loader />
+  ) : (
     <table className="latecomers-table">
       <tr>
         <th>№</th>
