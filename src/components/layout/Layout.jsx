@@ -42,7 +42,6 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const fetchDataAndSetState = () => {
       socket.emit("agentsLockAtTheMoment", (receivedData) => {
-        console.log(receivedData, "one");
         setOverBreakData(receivedData);
       });
     };

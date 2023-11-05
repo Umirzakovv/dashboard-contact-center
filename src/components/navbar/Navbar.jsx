@@ -21,7 +21,7 @@ const Navbar = () => {
     {
       id: 4,
       title: "Статистика сотрудников",
-      href: "/statistics-operators",
+      href: "/statistics-employees",
     },
     {
       id: 5,

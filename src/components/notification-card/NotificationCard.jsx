@@ -1,12 +1,8 @@
 /* eslint-disable react/prop-types */
 import "./notification-card.scss";
-import { BiRun } from "react-icons/bi";
 import { AiFillLock } from "react-icons/ai";
 import { formatSecondsToTime } from "../../consts";
-import { FaCrown, FaHamburger } from "react-icons/fa";
-import { GiCigarette } from "react-icons/gi";
-import { BsFillLaptopFill } from "react-icons/bs";
-import { PiGraduationCapFill } from "react-icons/pi";
+import { MdTimer } from "react-icons/md";
 
 const NotificationCard = (props) => {
   const lastLockCause = props?.operator?.lastLockCause;
@@ -30,15 +26,19 @@ const NotificationCard = (props) => {
           style={{ display: "flex", alignItems: "center" }}
           className="over-break__icon"
         >
-          {lastLockCause === "-1" || lastLockCause === "5" ? "time" : "lock"}
+          {lastLockCause === "-1" || lastLockCause === "5" ? (
+            <MdTimer />
+          ) : (
+            <AiFillLock />
+          )}
         </div>
         <div
           style={{ display: "flex", alignItems: "center" }}
           className="over-break__time"
         >
           {lastLockCause === "-1" || lastLockCause === "5"
-            ? agentStateDuration
-            : lastAgentStateDuration + " - " + agentStateDuration}
+            ? formatSecondsToTime(agentStateDuration)
+            : formatSecondsToTime(agentStateDuration)}
         </div>
       </div>
     </div>
