@@ -22,44 +22,23 @@ const NotificationCard = (props) => {
       />
       <div className="operator-info">
         <h2 className="operator-title">
-          {props?.operator?.lastName} {props?.operator?.firstName} {props?.operator?.secondName}
+          {props?.operator?.lastName} {props?.operator?.firstName}{" "}
+          {props?.operator?.secondName}
         </h2>
         <p className="operator-rmo__id">ID РМО: {props?.operator?.login}</p>
         <div
           style={{ display: "flex", alignItems: "center" }}
           className="over-break__icon"
         >
-          {lastLockCause === lockCause && lastLockCause === "2" ? (
-            <GiCigarette />
-          ) : lastLockCause === lockCause && lastLockCause === "3" ? (
-            <FaCrown />
-          ) : lastLockCause === lockCause && lastLockCause === "4" ? (
-            <BsFillLaptopFill />
-          ) : lastLockCause === lockCause && lastLockCause === "5" ? (
-            <FaHamburger />
-          ) : lastLockCause === lockCause && lastLockCause === "6" ? (
-            <BiRun />
-          ) : lastLockCause === lockCause && lastLockCause === "7" ? (
-            <PiGraduationCapFill />
-          ) : lastLockCause !== lockCause ? (
-            <>
-              <AiFillLock />
-              <p>&rarr;</p>
-              <AiFillLock />
-            </>
-          ) : null}
+          {lastLockCause === "-1" || lastLockCause === "5" ? "time" : "lock"}
         </div>
         <div
           style={{ display: "flex", alignItems: "center" }}
           className="over-break__time"
         >
-          {lastLockCause === lockCause
-            ? `${formatSecondsToTime(+agentStateDuration)}`
-            : lastLockCause !== lockCause
-            ? `${formatSecondsToTime(
-                +lastAgentStateDuration
-              )} - ${formatSecondsToTime(+agentStateDuration)}`
-            : null}
+          {lastLockCause === "-1" || lastLockCause === "5"
+            ? agentStateDuration
+            : lastAgentStateDuration + " - " + agentStateDuration}
         </div>
       </div>
     </div>

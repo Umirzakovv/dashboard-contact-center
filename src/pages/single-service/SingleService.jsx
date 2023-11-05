@@ -17,14 +17,14 @@ const SingleService = () => {
       setCurrentStatistics(receivedData);
     });
 
-    setInterval(() => {
-      socket.emit("statictikGroup", { group_id: id }, (receivedData) => {
-        setCurrentStatistics(receivedData);
-      });
-      // return () => {
-      //   socket.disconnect();
-      // };
-    }, 7000);
+    // setInterval(() => {
+    //   socket.emit("statictikGroup", { group_id: id }, (receivedData) => {
+    //     setCurrentStatistics(receivedData);
+    //   });
+    //   // return () => {
+    //   //   socket.disconnect();
+    //   // };
+    // }, 7000);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
