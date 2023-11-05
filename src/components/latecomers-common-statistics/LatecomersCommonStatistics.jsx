@@ -20,9 +20,10 @@ const LatecomersCommonStatistics = () => {
       id: 3,
       title: "Превышающие перерыв",
       statistics: "1895",
-      icon: <TfiTimer />
+      icon: <TfiTimer />,
     },
   ];
+
   return (
     <div
       className="latecomers-common__statistics-wrapper"

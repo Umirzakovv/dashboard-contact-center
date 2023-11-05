@@ -66,7 +66,11 @@ const LatecomersTable = () => {
               )}
             </td>
             <td>{formatSecondsToTime(+item?.agentStateDuration)}</td>
-            <td>{item?.create_data.slice(0, 10)}</td>
+            <td>
+              {item?.create_data.slice(11, 16)}
+              <br />
+              {item?.create_data.slice(0, 10)}
+            </td>
           </tr>
         );
       })}
