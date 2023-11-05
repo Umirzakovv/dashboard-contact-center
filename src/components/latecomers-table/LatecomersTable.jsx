@@ -15,10 +15,12 @@ const LatecomersTable = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://192.168.42.176:2000/api/v1/agents/all")
+    fetch("http://192.168.42.176:2000/api/v1/agents/allBlock")
       .then((res) => res.json())
       .then((data) => {
-        setLatecomers(data);
+        // console.log(data);
+        // console.log(data.findBlockAgents);
+        setLatecomers(data?.findBlockAgents);
         setLoading(false);
       })
       .catch((err) => console.log(err));
