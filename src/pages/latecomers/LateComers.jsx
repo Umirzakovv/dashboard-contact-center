@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import LatecomersCommonStatistics from "../../components/latecomers-common-statistics/LatecomersCommonStatistics";
 import LatecomersHeader from "../../components/latecomers-header/LatecomersHeader";
 import LatecomersTable from "../../components/latecomers-table/LatecomersTable";

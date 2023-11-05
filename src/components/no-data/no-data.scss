@@ -1,5 +1,24 @@
 .no-data {
-    p {
-        font-size: 1.6rem;
-    }
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20rem 0;
+
+  border-radius: 1rem;
+  background-color: #fff;
+
+  .no-data__icon {
+    display: block;
+    margin: 0 auto;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    text-align: center;
+    font-style: normal;
+    line-height: 2rem;
+    letter-spacing: 0.1px;
+  }
 }

@@ -5,13 +5,14 @@ import io from "socket.io-client";
 import "./servives.scss";
 import { useEffect, useState } from "react";
 
-const socket = io.connect("http://192.168.0.167:2004/");
+const socket = io.connect("http://192.168.42.176:2000/");
 
 const Services = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
     socket.emit("data", (receivedData) => {
+      console.log(receivedData);
       setData(receivedData);
     });
 
@@ -19,7 +20,8 @@ const Services = () => {
       socket.emit("data", (receivedData) => {
         setData(receivedData);
       });
-    }, 10_000);
+    }, 7000);
+
   }, []);
 
   return (

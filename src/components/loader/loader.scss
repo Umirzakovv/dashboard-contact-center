@@ -1,9 +1,7 @@
-.loader-wrapper {
-  border: 1px solid red;
-  display: block !important;
-  margin: 0 auto !important;
 
   .loader {
+    display: block;
+    margin: 0 auto;
     border: 1rem solid #fff;
     border-radius: 50%;
     border-top: 1rem solid #558eff;
@@ -12,7 +10,6 @@
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 0.8s linear infinite;
   }
-}
 
 /* Safari */
 @-webkit-keyframes spin {

@@ -8,7 +8,7 @@ const Sorting = () => {
   const { setLoading } = useContext(LoadingContext);
 
   const handleSelect = async (e) => {
-    const sortingUrl = `http://192.168.0.167:2004/api/v1/agents/findByFilter?name=null&operator_number=null&status=${
+    const sortingUrl = `http://192.168.42.176:2000/api/v1/agents/findByFilter?name=null&operator_number=null&status=${
       e?.target?.value === "all" ? null : e?.target?.value
     }`;
     setLoading(true);

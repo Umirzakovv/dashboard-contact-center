@@ -4,10 +4,9 @@ import BackBtn from "../../components/back-btn/BackBtn";
 import { io } from "socket.io-client";
 import Chart from "../../components/chart/Chart";
 import { useEffect, useState } from "react";
-import CommonStatisticsCard from "../../components/common-statistics-card/CommonStatisticsCard";
 import SinglePageCommonStatistics from "../../components/single-page-common-statistics/SinglePageCommonStatistics";
 
-const socket = io.connect("http://192.168.0.167:2004/");
+const socket = io.connect("http://192.168.42.176:2000/");
 
 const SingleService = () => {
   const { id } = useParams();
@@ -22,8 +21,12 @@ const SingleService = () => {
       socket.emit("statictikGroup", { group_id: id }, (receivedData) => {
         setCurrentStatistics(receivedData);
       });
-    }, 10_000);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, 7000);
+
+    // return () => {
+    //   socket.disconnect();
+    // };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
