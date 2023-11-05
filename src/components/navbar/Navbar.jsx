@@ -20,7 +20,12 @@ const Navbar = () => {
     },
     {
       id: 4,
-      title: "Отчёт по опозданиям",
+      title: "Статистика сотрудников",
+      href: "/statistics-operators",
+    },
+    {
+      id: 5,
+      title: "Отчёт по перерывам",
       href: "/report-latecomers",
     },
   ];

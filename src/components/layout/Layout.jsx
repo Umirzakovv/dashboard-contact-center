@@ -7,13 +7,12 @@ import SideBar from "../sidebar/SideBar";
 import "./layout.scss";
 import io from "socket.io-client";
 
-const socket = io.connect("http://192.168.42.176:2000/");
+const socket = io.connect("http://192.168.42.176:2000");
 
 export const NotificationContext = createContext();
 export const OverBreakDataContext = createContext();
 export const LateComersListContext = createContext();
 export const LoadingContext = createContext();
-
 
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,18 +24,19 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     socket.emit("agentsLockAtTheMoment", (receivedData) => {
+      console.log(receivedData, "one");
       setOverBreakData(receivedData);
     });
 
     setInterval(() => {
       socket.emit("agentsLockAtTheMoment", (receivedData) => {
+        console.log(receivedData, "two");
         setOverBreakData(receivedData);
       });
+      return () => {
+        socket.disconnect();
+      };
     }, 7000);
-
-    // return () => {
-    //   socket.disconnect();
-    // };
   }, []);
 
   return (

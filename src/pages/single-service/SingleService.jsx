@@ -21,11 +21,11 @@ const SingleService = () => {
       socket.emit("statictikGroup", { group_id: id }, (receivedData) => {
         setCurrentStatistics(receivedData);
       });
+      // return () => {
+      //   socket.disconnect();
+      // };
     }, 7000);
 
-    // return () => {
-    //   socket.disconnect();
-    // };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

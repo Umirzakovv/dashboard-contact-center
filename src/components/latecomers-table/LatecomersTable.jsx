@@ -31,47 +31,57 @@ const LatecomersTable = () => {
     <NoData />
   ) : (
     <table className="latecomers-table">
-      <tr>
-        <th>№</th>
-        <th>Ф.И.О</th>
-        <th>ID РМО</th>
-        <th>Причина</th>
-        <th>Длительность</th>
-        <th>Время</th>
-      </tr>
-      {/* <LatecomersTableData /> */}
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Ф.И.О</th>
+          <th>ID РМО</th>
+          <th>Причина</th>
+          <th>Длительность</th>
+          <th>Время</th>
+        </tr>
+      </thead>
 
       {latecomers?.map((item, index) => {
         return (
-          <tr key={item?.agent_id}>
-            <td>{index + 1}</td>
-            <td>
-              {item?.lastName} {item?.firstName} {item?.secondName}
-            </td>
-            <td>{item?.login}</td>
-            <td
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {item?.banInfo === "time" ? (
-                <TfiTimer />
-              ) : (
-                <>
-                  <AiOutlineLock /> &rarr;
-                  <AiOutlineLock />
-                </>
-              )}
-            </td>
-            <td>{formatSecondsToTime(+item?.agentStateDuration)}</td>
-            <td>
-              {item?.create_data.slice(11, 16)}
-              <br />
-              {item?.create_data.slice(0, 10)}
-            </td>
-          </tr>
+          <tbody key={item?.agent_id}>
+            <tr>
+              <td>{index + 1}</td>
+              <td>
+                {item?.lastName} {item?.firstName} {item?.secondName}
+              </td>
+              <td>{item?.login}</td>
+              <td
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {item?.banInfo === "time" ? (
+                  <TfiTimer />
+                ) : (
+                  <>
+                    <AiOutlineLock /> &rarr;
+                    <AiOutlineLock />
+                  </>
+                )}
+              </td>
+              <td>
+                {item?.banInfo === "time"
+                  ? formatSecondsToTime(+item?.agentStateDuration)
+                  : formatSecondsToTime(+item?.agentStateDuration) +
+                    " - " +
+                    formatSecondsToTime(+item?.lastAgentStateDuration)}{" "}
+              </td>
+              <td>
+                {item?.create_data.slice(11, 16)}
+                <br />
+                {item?.create_data.slice(8, 10)}-{item?.create_data.slice(5, 7)}
+                -{item?.create_data.slice(0, 4)}
+              </td>
+            </tr>
+          </tbody>
         );
       })}
     </table>
