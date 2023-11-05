@@ -24,22 +24,19 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log("layout is working");
     socket.emit("agentsLockAtTheMoment", (receivedData) => {
-      console.log(receivedData ,'okkkk');
       setOverBreakData(receivedData);
     });
 
     setInterval(() => {
       socket.emit("agentsLockAtTheMoment", (receivedData) => {
-        console.log(receivedData ,'okkkk');
         setOverBreakData(receivedData);
       });
-    }, 5000);
+    }, 7000);
 
-    return () => {
-      socket.disconnect();
-    };
+    // return () => {
+    //   socket.disconnect();
+    // };
   }, []);
 
   return (

@@ -5,7 +5,6 @@ import "./sidebar.scss";
 
 const SideBar = () => {
   const { overBreakData } = useContext(OverBreakDataContext);
-  console.log(overBreakData);
   return (
     <div className="sidebar">
       <div className="sidebar-header">

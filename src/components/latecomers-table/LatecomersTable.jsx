@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import LatecomersTableData from "../latecomers-table-data/LatecomersTableData";
 import Loader from "../loader/Loader";
 import NoData from "../no-data/NoData";
 import { TfiTimer } from "react-icons/tfi";
@@ -19,7 +18,6 @@ const LatecomersTable = () => {
     fetch("http://192.168.42.176:2000/api/v1/agents/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setLatecomers(data);
         setLoading(false);
       })

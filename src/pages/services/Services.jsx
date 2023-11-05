@@ -12,7 +12,6 @@ const Services = () => {
 
   useEffect(() => {
     socket.emit("data", (receivedData) => {
-      console.log(receivedData);
       setData(receivedData);
     });
 

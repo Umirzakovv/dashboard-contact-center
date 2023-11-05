@@ -13,7 +13,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     socket.emit("statictik", (receivedData) => {
-      console.log(receivedData);
       setStatistics(receivedData);
     });
   }, []);

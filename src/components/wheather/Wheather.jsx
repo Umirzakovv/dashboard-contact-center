@@ -12,10 +12,9 @@ const Wheather = () => {
   }, []);
 
   return (
-    // <div className="wheather">
-    //   Ташкент {Math.round(wheather?.main?.temp)}&deg;
-    // </div>
-    null
+    <div className="wheather">
+      Ташкент {Math.round(wheather?.main?.temp)}&deg;
+    </div>
   );
 };
 
