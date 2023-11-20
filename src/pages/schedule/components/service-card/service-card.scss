@@ -1,0 +1,38 @@
+.service-card {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding: 10rem 13rem;
+  border-radius: 1rem;
+  background-color: #336cfb;
+  text-decoration: none;
+  margin-bottom: 7rem;
+
+  &:hover {
+    background-color: rgba(50, 107, 251, 0.8);
+  }
+
+  .service-title {
+    margin-left: 3rem;
+
+    h4 {
+      color: #91b0ff;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+    }
+
+    h6 {
+      color: #fff;
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0.1px;
+      margin-top: 1rem;
+    }
+  }
+}

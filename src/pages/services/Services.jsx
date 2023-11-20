@@ -12,15 +12,16 @@ const Services = () => {
 
   useEffect(() => {
     socket.emit("data", (receivedData) => {
-      setData(receivedData);
+      const sortedData = receivedData?.sort((a, b) => +b.queue - +a.queue);
+      setData(sortedData);
     });
 
     setInterval(() => {
       socket.emit("data", (receivedData) => {
-        setData(receivedData);
+        const sortedData = receivedData?.sort((a, b) => +b.queue - +a.queue);
+        setData(sortedData);
       });
     }, 7000);
-
   }, []);
 
   return (

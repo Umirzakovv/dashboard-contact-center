@@ -7,6 +7,7 @@ import SingleService from "./pages/single-service/SingleService";
 import StatEmployees from "./pages/stat-employees/StatEmployees";
 
 const App = () => {
+
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />

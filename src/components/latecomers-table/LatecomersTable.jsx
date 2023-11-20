@@ -18,8 +18,6 @@ const LatecomersTable = () => {
     fetch("http://192.168.42.176:2000/api/v1/agents/allBlock")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
-        // console.log(data.findBlockAgents);
         setLatecomers(data?.findBlockAgents);
         setLoading(false);
       })
