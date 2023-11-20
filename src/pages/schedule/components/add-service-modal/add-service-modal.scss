@@ -1,0 +1,52 @@
+.add-service__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 7rem 12rem;
+  border-radius: 1rem;
+
+  .add-service__title {
+    color: #64748b;
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .add-service__input {
+    padding: 1.4rem 1.6rem;
+    width: 45.2rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    outline: none;
+    border: .5px solid #A0A4A8;
+    border-radius: .8rem;
+    background-color: #E2E8F0;
+  }
+
+  .add-service__btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    padding: 1.5rem 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    width: 28rem;
+    background-color: #336CFB;
+    color: #fff;
+    border: none;
+    border-radius: .8rem;
+  }
+}
