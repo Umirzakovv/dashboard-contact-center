@@ -7,10 +7,11 @@ import Curtain from "../../components/curtain/Curtain";
 
 const Schedule = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const services = [
+  const [newInputValue, setNewInputValue] = useState();
+  const [services, setServices] = useState([
     { id: 1, title: "1000", href: "1000" },
     { id: 2, title: "1009", href: "1009" },
-  ];
+  ]);
 
   const WrapperStyle = {
     padding: "10rem 20rem",
@@ -45,7 +46,13 @@ const Schedule = () => {
           <h6 style={{ fontSize: "2rem", color: "#64748B" }}>Добавить</h6>
         </div>
       </div>
-      {isModalOpen ? <AddServiceModal setIsModalOpen={setIsModalOpen} /> : null}
+      {isModalOpen ? (
+        <AddServiceModal
+          setIsModalOpen={setIsModalOpen}
+          newInputValue={newInputValue}
+          setNewInputValue={setNewInputValue}
+        />
+      ) : null}
       {isModalOpen ? <Curtain /> : null}
     </Layout>
   );

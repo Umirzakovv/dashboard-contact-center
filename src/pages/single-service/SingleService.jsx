@@ -22,7 +22,7 @@ const SingleService = () => {
   return (
     <div>
       <Layout>
-        <BackBtn />
+        <BackBtn href={"/services"} />
         <SinglePageCommonStatistics statistics={currentStatistics} />
         <Chart statistics={currentStatistics} />
       </Layout>

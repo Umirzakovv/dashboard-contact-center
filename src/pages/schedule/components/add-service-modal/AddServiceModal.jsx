@@ -2,8 +2,14 @@
 import { useEffect } from "react";
 import "./add-service-modal.scss";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AddServiceModal = ({ setIsModalOpen }) => {
+const AddServiceModal = ({
+  newInputValue,
+  setIsModalOpen,
+  setNewInputValue,
+}) => {
+  const navigate = useNavigate();
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -19,11 +25,26 @@ const AddServiceModal = ({ setIsModalOpen }) => {
     };
   });
 
+  const handleInputChange = (e) => {
+    setNewInputValue(e?.target?.value);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    navigate(newInputValue);
+  };
+
   return (
-    <form ref={modalRef} className="add-service__modal">
+    <form
+      ref={modalRef}
+      className="add-service__modal"
+      onSubmit={handleFormSubmit}
+    >
       <h2 className="add-service__title">Добавить услугу</h2>
 
       <input
+        onChange={handleInputChange}
         type="text"
         className="add-service__input"
         placeholder="Названия услуги"
