@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useContext, useState } from "react";
 import { LateComersListContext, LoadingContext } from "../layout/Layout";
-
 import searchIcon from "../../assets/icons/search.svg";
-import "./search-bar.scss";
+import SearchBarLayout from "../search-bar-layout/SearchBarLayout";
 
 const MAX_COUNT = 9;
 
-const SearchBar = (props) => {
+const SearchBarLatecomers = () => {
   const [inputValue, setInputValue] = useState("");
   const { setLatecomers } = useContext(LateComersListContext);
   const { setLoading } = useContext(LoadingContext);
@@ -41,16 +40,24 @@ const SearchBar = (props) => {
   };
 
   return (
-    <form className="search-bar" onSubmit={handleSearchSubmit}>
-      <img src={searchIcon} alt="search icon" />
-      <input
-        type="search"
-        placeholder={props.placeholder}
-        onChange={handleChange}
-        value={inputValue}
-      />
-    </form>
+    // <form className="search-bar" onSubmit={handleSearchSubmit}>
+    //   <img src={searchIcon} alt="search icon" />
+    //   <input
+    //     type="search"
+    //     placeholder={props.placeholder}
+    //     onChange={handleChange}
+    //     value={inputValue}
+    //   />
+    // </form>
+    <SearchBarLayout
+      onSubmit={handleSearchSubmit}
+      img={searchIcon}
+      alt="search icon"
+      placeholder="Поиск по ФИО или ID РМО"
+      onChange={handleChange}
+      value={inputValue}
+    />
   );
 };
 
-export default SearchBar;
+export default SearchBarLatecomers;

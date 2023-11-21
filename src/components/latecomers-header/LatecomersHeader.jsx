@@ -1,5 +1,5 @@
 import ExcelBtn from "../excel-btn/ExcelBtn";
-import SearchBar from "../search-bar/SearchBar";
+import SearchBarLatecomers from "../search-bar-latecomers/SearchBarLatecomers";
 import Sorting from "../sorting/Sorting";
 
 const LatecomersHeader = () => {
@@ -14,7 +14,7 @@ const LatecomersHeader = () => {
       }}
     >
       <ExcelBtn />
-      <SearchBar placeholder="Поиск по фамилии или ID РМО" />
+      <SearchBarLatecomers />
       <Sorting />
     </div>
   );

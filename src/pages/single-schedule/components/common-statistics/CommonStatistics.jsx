@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import CommonStatisticsCard from "../../../../components/common-statistics-card/CommonStatisticsCard";
 
 const CommonStatisticsSingleSchedule = () => {

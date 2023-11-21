@@ -1,6 +1,7 @@
 import BackBtn from "../../components/back-btn/BackBtn";
 import Layout from "../../components/layout/Layout";
-import CommonStatisticsSingleSchedule from "./components/common-statistics-single-schedule/CommonStatisticsSingleSchedule";
+import CommonStatisticsSingleSchedule from "./components/common-statistics/CommonStatistics";
+import Header from "./components/header/Header";
 import "./single-schedule.scss";
 
 const SingleSchedule = () => {
@@ -8,6 +9,7 @@ const SingleSchedule = () => {
     <Layout>
       <BackBtn href={"/schedule"} />
       <CommonStatisticsSingleSchedule />
+      <Header />
     </Layout>
   );
 };
