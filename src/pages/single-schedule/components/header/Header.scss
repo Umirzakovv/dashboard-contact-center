@@ -1,0 +1,13 @@
+.single-schedule__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #fff;
+    padding: 1.6rem 5rem;
+    border-radius: .5rem;
+
+    .btns-wrapper {
+        display: flex;
+    }
+}

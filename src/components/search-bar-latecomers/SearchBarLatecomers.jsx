@@ -40,15 +40,6 @@ const SearchBarLatecomers = () => {
   };
 
   return (
-    // <form className="search-bar" onSubmit={handleSearchSubmit}>
-    //   <img src={searchIcon} alt="search icon" />
-    //   <input
-    //     type="search"
-    //     placeholder={props.placeholder}
-    //     onChange={handleChange}
-    //     value={inputValue}
-    //   />
-    // </form>
     <SearchBarLayout
       onSubmit={handleSearchSubmit}
       img={searchIcon}
@@ -56,6 +47,7 @@ const SearchBarLatecomers = () => {
       placeholder="Поиск по ФИО или ID РМО"
       onChange={handleChange}
       value={inputValue}
+      borderColor="#E1E6EF"
     />
   );
 };
