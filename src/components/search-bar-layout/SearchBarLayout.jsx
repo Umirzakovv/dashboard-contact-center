@@ -7,13 +7,11 @@ const SearchBarLayout = ({
   placeholder,
   onChange,
   value,
-  borderColor,
 }) => {
   return (
     <form
       className="search-bar"
       onSubmit={onSubmit}
-      style={{ border: `1px solid ${borderColor}` }}
     >
       <img src={img} alt={alt} />
       <input

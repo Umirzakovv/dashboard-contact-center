@@ -1,0 +1,17 @@
+.delete-btn {
+  border: none;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 0.2px;
+  color: #fff;
+  background-color: #dc2c2c;
+  padding: 1.5rem 5rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+
+  &:active {
+    background-color: #dc2c2c8a;
+  }
+}

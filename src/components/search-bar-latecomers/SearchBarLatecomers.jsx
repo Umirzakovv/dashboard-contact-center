@@ -47,7 +47,6 @@ const SearchBarLatecomers = () => {
       placeholder="Поиск по ФИО или ID РМО"
       onChange={handleChange}
       value={inputValue}
-      borderColor="#E1E6EF"
     />
   );
 };

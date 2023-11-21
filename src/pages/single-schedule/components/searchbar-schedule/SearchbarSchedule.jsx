@@ -6,7 +6,6 @@ const SearchbarSchedule = () => {
       img={img}
       alt="search icon"
       placeholder="Поиск по ФИО или ID РМО"
-      borderColor="#E1E6EF"
     />
   );
 };
