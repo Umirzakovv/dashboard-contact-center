@@ -1,0 +1,33 @@
+.table-user {
+  &:nth-child(odd) {
+    background-color: #fff;
+    color: #1d2433;
+  }
+
+  &:nth-child(even) {
+    background-color: #e1e6ef;
+    color: #1d2433;
+  }
+
+  td {
+    color: #000;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .user-name {
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .user-edit__btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
