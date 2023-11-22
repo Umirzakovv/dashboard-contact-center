@@ -1,0 +1,21 @@
+.add-group__modal {
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 0.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  padding: 6rem;
+  width: 100rem;
+
+  .add-group__modal-title {
+    color: #64748b;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+  }
+}
