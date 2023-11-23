@@ -1,0 +1,35 @@
+.search-result__modal {
+  background-color: #fff;
+  width: max-content;
+  position: absolute;
+  right: 0;
+  width: 45rem;
+  overflow-y: scroll;
+  max-height: 12.8rem;
+  border-radius: 0.5rem;
+  .search-result {
+    padding: 0.5rem 1.2rem;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 4px;
+  }
+}

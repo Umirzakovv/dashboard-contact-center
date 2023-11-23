@@ -4,9 +4,9 @@ import userImg from "../../assets/icons/user.svg";
 
 const SupervisorInput = ({ placeholder }) => {
   return (
-    <div className="add-supervisor__input-wrapper">
+    <div className="supervisor__input-wrapper">
       <h4>Имя супервайзера</h4>
-      <div className="add-supervisor__input">
+      <div className="supervisor__input">
         <input type="text" placeholder={placeholder} />
         <img src={userImg} alt="user img" />
       </div>
