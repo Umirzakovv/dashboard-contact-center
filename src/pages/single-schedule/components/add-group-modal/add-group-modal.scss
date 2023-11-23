@@ -1,5 +1,5 @@
 .add-group__modal {
-  background-color: #f1f5f9;
+  background-color: #fff;
   z-index: 2;
   border-radius: 0.5rem;
   position: fixed;
@@ -7,7 +7,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-  width: 72rem;
+  width: 80rem;
   max-height: 90rem;
 
   .add-group__modal-title {
