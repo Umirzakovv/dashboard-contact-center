@@ -24,8 +24,8 @@ const AddGroupModal = ({ setisModalOpen }) => {
   return (
     <form className="add-group__modal" ref={modalRef}>
       <h2 className="add-group__modal-title">Добавить новую группу</h2>
+      <TitleInput placeholder="Название группы" />
       <SupervisorInput />
-      <TitleInput />
     </form>
   );
 };
