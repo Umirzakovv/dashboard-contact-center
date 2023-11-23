@@ -7,7 +7,7 @@ const Logo = () => {
   return (
     <Link to="/" className="logo">
       <img src={LogoImg} alt="logo" />
-      <h1>UCC</h1>
+      <h1>UCC WFM</h1>
     </Link>
   );
 };
