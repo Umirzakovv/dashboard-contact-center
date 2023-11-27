@@ -1,0 +1,59 @@
+@import "../../assets/scss/variables.scss";
+
+.select-result__modal {
+  background-color: #fff;
+  border: 1px solid $input_bgc;
+  width: max-content;
+  right: 0;
+  width: 45rem;
+  overflow-y: scroll;
+  max-height: 12.8rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+
+  .select-result__wrapper {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: $input_bgc;
+    border-radius: 0.5rem;
+
+    .select-result {
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      padding: 0.5rem;
+    }
+
+    button {
+      border: none;
+      background: none;
+      margin-left: 1rem;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 4px;
+  }
+}
+
+.select-result__modal-inactive {
+    display: none;
+}
