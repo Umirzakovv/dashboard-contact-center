@@ -28,6 +28,11 @@ const Navbar = () => {
       title: "Отчёт по перерывам",
       href: "/report-latecomers",
     },
+    {
+      id: 6,
+      title: "База данных операторов",
+      href: "/database-operators",
+    },
   ];
 
   return (

@@ -6,6 +6,7 @@ import LateComers from "./pages/latecomers/LateComers";
 import SingleService from "./pages/single-service/SingleService";
 import StatEmployees from "./pages/stat-employees/StatEmployees";
 import SingleSchedule from "./pages/single-schedule/SingleSchedule";
+import DatabaseOperators from "./pages/database-operators/DatabaseOperators";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/report-latecomers" element={<LateComers />} />
       <Route path="/services/single-service/:id" element={<SingleService />} />
       <Route path="/schedule/1000" element={<SingleSchedule />} />
+      <Route path="/database-operators" element={<DatabaseOperators />}/>
     </Routes>
   );
 };
