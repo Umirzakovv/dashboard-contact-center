@@ -1,0 +1,34 @@
+.type-filter {
+  background-color: #336cfb;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6rem;
+}
+
+.type-filter__styled-radio {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+
+  color: #fff;
+  background-color: #336cfb;
+
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+.type-filter__radio:checked + .type-filter__styled-radio {
+  background-color: #fff;
+  color: #336cfb;
+}
+
+.visually-hidden {
+  display: none;
+}
