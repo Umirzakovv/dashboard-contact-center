@@ -6,15 +6,13 @@ import lostIcon from "../../assets/icons/phone-missed (1).svg";
 import queueDispatchedIcon from "../../assets/icons/phone-off (2).svg";
 
 const CommonStatisticsDashboard = (props) => {
+  const style = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
   return (
-    <div
-      className="common-statistics__wrapper"
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
+    <div className="common-statistics__wrapper" style={style}>
       <CommonStatisticsCard
         img={acceptedIcon}
         title="Поступившие звонки"
