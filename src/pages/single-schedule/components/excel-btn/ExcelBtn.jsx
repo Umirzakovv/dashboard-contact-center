@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import reply from "../../../../assets/icons/reply.svg";
 import "./excel-btn.scss";
-const ExcelBtn = () => {
+const ExcelBtn = ({ icon, style }) => {
   return (
-    <button className="shchedule-excel__btn">
-      <img src={reply} alt="reply img" />
-      Экспорт в Excel
+    <button className="shchedule-excel__btn" style={style}>
+      <img src={icon ? icon : reply} alt="reply img" />
+      Экспортировать в Excel
     </button>
   );
 };
