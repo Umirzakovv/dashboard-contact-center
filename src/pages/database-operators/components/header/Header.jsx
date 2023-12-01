@@ -6,7 +6,7 @@ import img from "../../../../assets/icons/search.svg";
 import ExtendedFilterBtn from "../extended-filter-btn/ExtendedFilterBtn";
 
 const Header = () => {
-  const excelStyle = {
+  const excelBtnStyle = {
     padding: "1rem",
     borderRadius: "4rem",
     background: "#4DC555",
@@ -19,7 +19,7 @@ const Header = () => {
     <div className="database-operators__header">
       <ExtendedFilterBtn />
       <SearchBarLayout placeholder="Поиск по Ф.И.О или ID" img={img} />
-      <ExcelBtn icon={icon} style={excelStyle} />
+      <ExcelBtn icon={icon} style={excelBtnStyle} />
     </div>
   );
 };

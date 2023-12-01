@@ -6,7 +6,7 @@ import Curtain from "../../../../components/curtain/Curtain";
 const ExtendedFilterBtn = () => {
   const [filterModal, setFilterModal] = useState(false);
   const handleFilterClick = () => {
-    setFilterModal(true);
+    setFilterModal(!filterModal);
   };
 
   return (

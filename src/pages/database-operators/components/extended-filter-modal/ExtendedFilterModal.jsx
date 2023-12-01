@@ -7,27 +7,13 @@ import "./extended-filter-modal.scss";
 
 import { extendedFilterSelections } from "../../../../mock/mock-data";
 
-const ExtendedFilterModal = ({ setFilterModal }) => {
-  const modalRef = useRef();
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!modalRef?.current.contains(e.target)) {
-        setFilterModal(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
+const ExtendedFilterModal = ( ) => {
 
   const handleClick = () => {
     console.log(extendedFilterSelections);
   };
   return (
-    <div className="extended-filter-modal" ref={modalRef}>
+    <div className="extended-filter-modal">
       <div className="extended-filter__selects">
         {extendedFilterSelections?.map((item) => {
           return <Select key={item?.id} item={item}/>;

@@ -22,7 +22,6 @@ const GroupsDivision = () => {
             onClick={handleClick}
           >
             <input
-              defaultChecked
               className="visually-hidden type-filter__radio"
               type="radio"
               name="type"
