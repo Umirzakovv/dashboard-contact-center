@@ -2,8 +2,8 @@ import SearchBarLayout from "../../../../components/search-bar-layout/SearchBarL
 import ExcelBtn from "../../../single-schedule/components/excel-btn/ExcelBtn";
 import icon from "../../../../assets/icons/reply-white.svg";
 import "./header.scss";
-import ExtendedFilter from "../extended-filter/ExtendedFilter";
 import img from "../../../../assets/icons/search.svg";
+import ExtendedFilterBtn from "../extended-filter-btn/ExtendedFilterBtn";
 
 const Header = () => {
   const excelStyle = {
@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <div className="database-operators__header">
-      <ExtendedFilter />
+      <ExtendedFilterBtn />
       <SearchBarLayout placeholder="Поиск по Ф.И.О или ID" img={img} />
       <ExcelBtn icon={icon} style={excelStyle} />
     </div>

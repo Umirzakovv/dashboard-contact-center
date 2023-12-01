@@ -1,11 +1,26 @@
+/* eslint-disable react/prop-types */
+import { useEffect, useRef } from "react";
 import CancelBtn from "../../../../components/cancel-btn/CancelBtn";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import Select from "../select/Select";
 import "./extended-filter-modal.scss";
 
-const ExtendedFilterModal = () => {
+const ExtendedFilterModal = ({ setFilterModal }) => {
+  const modalRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      if (!modalRef?.current.contains(e.target)) {
+        setFilterModal(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
-    <div className="extended-filter-modal">
+    <div className="extended-filter-modal" ref={modalRef}>
       <div className="extended-filter__selects">
         <Select />
         <Select />
@@ -15,8 +30,8 @@ const ExtendedFilterModal = () => {
         <Select />
       </div>
       <div className="extended-filter__btns">
-        <CancelBtn title="Сбросить"/>
-        <SubmitBtn title="Фильтрировать"/>
+        <CancelBtn title="Сбросить" />
+        <SubmitBtn title="Фильтрировать" />
       </div>
     </div>
   );
