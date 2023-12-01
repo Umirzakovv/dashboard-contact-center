@@ -5,8 +5,11 @@ import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import Select from "../select/Select";
 import "./extended-filter-modal.scss";
 
+import { extendedFilterSelections } from "../../../../mock/mock-data";
+
 const ExtendedFilterModal = ({ setFilterModal }) => {
   const modalRef = useRef();
+
   useEffect(() => {
     let handler = (e) => {
       if (!modalRef?.current.contains(e.target)) {
@@ -19,18 +22,19 @@ const ExtendedFilterModal = ({ setFilterModal }) => {
       document.removeEventListener("mousedown", handler);
     };
   });
+
+  const handleClick = () => {
+    console.log(extendedFilterSelections);
+  };
   return (
     <div className="extended-filter-modal" ref={modalRef}>
       <div className="extended-filter__selects">
-        <Select />
-        <Select />
-        <Select />
-        <Select />
-        <Select />
-        <Select />
+        {extendedFilterSelections?.map((item) => {
+          return <Select key={item?.id} item={item}/>;
+        })}
       </div>
       <div className="extended-filter__btns">
-        <CancelBtn title="Сбросить" />
+        <CancelBtn title="Сбросить" onClick={handleClick} />
         <SubmitBtn title="Фильтрировать" />
       </div>
     </div>

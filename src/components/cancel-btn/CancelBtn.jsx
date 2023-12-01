@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import "./cancel-btn.scss";
 
-const CancelBtn = ({ title }) => {
-  return <button className="cancel-btn">{title}</button>;
+const CancelBtn = ({ title, onClick }) => {
+  return <button className="cancel-btn" onClick={onClick}>{title}</button>;
 };
 
 export default CancelBtn;

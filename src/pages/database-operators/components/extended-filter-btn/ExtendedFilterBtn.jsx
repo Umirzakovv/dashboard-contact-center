@@ -5,23 +5,9 @@ import ExtendedFilterModal from "../extended-filter-modal/ExtendedFilterModal";
 import Curtain from "../../../../components/curtain/Curtain";
 const ExtendedFilterBtn = () => {
   const [filterModal, setFilterModal] = useState(false);
-  const modalRef = useRef();
   const handleFilterClick = () => {
     setFilterModal(true);
   };
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!modalRef?.current.contains(e.target)) {
-        setFilterModal(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
 
   return (
     <>
@@ -34,7 +20,6 @@ const ExtendedFilterBtn = () => {
       ) : (
         ""
       )}
-      {filterModal ? <Curtain /> : ""}
     </>
   );
 };
