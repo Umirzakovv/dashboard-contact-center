@@ -1,0 +1,26 @@
+.extended-filter__select {
+  .extended-filter__select-title {
+    color: #64748b;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0.1px;
+  }
+
+  select {
+    border-radius: 8px;
+    border: 1px solid #c6c8cb;
+    padding: 1rem 1.2rem;
+    font-size: 1.4rem;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem; 
+    letter-spacing: 0.1px;
+
+    option {
+        border: 1px solid red;
+    }
+  }
+}

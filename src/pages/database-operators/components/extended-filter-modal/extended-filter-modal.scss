@@ -6,4 +6,16 @@
     width: 100%;
     margin-top: 10rem;
     border-radius: 1rem;
+    
+    .extended-filter__selects {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .extended-filter__btns {
+
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10rem;
+    }
 }
