@@ -16,8 +16,6 @@ const TableHead = () => {
     { id: 11, title: "Yashash manzil" },
     { id: 12, title: "Tamomlagan muassasa nomi" },
     { id: 13, title: "Lavozimdagi oxirgi o’zgarish" },
-    { id: 14, title: "Править" },
-
   ];
 
   return (
@@ -25,6 +23,7 @@ const TableHead = () => {
       {tableHeadData?.map((item) => {
         return <th key={item?.id}>{item?.title}</th>;
       })}
+      <th>Править</th>
     </tr>
   );
 };

@@ -56,6 +56,7 @@ const Layout = ({ children }) => {
     //   socket.disconnect();
     // };
   }, []);
+  console.log("layout is working");
 
   return (
     <NotificationContext.Provider value={{ isOpen, setIsOpen }}>

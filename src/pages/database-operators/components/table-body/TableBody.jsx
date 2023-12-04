@@ -1,9 +1,8 @@
+import EditBtnBlue from "../../../../components/edit-btn-blue/EditBtnBlue";
+import MoreBtnBlue from "../more-btn/MoreBtn";
 import "./table-body.scss";
-import pencilImg from "../../../../assets/icons/pencil-blue.svg";
-import moreBtnImg from "../../../../assets/icons/eye-blue.svg";
 
 const TableBody = () => {
-
   const tableBodyData = [
     { id: 1, title: "Ganiyev Raxmatullaxodja Raximxodjayev" },
     { id: 1, title: "ICHP" },
@@ -26,18 +25,14 @@ const TableBody = () => {
 
   return (
     <tr className="database-operators__table-data">
-        <td>1</td>
+      <td>1</td>
       {tableBodyData?.map((item) => {
         return <td key={item?.id}>{item?.title}</td>;
       })}
 
       <td className="database-operators__table-data__manage">
-        <button>
-          <img src={pencilImg} alt="pencil img" style={{ color: "red" }} />
-        </button>
-        <button>
-          <img src={moreBtnImg} alt="more button" />
-        </button>
+        <EditBtnBlue />
+        <MoreBtnBlue />
       </td>
     </tr>
   );

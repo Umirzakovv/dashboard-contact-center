@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
 import CancelBtn from "../../../../components/cancel-btn/CancelBtn";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import Select from "../select/Select";

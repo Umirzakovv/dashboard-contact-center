@@ -30,7 +30,7 @@ const Navbar = () => {
     },
     {
       id: 6,
-      title: "База данных операторов",
+      title: "База данных сотрудников",
       href: "/database-operators",
     },
   ];

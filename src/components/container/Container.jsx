@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 const Container = (props) => {
   const containerStyle = {
-    // border: "1px solid blue",
     padding: "0 12rem",
   };
   return (
