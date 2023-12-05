@@ -1,0 +1,22 @@
+.more-modal__body-wrapper {
+  margin-top: 7rem;
+  display: flex;
+
+  .more-modal__single-info__wrapper {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+  .more-modal__documents-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 45%;
+    margin-left: 4rem;
+  }
+  
+}
