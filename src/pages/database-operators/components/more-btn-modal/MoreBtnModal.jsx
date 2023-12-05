@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
 import "./more-btn-modal.scss";
+import MoreModalHeader from "../more-modal-header/MoreModalHeader";
 
 const MoreBtnModal = ({ setIsMoreBtnModalOpen }) => {
   const modalRef = useRef();
@@ -20,10 +21,7 @@ const MoreBtnModal = ({ setIsMoreBtnModalOpen }) => {
 
   return (
     <div className="database-operators__more-btn__modal" ref={modalRef}>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur odio,
-      nisi nesciunt repellendus vitae sapiente nulla nihil molestias, laudantium
-      voluptas sequi libero laborum consequuntur at adipisci officia,
-      perferendis quam beatae.
+      <MoreModalHeader />
     </div>
   );
 };
