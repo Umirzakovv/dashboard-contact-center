@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import filterIcon from "../../../../assets/icons/filter.svg";
 import "./extended-filter-btn.scss";
 import ExtendedFilterModal from "../extended-filter-modal/ExtendedFilterModal";
-import Curtain from "../../../../components/curtain/Curtain";
 const ExtendedFilterBtn = () => {
   const [filterModal, setFilterModal] = useState(false);
   const handleFilterClick = () => {
@@ -16,7 +15,10 @@ const ExtendedFilterBtn = () => {
         <img src={filterIcon} alt="filter icon" />
       </button>
       {filterModal ? (
-        <ExtendedFilterModal setFilterModal={setFilterModal} />
+        <ExtendedFilterModal
+          filterModal={filterModal}
+          setFilterModal={setFilterModal}
+        />
       ) : (
         ""
       )}

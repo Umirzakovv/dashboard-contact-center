@@ -4,10 +4,15 @@ import "./table.scss";
 
 const Table = () => {
   return (
-    <table className="database-operators__table">
-      <TableHead />
-      <TableBody />
-    </table>
+    <div className="database-operators__group">
+      <h2 className="database-operators__table-title">
+        Ekspluatatsiya va xo’jalik ishlari gruruhi
+      </h2>
+      <table className="database-operators__table">
+        <TableHead />
+        <TableBody />
+      </table>
+    </div>
   );
 };
 
