@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EditBtnBlue from "../../../../components/edit-btn-blue/EditBtnBlue";
 import MoreBtnBlue from "../more-btn/MoreBtn";
 import MoreBtnModal from "../more-btn-modal/MoreBtnModal";
@@ -15,9 +15,32 @@ const TableBody = () => {
   const handleEditBtnClick = () => {
     setIsEditBtnModalOpen(true);
   };
+
   const handleMoreBtnClick = () => {
     setIsMoreBtnModalOpen(true);
   };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      setIsMoreBtnModalOpen(false);
+      setIsEditBtnModalOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isMoreBtnModalOpen || isEditBtnModalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [
+    isMoreBtnModalOpen,
+    setIsMoreBtnModalOpen,
+    isEditBtnModalOpen,
+    setIsEditBtnModalOpen,
+  ]);
 
   return (
     <>

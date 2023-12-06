@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import addImg from "../../../../assets/icons/plus.svg";
 import "./add-group-btn.scss";
 import AddGroupModal from "../add-group-modal/AddGroupModal";
@@ -8,6 +8,23 @@ const AddGroupBtn = () => {
   const handleClick = () => {
     setisModalOpen(true);
   };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      setisModalOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    // Detach the event listener when the modal is closed
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isModalOpen, setisModalOpen]);
 
   return (
     <>

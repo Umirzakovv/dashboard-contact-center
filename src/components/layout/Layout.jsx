@@ -15,8 +15,9 @@ export const LateComersListContext = createContext();
 export const LoadingContext = createContext();
 
 const Layout = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  localStorage.setItem("sidebar_status", isOpen);
+  const [isOpen, setIsOpen] = useState(
+    localStorage.getItem("sidebar_status") === "true"
+  );
 
   const [overBreakData, setOverBreakData] = useState();
   const [latecomers, setLatecomers] = useState();
@@ -56,7 +57,6 @@ const Layout = ({ children }) => {
     //   socket.disconnect();
     // };
   }, []);
-  console.log("layout is working");
 
   return (
     <NotificationContext.Provider value={{ isOpen, setIsOpen }}>

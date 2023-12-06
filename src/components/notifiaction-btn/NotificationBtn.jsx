@@ -7,12 +7,14 @@ import {
 } from "../../components/layout/Layout";
 
 const NotificationBtn = () => {
-  const { isOpen, setIsOpen } = useContext(NotificationContext);
   const { overBreakData } = useContext(OverBreakDataContext);
+  const { isOpen, setIsOpen } = useContext(NotificationContext);
+
   const handleNotificationClick = () => {
     setIsOpen(!isOpen);
-    localStorage.setItem("sidebar_status", isOpen);
+    localStorage.setItem("sidebar_status", !isOpen);
   };
+
   return (
     <div className="notification" onClick={handleNotificationClick}>
       <img src={notificationImg} alt="notification" />
