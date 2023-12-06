@@ -1,7 +1,13 @@
-.type-filter {
+.type-filter__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #336cfb;
   padding: 0.5rem;
   border-radius: 0.5rem;
+}
+
+.type-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 0 6rem;
@@ -27,6 +33,12 @@
 .type-filter__radio:checked + .type-filter__styled-radio {
   background-color: #fff;
   color: #336cfb;
+}
+
+.division-add__btn {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .visually-hidden {

@@ -1,0 +1,43 @@
+.add-division__modal {
+  border-radius: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: white;
+  padding: 4rem 2rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .add-division__title {
+    color: #64748b;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .add-division__input {
+    outline: none;
+    background-color: #e2e8f0;
+    width: 100%;
+    border: none;
+
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0.1px;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+
+    &:focus {
+        outline: 1px solid #336cfb;
+    }
+  }
+}

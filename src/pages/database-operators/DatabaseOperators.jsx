@@ -12,8 +12,6 @@ const DatabaseOperators = () => {
       <GroupsDivision />
       <Header />
       <Table />
-      <Table />
-
     </Layout>
   );
 };
