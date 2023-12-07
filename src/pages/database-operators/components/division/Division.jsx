@@ -8,14 +8,9 @@ const Division = ({ group }) => {
   const [isDivisionModalOpen, setIsDivisionModalOpen] = useState(false);
   const modalRef = useRef();
 
-  const handleContextMenu = (event) => {
-    event.preventDefault();
+  const handleContextMenu = (e) => {
+    e.preventDefault();
     setIsDivisionModalOpen(!isDivisionModalOpen);
-    console.log(
-      "Right-click detected at coordinates:",
-      event.clientX,
-      event.clientY
-    );
   };
 
   useEffect(() => {
@@ -44,7 +39,7 @@ const Division = ({ group }) => {
         <span className="type-filter__styled-radio">{group?.title}</span>
       </label>
 
-      {isDivisionModalOpen ? <DivisionModal /> : ""}
+      {isDivisionModalOpen ? <DivisionModal group={group}/> : ""}
     </div>
   );
 };
