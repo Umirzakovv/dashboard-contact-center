@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import "./groups-division.scss";
 import { useState } from "react";
-
-import plusImg from "../../../../assets/icons/plus-white.svg";
 import AddDivisionModal from "../add-division-modal/AddDivisionModal";
 import Curtain from "../../../../components/curtain/Curtain";
+import plusImg from "../../../../assets/icons/plus-white.svg";
+import "./divisions.scss";
+import Division from "../division/Division";
 
-const GroupsDivision = () => {
+const Divisions = () => {
   const [groupsDivisionData, setGroupsDivisionData] = useState();
   const [error, setError] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,7 +15,7 @@ const GroupsDivision = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://192.168.104.70:2004/api/v1/division/all"
+          "http://192.168.126.70:2004/api/v1/division/all"
         );
         if (!response.ok) {
           throw new Error("Ошибка при загрузке");
@@ -35,10 +35,6 @@ const GroupsDivision = () => {
     return <p>{error?.message}</p>;
   }
 
-  const handleClick = (e) => {
-    console.log(e.target?.value);
-  };
-
   const handleAddDivisionClick = () => {
     setIsModalOpen(true);
   };
@@ -47,26 +43,11 @@ const GroupsDivision = () => {
     <div className="type-filter__wrapper">
       <div className="type-filter" method="get">
         {groupsDivisionData?.map((group) => {
-          return (
-            <label
-              key={group?.id}
-              className="type-filter__label"
-              onClick={handleClick}
-            >
-              <input
-                className="visually-hidden type-filter__radio"
-                type="radio"
-                name="type"
-                value={group?.value}
-                defaultChecked={group?.defaultChecked}
-              />
-              <span className="type-filter__styled-radio">{group?.title}</span>
-            </label>
-          );
+          return <Division key={group?.id} group={group} />;
         })}
       </div>
       <button className="division-add__btn" onClick={handleAddDivisionClick}>
-        <img src={plusImg} alt="" />
+        <img src={plusImg} alt="add division button" />
       </button>
 
       {isModalOpen ? <AddDivisionModal setIsModalOpen={setIsModalOpen} /> : ""}
@@ -75,4 +56,4 @@ const GroupsDivision = () => {
   );
 };
 
-export default GroupsDivision;
+export default Divisions;

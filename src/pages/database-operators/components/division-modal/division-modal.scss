@@ -1,0 +1,24 @@
+.division-modal {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  width: max-content;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  
+  p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    padding: 1rem;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: rgb(231, 231, 231);
+    }
+  }
+}

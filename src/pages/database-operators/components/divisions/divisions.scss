@@ -1,0 +1,25 @@
+.type-filter__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #336cfb;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+
+  .type-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+  }
+
+  .division-add__btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+}
+
+.visually-hidden {
+  display: none;
+}

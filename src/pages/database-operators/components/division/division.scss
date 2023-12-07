@@ -1,0 +1,23 @@
+.type-filter__label-wrapper {
+  position: relative;
+}
+
+.type-filter__styled-radio {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #fff;
+    background-color: #336cfb;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: .5rem;
+  }
+
+  .type-filter__radio:checked + .type-filter__styled-radio {
+    background-color: #fff;
+    color: #336cfb;
+  }
