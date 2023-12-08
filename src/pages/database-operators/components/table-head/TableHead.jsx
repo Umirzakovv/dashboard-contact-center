@@ -19,12 +19,14 @@ const TableHead = () => {
   ];
 
   return (
-    <tr className="database-operators__table-head">
-      {tableHeadData?.map((item) => {
-        return <th key={item?.id}>{item?.title}</th>;
-      })}
-      <th>Править</th>
-    </tr>
+    <thead>
+      <tr className="database-operators__table-head">
+        {tableHeadData?.map((item) => {
+          return <th key={item?.id}>{item?.title}</th>;
+        })}
+        <th>Править</th>
+      </tr>
+    </thead>
   );
 };
 

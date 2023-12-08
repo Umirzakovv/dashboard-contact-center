@@ -1,13 +1,12 @@
 import TableBody from "../table-body/TableBody";
 import TableHead from "../table-head/TableHead";
+import TableTitle from "../table-title/TableTitle";
 import "./table.scss";
 
 const Table = () => {
   return (
     <div className="database-operators__group">
-      <h2 className="database-operators__table-title">
-        Ekspluatatsiya va xo’jalik ishlari gruruhi
-      </h2>
+      <TableTitle />
       <table className="database-operators__table">
         <TableHead />
         <TableBody />

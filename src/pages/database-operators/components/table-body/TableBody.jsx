@@ -43,7 +43,7 @@ const TableBody = () => {
   ]);
 
   return (
-    <>
+    <tbody>
       <tr className="database-operators__table-data">
         <td>1</td>
         {tableBodyData?.map((item) => {
@@ -73,7 +73,7 @@ const TableBody = () => {
       ) : (
         ""
       )}
-    </>
+    </tbody>
   );
 };
 
