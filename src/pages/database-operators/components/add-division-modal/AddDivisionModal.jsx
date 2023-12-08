@@ -1,13 +1,16 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import "./add-division-modal.scss";
 import { useRef } from "react";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import { useState } from "react";
+import { fetchAllDivisions } from "../../../../consts";
+import { DivisionsDataContext } from "../divisions/Divisions";
 
 const AddDivisionModal = ({ setIsModalOpen }) => {
   const [inputValue, setInputValue] = useState();
   const [error, setError] = useState();
+  const { setGroupsDivisionData } = useContext(DivisionsDataContext);
 
   const modalRef = useRef();
   useEffect(() => {
@@ -38,11 +41,12 @@ const AddDivisionModal = ({ setIsModalOpen }) => {
         title: inputValue,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log(inputValue);
+      .then((response) => {
+        if (response?.ok) {
+          fetchAllDivisions(setError, setGroupsDivisionData);
+        }
       })
+
       .catch((error) => setError(error));
     setIsModalOpen(false);
   };

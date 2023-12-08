@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import { useState } from "react";
+import { fetchAllDivisions } from "../../../../consts";
+import { DivisionsDataContext } from "../divisions/Divisions";
 
 const EditDivisionModal = ({
   group,
@@ -11,6 +13,7 @@ const EditDivisionModal = ({
   console.log(group);
   const [inputValue, setInputValue] = useState(group?.title);
   const [error, setError] = useState();
+  const { setGroupsDivisionData } = useContext(DivisionsDataContext);
 
   const modalRef = useRef();
   useEffect(() => {
@@ -40,15 +43,20 @@ const EditDivisionModal = ({
         title: inputValue,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log(inputValue);
+      .then((response) => {
+        if (response?.ok) {
+          fetchAllDivisions(setError, setGroupsDivisionData);
+        }
       })
+
       .catch((error) => setError(error));
     setIsEditModalOpen(false);
     setIsDivisionModalOpen(false);
   };
+
+  if (error) {
+    return <p>{error?.message}</p>;
+  }
 
   return (
     <form

@@ -5,6 +5,7 @@ import DivisionModal from "../division-modal/DivisionModal";
 import { useEffect } from "react";
 import { useRef } from "react";
 const Division = ({ group }) => {
+  console.log(group);
   const [isDivisionModalOpen, setIsDivisionModalOpen] = useState(false);
   const modalRef = useRef();
 

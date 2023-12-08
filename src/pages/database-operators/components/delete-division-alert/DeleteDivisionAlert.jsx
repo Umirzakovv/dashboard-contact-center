@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import DeleteBtn from "../../../../components/delete-btn/DeleteBtn";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import "./delete-division-alert.scss";
+import { fetchAllDivisions } from "../../../../consts";
+import { DivisionsDataContext } from "../divisions/Divisions";
 
 const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
   const modalRef = useRef();
+  const [error, setError] = useState();
+  const { setGroupsDivisionData } = useContext(DivisionsDataContext);
   const handleСonfirmClick = () => {
     fetch(`http://192.168.104.70:2004/api/v1/division/delete/${group?.id}`, {
       method: "DELETE",
@@ -16,10 +20,12 @@ const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
         id: group?.id,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+      .then((response) => {
+        if (response?.ok) {
+          fetchAllDivisions(setError, setGroupsDivisionData);
+        }
       })
+
       .catch((error) => console.log(error));
     setIsDeleteModalOpen(false);
   };

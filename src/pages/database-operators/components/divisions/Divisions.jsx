@@ -1,37 +1,22 @@
-import { useEffect } from "react";
+import { createContext, useEffect } from "react";
 import { useState } from "react";
 import AddDivisionModal from "../add-division-modal/AddDivisionModal";
 import Curtain from "../../../../components/curtain/Curtain";
 import plusImg from "../../../../assets/icons/plus-white.svg";
 import "./divisions.scss";
 import Division from "../division/Division";
+import { fetchAllDivisions } from "../../../../consts";
+
+export const DivisionsDataContext = createContext();
 
 const Divisions = () => {
-  const [groupsDivisionData, setGroupsDivisionData] = useState();
   const [error, setError] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [groupsDivisionData, setGroupsDivisionData] = useState();
 
   useEffect(() => {
-
-    const fetchAllDivisions = async () => {
-      try {
-        const response = await fetch(
-          "http://192.168.104.70:2004/api/v1/division/all"
-        );
-        if (!response.ok) {
-          throw new Error("Ошибка при загрузке");
-        }
-    
-        const result = await response.json();
-        setGroupsDivisionData(result);
-      } catch (error) {
-        setError(error);
-      }
-    };
-
-    fetchAllDivisions()
-
-  }, [groupsDivisionData]);
+    fetchAllDivisions(setError, setGroupsDivisionData);
+  }, []);
 
   if (error) {
     return <p>{error?.message}</p>;
@@ -42,19 +27,27 @@ const Divisions = () => {
   };
 
   return (
-    <div className="type-filter__wrapper">
-      <div className="type-filter" method="get">
-        {groupsDivisionData?.map((group) => {
-          return <Division key={group?.id} group={group} />;
-        })}
-      </div>
-      <button className="division-add__btn" onClick={handleAddDivisionClick}>
-        <img src={plusImg} alt="add division button" />
-      </button>
+    <DivisionsDataContext.Provider
+      value={{ groupsDivisionData, setGroupsDivisionData }}
+    >
+      <div className="type-filter__wrapper">
+        <div className="type-filter" method="get">
+          {groupsDivisionData?.map((group) => {
+            return <Division key={group?.id} group={group} />;
+          })}
+        </div>
+        <button className="division-add__btn" onClick={handleAddDivisionClick}>
+          <img src={plusImg} alt="add division button" />
+        </button>
 
-      {isModalOpen ? <AddDivisionModal setIsModalOpen={setIsModalOpen} /> : ""}
-      {isModalOpen ? <Curtain /> : ""}
-    </div>
+        {isModalOpen ? (
+          <AddDivisionModal setIsModalOpen={setIsModalOpen} />
+        ) : (
+          ""
+        )}
+        {isModalOpen ? <Curtain /> : ""}
+      </div>
+    </DivisionsDataContext.Provider>
   );
 };
 
