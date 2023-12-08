@@ -13,8 +13,9 @@ export const extendedFilterSelections = [
     title: "Jinsi",
     select: "ipsum",
     options: [
-      { id: 1, title: "Erkak" },
-      { id: 2, title: "Ayol" },
+      { id: 1, title: "Barchasi" },
+      { id: 2, title: "Erkak" },
+      { id: 3, title: "Ayol" },
     ],
   },
   {
@@ -22,6 +23,8 @@ export const extendedFilterSelections = [
     title: "Ma'lumoti",
     select: "ipsum",
     options: [
+      {id: 1, title: "Barchasi"},
+
       { id: 1, title: "Oliy" },
       { id: 2, title: "Tugallanmagan oliy" },
       { id: 3, title: "O'rta-maxsus" },
@@ -33,6 +36,7 @@ export const extendedFilterSelections = [
     title: "Lavozimi",
     select: "ipsum",
     options: [
+      {id: 1, title: "Barchasi"},
       { id: 1, title: "Direktor" },
       { id: 2, title: "Birinchi o'rinbosar" },
       { id: 2, title: "Direktor o'rinbosari" },
@@ -61,6 +65,7 @@ export const extendedFilterSelections = [
     title: "Toifasi",
     select: "ipsum",
     options: [
+      {id: 1, title: "Barchasi"},
       { id: 1, title: "MBP" },
       { id: 2, title: "IChP" },
     ],
@@ -70,6 +75,8 @@ export const extendedFilterSelections = [
     title: "Razryadi",
     select: "ipsum",
     options: [
+      {id: 1, title: "Barchasi"},
+
       { id: 1, title: "1" },
       { id: 1, title: "3" },
       { id: 1, title: "4" },

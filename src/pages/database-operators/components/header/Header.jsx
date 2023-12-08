@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div className="database-operators__header">
       <ExtendedFilterBtn />
-      <SearchBarLayout placeholder="Поиск по Ф.И.О или ID" img={img} />
+      <SearchBarLayout placeholder="Поиск по Ф.И.О или ID РМО" img={img} />
       <ExcelBtn icon={icon} style={excelBtnStyle} />
     </div>
   );

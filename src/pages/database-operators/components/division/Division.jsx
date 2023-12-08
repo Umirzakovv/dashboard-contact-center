@@ -39,7 +39,7 @@ const Division = ({ group }) => {
         <span className="type-filter__styled-radio">{group?.title}</span>
       </label>
 
-      {isDivisionModalOpen ? <DivisionModal group={group}/> : ""}
+      {isDivisionModalOpen ? <DivisionModal group={group} setIsDivisionModalOpen={setIsDivisionModalOpen}/> : ""}
     </div>
   );
 };

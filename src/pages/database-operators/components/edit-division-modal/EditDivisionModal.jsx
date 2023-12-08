@@ -1,20 +1,37 @@
 /* eslint-disable react/prop-types */
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import { useState } from "react";
 
-const EditDivisionModal = ({ setIsEditModalOpen, group }) => {
+const EditDivisionModal = ({
+  group,
+  setIsEditModalOpen,
+  setIsDivisionModalOpen,
+}) => {
   console.log(group);
-  const modalRef = useRef();
   const [inputValue, setInputValue] = useState(group?.title);
   const [error, setError] = useState();
+
+  const modalRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      if (!modalRef?.current.contains(e.target)) {
+        setIsEditModalOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://192.168.126.70:2004/api/v1/division/update/${group?.id}`, {
+    fetch(`http://192.168.104.70:2004/api/v1/division/update/${group?.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -30,6 +47,7 @@ const EditDivisionModal = ({ setIsEditModalOpen, group }) => {
       })
       .catch((error) => setError(error));
     setIsEditModalOpen(false);
+    setIsDivisionModalOpen(false);
   };
 
   return (

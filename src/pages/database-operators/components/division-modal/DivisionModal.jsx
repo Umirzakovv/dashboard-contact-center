@@ -3,8 +3,9 @@ import { useState } from "react";
 import "./division-modal.scss";
 import EditDivisionModal from "../edit-division-modal/EditDivisionModal";
 import DeleteDivisionAlert from "../delete-division-alert/DeleteDivisionAlert";
+import Curtain from "../../../../components/curtain/Curtain";
 
-const DivisionModal = ({ group }) => {
+const DivisionModal = ({ group, setIsDivisionModalOpen }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
@@ -25,8 +26,9 @@ const DivisionModal = ({ group }) => {
 
       {isEditModalOpen ? (
         <EditDivisionModal
-          setIsEditModalOpen={setIsEditModalOpen}
           group={group}
+          setIsEditModalOpen={setIsEditModalOpen}
+          setIsDivisionModalOpen={setIsDivisionModalOpen}
         />
       ) : (
         ""
@@ -39,6 +41,8 @@ const DivisionModal = ({ group }) => {
       ) : (
         ""
       )}
+      {isEditModalOpen ? <Curtain /> : ""}
+      {isDeleteModalOpen ? <Curtain /> : ""}
     </>
   );
 };

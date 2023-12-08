@@ -12,15 +12,16 @@ const Divisions = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+
+    const fetchAllDivisions = async () => {
       try {
         const response = await fetch(
-          "http://192.168.126.70:2004/api/v1/division/all"
+          "http://192.168.104.70:2004/api/v1/division/all"
         );
         if (!response.ok) {
           throw new Error("Ошибка при загрузке");
         }
-
+    
         const result = await response.json();
         setGroupsDivisionData(result);
       } catch (error) {
@@ -28,8 +29,9 @@ const Divisions = () => {
       }
     };
 
-    fetchData();
-  }, []);
+    fetchAllDivisions()
+
+  }, [groupsDivisionData]);
 
   if (error) {
     return <p>{error?.message}</p>;

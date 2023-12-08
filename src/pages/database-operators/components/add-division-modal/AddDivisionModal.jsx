@@ -29,7 +29,7 @@ const AddDivisionModal = ({ setIsModalOpen }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch("http://192.168.126.70:2004/api/v1/division/create", {
+    fetch("http://192.168.104.70:2004/api/v1/division/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
