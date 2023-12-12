@@ -1,10 +1,22 @@
-.database-operators__table-title {
+.database-operators__table-title__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #1ebb9f;
   color: #fff;
-  text-align: center;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   padding: 1.5rem;
+
+  .database-operators__table-title {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .department-add__btn {
+    border: none;
+    background: none;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
 }

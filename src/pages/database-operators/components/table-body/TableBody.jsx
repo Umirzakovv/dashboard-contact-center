@@ -5,11 +5,11 @@ import MoreBtnBlue from "../more-btn/MoreBtn";
 import MoreBtnModal from "../more-btn-modal/MoreBtnModal";
 import EditBtnModal from "../edit-btn-modal/EditBtnModal";
 import Curtain from "../../../../components/curtain/Curtain";
-import { tableBodyData } from "../../../../mock/mock-data";
 
 import "./table-body.scss";
 
 const TableBody = ({ tableData }) => {
+  console.log(tableData);
   const [isMoreBtnModalOpen, setIsMoreBtnModalOpen] = useState(false);
   const [isEditBtnModalOpen, setIsEditBtnModalOpen] = useState(false);
 
@@ -46,14 +46,22 @@ const TableBody = ({ tableData }) => {
   return (
     <tbody>
       <tr className="database-operators__table-data">
-        {tableData?.map((index, item) => {
-          console.log(index);
-          return (
-            <>
-              <td>{item?.title}</td>
-            </>
-          );
-        })}
+        <td>1</td>
+        <td>{tableData?.name}</td>
+        <td>{tableData?.employee_category}</td>
+        <td>{tableData?.tariff_discharge}</td>
+        <td>{tableData?.information}</td>
+        <td>{tableData?.date_of_birth}</td>
+        <td>{tableData?.phone_number}</td>
+        <td>
+          <img src={tableData?.user_img} alt="user img" />
+        </td>
+        <td>{tableData?.name}</td>
+        <td>{tableData?.experience}</td>
+        <td>{tableData?.date_of_acceptance}</td>
+        <td>{tableData?.address}</td>
+        <td>{tableData?.name_of_graduate_institution}</td>
+        <td>{tableData?.date_of_last_change_position}</td>
 
         <td className="database-operators__table-data__manage">
           <EditBtnBlue onClick={handleEditBtnClick} />

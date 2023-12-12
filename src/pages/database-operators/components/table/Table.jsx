@@ -6,17 +6,17 @@ import "./table.scss";
 import { TargetDivisionContext } from "../../DatabaseOperators";
 
 const Table = () => {
-  const { workers, setWorkers } = useContext(TargetDivisionContext);
+  const { workers } = useContext(TargetDivisionContext);
   const departments = workers?.map((i) => i.departments)[0];
-  const workerss = departments?.map((i) => i.workers)[0];
   return departments?.map((item) => {
-    console.log(item.workers);
     return (
       <div className="database-operators__group" key={item?.id}>
-        <TableTitle title={item?.title}/>
+        <TableTitle title={item?.title} />
         <table className="database-operators__table">
           <TableHead />
-          <TableBody tableData={item.workers}/>
+          {item?.workers.map((worker) => {
+            return <TableBody key={worker?.id} tableData={worker} />;
+          })}
         </table>
       </div>
     );
