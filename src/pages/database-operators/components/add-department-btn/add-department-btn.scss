@@ -1,0 +1,17 @@
+.add-department-btn {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e1e6ef;
+  padding: 1rem 1.6rem;
+  border-radius: 10rem;
+  font-size: 1.4rem;
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  cursor: pointer;
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+  }
+}

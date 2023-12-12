@@ -4,6 +4,7 @@ import icon from "../../../../assets/icons/reply-white.svg";
 import "./header.scss";
 import img from "../../../../assets/icons/search.svg";
 import ExtendedFilterBtn from "../extended-filter-btn/ExtendedFilterBtn";
+import AddDepartmentBtn from "../add-department-btn/AddDepartmentBtn";
 
 const Header = () => {
   const excelBtnStyle = {
@@ -19,6 +20,7 @@ const Header = () => {
     <div className="database-operators__header">
       <ExtendedFilterBtn />
       <SearchBarLayout placeholder="Поиск по Ф.И.О или ID РМО" img={img} />
+      <AddDepartmentBtn />
       <ExcelBtn icon={icon} style={excelBtnStyle} />
     </div>
   );
