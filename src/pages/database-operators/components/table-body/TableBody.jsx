@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import EditBtnBlue from "../../../../components/edit-btn-blue/EditBtnBlue";
 import MoreBtnBlue from "../more-btn/MoreBtn";
@@ -8,7 +9,7 @@ import { tableBodyData } from "../../../../mock/mock-data";
 
 import "./table-body.scss";
 
-const TableBody = () => {
+const TableBody = ({ tableData }) => {
   const [isMoreBtnModalOpen, setIsMoreBtnModalOpen] = useState(false);
   const [isEditBtnModalOpen, setIsEditBtnModalOpen] = useState(false);
 
@@ -45,9 +46,13 @@ const TableBody = () => {
   return (
     <tbody>
       <tr className="database-operators__table-data">
-        <td>1</td>
-        {tableBodyData?.map((item) => {
-          return <td key={item?.id}>{item?.title}</td>;
+        {tableData?.map((index, item) => {
+          console.log(index);
+          return (
+            <>
+              <td>{item?.title}</td>
+            </>
+          );
         })}
 
         <td className="database-operators__table-data__manage">

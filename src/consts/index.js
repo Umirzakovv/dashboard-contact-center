@@ -62,7 +62,7 @@ export const switchStatus = (status) => {
 export const fetchAllDivisions = async (setError, setData) => {
   try {
     const response = await fetch(
-      "http://192.168.104.70:2004/api/v1/division/all"
+      "http://192.168.61.169:2004/api/v1/division/all"
     );
     if (!response.ok) {
       throw new Error("Ошибка при загрузке");

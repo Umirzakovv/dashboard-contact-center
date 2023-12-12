@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import "./table-head.scss";
 const TableHead = () => {
   const tableHeadData = [
     { id: 1, title: "№" },
     { id: 15, title: "F.I.SH" },
-
     { id: 2, title: "Xodim toifasi" },
     { id: 3, title: "Tarif razryadi" },
     { id: 4, title: "Ma’lumoti" },
@@ -16,6 +16,8 @@ const TableHead = () => {
     { id: 11, title: "Yashash manzil" },
     { id: 12, title: "Tamomlagan muassasa nomi" },
     { id: 13, title: "Lavozimdagi oxirgi o’zgarish" },
+    { id: 16, title: "Править" },
+
   ];
 
   return (
@@ -24,7 +26,6 @@ const TableHead = () => {
         {tableHeadData?.map((item) => {
           return <th key={item?.id}>{item?.title}</th>;
         })}
-        <th>Править</th>
       </tr>
     </thead>
   );

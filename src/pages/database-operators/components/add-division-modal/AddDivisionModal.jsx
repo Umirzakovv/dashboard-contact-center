@@ -5,12 +5,12 @@ import { useRef } from "react";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import { useState } from "react";
 import { fetchAllDivisions } from "../../../../consts";
-import { DivisionsDataContext } from "../divisions/Divisions";
+import { TargetDivisionContext } from "../../DatabaseOperators";
 
 const AddDivisionModal = ({ setIsModalOpen }) => {
   const [inputValue, setInputValue] = useState();
   const [error, setError] = useState();
-  const { setGroupsDivisionData } = useContext(DivisionsDataContext);
+  const { setTargetDivision } = useContext(TargetDivisionContext);
 
   const modalRef = useRef();
   useEffect(() => {
@@ -32,7 +32,7 @@ const AddDivisionModal = ({ setIsModalOpen }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch("http://192.168.104.70:2004/api/v1/division/create", {
+    fetch("http://192.168.61.169:2004/api/v1/division/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const AddDivisionModal = ({ setIsModalOpen }) => {
     })
       .then((response) => {
         if (response?.ok) {
-          fetchAllDivisions(setError, setGroupsDivisionData);
+          fetchAllDivisions(setError, setTargetDivision);
         }
       })
 

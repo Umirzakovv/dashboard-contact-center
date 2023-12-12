@@ -2,18 +2,17 @@
 import { useContext, useEffect, useRef } from "react";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import { useState } from "react";
+import { TargetDivisionContext } from "../../DatabaseOperators";
 import { fetchAllDivisions } from "../../../../consts";
-import { DivisionsDataContext } from "../divisions/Divisions";
 
 const EditDivisionModal = ({
   group,
   setIsEditModalOpen,
   setIsDivisionModalOpen,
 }) => {
-  console.log(group);
   const [inputValue, setInputValue] = useState(group?.title);
   const [error, setError] = useState();
-  const { setGroupsDivisionData } = useContext(DivisionsDataContext);
+  const { setTargetDivision } = useContext(TargetDivisionContext);
 
   const modalRef = useRef();
   useEffect(() => {
@@ -34,7 +33,7 @@ const EditDivisionModal = ({
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://192.168.104.70:2004/api/v1/division/update/${group?.id}`, {
+    fetch(`http://192.168.61.169:2004/api/v1/division/update/${group?.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +44,7 @@ const EditDivisionModal = ({
     })
       .then((response) => {
         if (response?.ok) {
-          fetchAllDivisions(setError, setGroupsDivisionData);
+          fetchAllDivisions(setError, setTargetDivision);
         }
       })
 

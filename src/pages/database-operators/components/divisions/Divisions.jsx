@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import AddDivisionModal from "../add-division-modal/AddDivisionModal";
 import Curtain from "../../../../components/curtain/Curtain";
@@ -6,16 +6,17 @@ import plusImg from "../../../../assets/icons/plus-white.svg";
 import "./divisions.scss";
 import Division from "../division/Division";
 import { fetchAllDivisions } from "../../../../consts";
-
-export const DivisionsDataContext = createContext();
+import { TargetDivisionContext } from "../../DatabaseOperators";
 
 const Divisions = () => {
   const [error, setError] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [groupsDivisionData, setGroupsDivisionData] = useState();
+  const { targetDivision, setTargetDivision } = useContext(
+    TargetDivisionContext
+  );
 
   useEffect(() => {
-    fetchAllDivisions(setError, setGroupsDivisionData);
+    fetchAllDivisions(setError, setTargetDivision);
   }, []);
 
   if (error) {
@@ -27,27 +28,19 @@ const Divisions = () => {
   };
 
   return (
-    <DivisionsDataContext.Provider
-      value={{ groupsDivisionData, setGroupsDivisionData }}
-    >
-      <div className="type-filter__wrapper">
-        <div className="type-filter" method="get">
-          {groupsDivisionData?.map((group) => {
-            return <Division key={group?.id} group={group} />;
-          })}
-        </div>
-        <button className="division-add__btn" onClick={handleAddDivisionClick}>
-          <img src={plusImg} alt="add division button" />
-        </button>
-
-        {isModalOpen ? (
-          <AddDivisionModal setIsModalOpen={setIsModalOpen} />
-        ) : (
-          ""
-        )}
-        {isModalOpen ? <Curtain /> : ""}
+    <div className="type-filter__wrapper">
+      <div className="type-filter" method="get">
+        {targetDivision?.map((group) => {
+          return <Division key={group?.id} group={group} id={group?.id} />;
+        })}
       </div>
-    </DivisionsDataContext.Provider>
+      <button className="division-add__btn" onClick={handleAddDivisionClick}>
+        <img src={plusImg} alt="add division button" />
+      </button>
+
+      {isModalOpen ? <AddDivisionModal setIsModalOpen={setIsModalOpen} /> : ""}
+      {isModalOpen ? <Curtain /> : ""}
+    </div>
   );
 };
 
