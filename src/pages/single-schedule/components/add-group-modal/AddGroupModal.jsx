@@ -7,6 +7,7 @@ import SupervisorInput from "../../../../components/supervisor-input/SupervisorI
 import OperatorInput from "../../../../components/operator-input/OperatorInput";
 import SelectDateInput from "../../../../components/select-data-input/SelectDateInput";
 import DinnerTime from "../dinner-time/DinnerTime";
+import GraphicSelection from "../graphic-selection/GraphicSelection";
 
 const AddGroupModal = ({ setisModalOpen }) => {
   const modalRef = useRef();
@@ -31,6 +32,7 @@ const AddGroupModal = ({ setisModalOpen }) => {
       <SupervisorInput placeholder="Имя супервайзера" />
       <OperatorInput placeholder="Ф.И.О" />
       <SelectDateInput />
+      <GraphicSelection />
       <DinnerTime />
     </form>
   );
