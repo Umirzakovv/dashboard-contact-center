@@ -13,7 +13,6 @@ const Table = () => {
       <TableUsers />
       <TableUsers />
       <TableUsers />
-
     </table>
   );
 };

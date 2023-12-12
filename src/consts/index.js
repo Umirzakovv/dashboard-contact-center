@@ -74,3 +74,11 @@ export const fetchAllDivisions = async (setError, setData) => {
     setError(error);
   }
 };
+
+export function formatTime(inputValue) {
+  inputValue = inputValue.replace(":", "");
+
+  const outputTime = inputValue.slice(0, 2) + ":" + inputValue.slice(2);
+
+  return outputTime.slice(0, 5);
+}

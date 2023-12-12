@@ -6,6 +6,7 @@ import TitleInput from "../../../../components/title-input/TitleInput";
 import SupervisorInput from "../../../../components/supervisor-input/SupervisorInput";
 import OperatorInput from "../../../../components/operator-input/OperatorInput";
 import SelectDateInput from "../../../../components/select-data-input/SelectDateInput";
+import DinnerTime from "../dinner-time/DinnerTime";
 
 const AddGroupModal = ({ setisModalOpen }) => {
   const modalRef = useRef();
@@ -30,6 +31,7 @@ const AddGroupModal = ({ setisModalOpen }) => {
       <SupervisorInput placeholder="Имя супервайзера" />
       <OperatorInput placeholder="Ф.И.О" />
       <SelectDateInput />
+      <DinnerTime />
     </form>
   );
 };
