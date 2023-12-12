@@ -3,7 +3,7 @@ import phoneImg from "../../../../assets/icons/phone.svg";
 
 import "./more-modal-header.scss";
 
-const MoreModalHeader = () => {
+const MoreInfoWorkerHeader = () => {
   return (
     <div className="more-modal__header">
       <img
@@ -38,4 +38,4 @@ const MoreModalHeader = () => {
   );
 };
 
-export default MoreModalHeader;
+export default MoreInfoWorkerHeader;
