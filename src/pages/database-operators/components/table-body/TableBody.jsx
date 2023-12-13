@@ -9,7 +9,6 @@ import Curtain from "../../../../components/curtain/Curtain";
 import "./table-body.scss";
 
 const TableBody = ({ tableData }) => {
-  console.log(tableData);
   const [isMoreBtnModalOpen, setIsMoreBtnModalOpen] = useState(false);
   const [isEditBtnModalOpen, setIsEditBtnModalOpen] = useState(false);
 
