@@ -42,6 +42,7 @@ const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
       document.removeEventListener("mousedown", handler);
     };
   });
+  
   return (
     <div className="delete-division__alert" ref={modalRef}>
       <h2>
