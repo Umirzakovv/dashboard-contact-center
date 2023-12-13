@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import "./add-department-modal.scss";
 import { DivisionsContext } from "../../DatabaseOperators";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
-import { fetchSingleDivision } from "../../../../consts";
+import { fetchSingleDivisionData } from "../../../../consts";
 
 const AddDepartmentModal = ({
   inputValue,
@@ -46,7 +46,7 @@ const AddDepartmentModal = ({
     })
       .then((res) => {
         if (res?.ok) {
-          fetchSingleDivision(targetDivisionId, setWorkers);
+          fetchSingleDivisionData(targetDivisionId, setWorkers);
         }
       })
       .catch((error) => setError(error));

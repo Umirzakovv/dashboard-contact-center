@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import EditBtnBlue from "../../../../components/edit-btn-blue/EditBtnBlue";
-import MoreBtnBlue from "../more-btn/MoreBtn";
+import MoreBtn from "../../../../components/more-btn/MoreBtn";
 import MoreBtnModal from "../more-btn-modal/MoreBtnModal";
 import EditBtnModal from "../edit-btn-modal/EditBtnModal";
 import Curtain from "../../../../components/curtain/Curtain";
+import EditBtn from "../../../../components/edit-btn/EditBtn";
+import editBlueImg from "../../../../assets/icons/pencil-blue.svg";
+import moreBlueImg from "../../../../assets/icons/eye-blue.svg";
 
 import "./table-body.scss";
 
@@ -63,8 +65,8 @@ const TableBody = ({ tableData }) => {
         <td>{tableData?.date_of_last_change_position}</td>
 
         <td className="database-operators__table-data__manage">
-          <EditBtnBlue onClick={handleEditBtnClick} />
-          <MoreBtnBlue onClick={handleMoreBtnClick} />
+          <EditBtn img={editBlueImg} onClick={handleEditBtnClick} />
+          <MoreBtn img={moreBlueImg} onClick={handleMoreBtnClick} />
         </td>
       </tr>
 

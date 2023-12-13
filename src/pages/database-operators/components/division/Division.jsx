@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { DivisionsContext } from "../../DatabaseOperators";
 import {
-  fetchSingleDivision,
+  fetchSingleDivisionData,
 } from "../../../../consts/index";
 const Division = ({ group }) => {
   const { setWorkers } = useContext(DivisionsContext);
@@ -35,7 +35,7 @@ const Division = ({ group }) => {
 
   const handleDivisionClick = () => {
     setTargetDivisionId(group?.id);
-    fetchSingleDivision(group?.id, setWorkers);
+    fetchSingleDivisionData(group?.id, setWorkers);
   };
 
   return (

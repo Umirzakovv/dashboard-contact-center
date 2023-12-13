@@ -12,4 +12,10 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  .database-operators__table-title__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
