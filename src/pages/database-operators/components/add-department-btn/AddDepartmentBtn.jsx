@@ -7,6 +7,7 @@ import Curtain from "../../../../components/curtain/Curtain";
 const AddDepartmentBtn = () => {
   const [isAddDepartmentModalOpen, setIsAddDepartmentModalOpen] =
     useState(false);
+  const [inputValue, setInputValue] = useState();
 
   const handleBtnClick = () => {
     setIsAddDepartmentModalOpen(true);
@@ -19,7 +20,15 @@ const AddDepartmentBtn = () => {
         <img src={plusImg} alt="plus img" />
       </button>
 
-      {isAddDepartmentModalOpen ? <AddDepartmentModal setIsAddDepartmentModalOpen={setIsAddDepartmentModalOpen}/> : ""}
+      {isAddDepartmentModalOpen ? (
+        <AddDepartmentModal
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          setIsAddDepartmentModalOpen={setIsAddDepartmentModalOpen}
+        />
+      ) : (
+        ""
+      )}
       {isAddDepartmentModalOpen ? <Curtain /> : ""}
     </>
   );

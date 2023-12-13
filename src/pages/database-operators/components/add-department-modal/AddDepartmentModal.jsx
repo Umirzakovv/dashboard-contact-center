@@ -1,13 +1,23 @@
 /* eslint-disable react/prop-types */
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./add-department-modal.scss";
-import { TargetDivisionContext } from "../../DatabaseOperators";
+import { DivisionsContext } from "../../DatabaseOperators";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
+import { fetchSingleDivision } from "../../../../consts";
 
-const AddDepartmentModal = ({ setIsAddDepartmentModalOpen }) => {
-  const { targetDivision, setTargetDivision } = useContext(
-    TargetDivisionContext
-  );
+const AddDepartmentModal = ({
+  inputValue,
+  setInputValue,
+  setIsAddDepartmentModalOpen,
+}) => {
+  const { setWorkers } = useContext(DivisionsContext);
+  const { targetDivisionId } = useContext(DivisionsContext);
+  const [error, setError] = useState();
+
+  const handleInputChange = (e) => {
+    setInputValue(e?.target.value);
+  };
+
   const modalRef = useRef();
   useEffect(() => {
     let handler = (e) => {
@@ -24,7 +34,23 @@ const AddDepartmentModal = ({ setIsAddDepartmentModalOpen }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    fetch("http://192.168.61.169:2004/api/v1/Department/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        service_department_id: targetDivisionId,
+        title: inputValue,
+      }),
+    })
+      .then((res) => {
+        if (res?.ok) {
+          fetchSingleDivision(targetDivisionId, setWorkers);
+        }
+      })
+      .catch((error) => setError(error));
+    setIsAddDepartmentModalOpen(false);
   };
   return (
     <form
@@ -33,8 +59,12 @@ const AddDepartmentModal = ({ setIsAddDepartmentModalOpen }) => {
       ref={modalRef}
     >
       <h2>Добавить новую группу</h2>
-      <input type="text" placeholder="Напишите..." />
-      <SubmitBtn type="submit" title="Добавить"></SubmitBtn>
+      <input
+        type="text"
+        placeholder="Напишите..."
+        onChange={handleInputChange}
+      />
+      <SubmitBtn type="submit" title="Добавить" />
     </form>
   );
 };

@@ -6,17 +6,17 @@ import plusImg from "../../../../assets/icons/plus-white.svg";
 import "./divisions.scss";
 import Division from "../division/Division";
 import { fetchAllDivisions } from "../../../../consts";
-import { TargetDivisionContext } from "../../DatabaseOperators";
+import { DivisionsContext } from "../../DatabaseOperators";
 
 const Divisions = () => {
   const [error, setError] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { targetDivision, setTargetDivision } = useContext(
-    TargetDivisionContext
+  const { divisions, setDivisions } = useContext(
+    DivisionsContext
   );
 
   useEffect(() => {
-    fetchAllDivisions(setError, setTargetDivision);
+    fetchAllDivisions(setError, setDivisions);
   }, []);
 
   if (error) {
@@ -30,7 +30,7 @@ const Divisions = () => {
   return (
     <div className="type-filter__wrapper">
       <div className="type-filter" method="get">
-        {targetDivision?.map((group) => {
+        {divisions?.map((group) => {
           return <Division key={group?.id} group={group} id={group?.id} />;
         })}
       </div>

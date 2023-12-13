@@ -4,15 +4,15 @@ import "./division.scss";
 import DivisionModal from "../division-modal/DivisionModal";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { TargetDivisionContext } from "../../DatabaseOperators";
+import { DivisionsContext } from "../../DatabaseOperators";
+import {
+  fetchSingleDivision,
+} from "../../../../consts/index";
 const Division = ({ group }) => {
-  const [isDivisionModalOpen, setIsDivisionModalOpen] = useState(false);
-  const { targetDivision, setTargetDivision } = useContext(
-    TargetDivisionContext
-  );
-  const { wrokers, setWorkers } = useContext(TargetDivisionContext);
-  const [targetId, setTargetId] = useState();
+  const { setWorkers } = useContext(DivisionsContext);
+  const { setTargetDivisionId } = useContext(DivisionsContext);
 
+  const [isDivisionModalOpen, setIsDivisionModalOpen] = useState(false);
   const modalRef = useRef();
 
   const handleContextMenu = (e) => {
@@ -33,34 +33,16 @@ const Division = ({ group }) => {
     };
   });
 
-  const handleTargetDivisionClick = () => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `http://192.168.61.169:2004/api/v1/division/one/${group?.id}`
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        setWorkers(result);
-      } catch (error) {
-        // setError(error);
-      } finally {
-        // setLoading(false);
-      }
-    };
-    fetchData();
+  const handleDivisionClick = () => {
+    setTargetDivisionId(group?.id);
+    fetchSingleDivision(group?.id, setWorkers);
   };
 
   return (
     <div
       className="type-filter__label-wrapper"
       ref={modalRef}
-      onClick={handleTargetDivisionClick}
+      onClick={handleDivisionClick}
       onContextMenu={handleContextMenu}
     >
       <label className="type-filter__label">

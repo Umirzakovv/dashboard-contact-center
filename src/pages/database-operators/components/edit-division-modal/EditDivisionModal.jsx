@@ -2,7 +2,7 @@
 import { useContext, useEffect, useRef } from "react";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import { useState } from "react";
-import { TargetDivisionContext } from "../../DatabaseOperators";
+import { DivisionsContext } from "../../DatabaseOperators";
 import { fetchAllDivisions } from "../../../../consts";
 
 const EditDivisionModal = ({
@@ -12,7 +12,7 @@ const EditDivisionModal = ({
 }) => {
   const [inputValue, setInputValue] = useState(group?.title);
   const [error, setError] = useState();
-  const { setTargetDivision } = useContext(TargetDivisionContext);
+  const { setDivisions } = useContext(DivisionsContext);
 
   const modalRef = useRef();
   useEffect(() => {
@@ -44,7 +44,7 @@ const EditDivisionModal = ({
     })
       .then((response) => {
         if (response?.ok) {
-          fetchAllDivisions(setError, setTargetDivision);
+          fetchAllDivisions(setError, setDivisions);
         }
       })
 

@@ -4,12 +4,12 @@ import DeleteBtn from "../../../../components/delete-btn/DeleteBtn";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import "./delete-division-alert.scss";
 import { fetchAllDivisions } from "../../../../consts";
-import { TargetDivisionContext } from "../../DatabaseOperators";
+import { DivisionsContext } from "../../DatabaseOperators";
 
 const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
   const modalRef = useRef();
   const [error, setError] = useState();
-  const { setTargetDivision } = useContext(TargetDivisionContext);
+  const { setDivisions } = useContext(DivisionsContext);
   const handleСonfirmClick = () => {
     fetch(`http://192.168.61.169:2004/api/v1/division/delete/${group?.id}`, {
       method: "DELETE",
@@ -22,7 +22,7 @@ const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
     })
       .then((response) => {
         if (response?.ok) {
-          fetchAllDivisions(setError, setTargetDivision);
+          fetchAllDivisions(setError, setDivisions);
         }
       })
 

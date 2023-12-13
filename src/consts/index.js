@@ -82,3 +82,23 @@ export function formatTime(inputValue) {
 
   return outputTime.slice(0, 5);
 }
+
+export const fetchSingleDivision = async (targetDivisionId, setWorkers) => {
+  try {
+    const response = await fetch(
+      `http://192.168.61.169:2004/api/v1/division/one/${targetDivisionId}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    setWorkers(result);
+  } catch (error) {
+    // setError(error);
+  } finally {
+    // setLoading(false);
+  }
+};

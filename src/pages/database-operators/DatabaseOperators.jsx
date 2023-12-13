@@ -6,15 +6,23 @@ import Header from "./components/header/Header";
 import Table from "./components/table/Table";
 import "./database-operators.scss";
 
-export const TargetDivisionContext = createContext();
+export const DivisionsContext = createContext();
 
 const DatabaseOperators = () => {
-  const [targetDivision, setTargetDivision] = useState();
+  const [divisions, setDivisions] = useState();
+  const [targetDivisionId, setTargetDivisionId] = useState();
   const [workers, setWorkers] = useState();
 
   return (
-    <TargetDivisionContext.Provider
-      value={{ targetDivision, setTargetDivision, workers, setWorkers }}
+    <DivisionsContext.Provider
+      value={{
+        divisions,
+        setDivisions,
+        workers,
+        setWorkers,
+        targetDivisionId,
+        setTargetDivisionId,
+      }}
     >
       <Layout>
         <CommonStatistics />
@@ -22,7 +30,7 @@ const DatabaseOperators = () => {
         <Header />
         <Table />
       </Layout>
-    </TargetDivisionContext.Provider>
+    </DivisionsContext.Provider>
   );
 };
 
