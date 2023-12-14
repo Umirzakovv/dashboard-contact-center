@@ -1,0 +1,27 @@
+.delete-department__alert {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+
+  h2 {
+    color: #64748b;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 2rem;
+  }
+
+  .delete-department__alert-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

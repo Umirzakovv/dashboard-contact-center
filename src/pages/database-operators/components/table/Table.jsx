@@ -9,11 +9,11 @@ import "./table.scss";
 const Table = () => {
   const { workers } = useContext(DivisionsContext);
   const departments = workers?.map((i) => i.departments)[0];
-  
+
   return departments?.map((item) => {
     return (
       <div className="database-operators__group" key={item?.id}>
-        <TableTitle title={item?.title} />
+        <TableTitle title={item?.title} id={item?.id} />
         <table className="database-operators__table">
           <TableHead />
           {item?.workers?.map((worker) => {
