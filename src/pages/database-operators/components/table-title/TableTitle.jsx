@@ -19,7 +19,7 @@ const TableTitle = ({ title, id }) => {
 
   const handleEditBtnClick = () => {
     setIsEditTableTitleModalOpen(true);
-    console.log("ok");
+    setTargetDepartmentId(id);
   };
 
   const handleDeleteClick = () => {
@@ -38,6 +38,8 @@ const TableTitle = ({ title, id }) => {
       </div>
       {isEditTableTitleModalOpen ? (
         <EditTableTitleModal
+        tableTitle={title}
+          targetDepartmentId={targetDepartmentId}
           setIsEditTableTitleModalOpen={setIsEditTableTitleModalOpen}
         />
       ) : (

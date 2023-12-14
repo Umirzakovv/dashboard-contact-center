@@ -17,9 +17,14 @@ const AddOperatorBtn = () => {
         Добавить оператора
         <img src={addImg} alt="add img" />
       </button>
-      {isAddOperatorModalOpen ? <AddOperatorModal /> : ""}
+      {isAddOperatorModalOpen ? (
+        <AddOperatorModal
+          setisAddOperatorModalOpen={setisAddOperatorModalOpen}
+        />
+      ) : (
+        ""
+      )}
       {isAddOperatorModalOpen ? <Curtain /> : ""}
-
     </>
   );
 };
