@@ -8,9 +8,10 @@ import { useState } from "react";
 import EditTableTitleModal from "../edit-table-title-modal/EditTableTitleModal";
 import Curtain from "../../../../components/curtain/Curtain";
 import DeleteDepartmentAlert from "../delete-department-alert/DeleteDepartmentAlert";
+import AddOperatorBtn from "../add-operator-btn/AddOperatorBtn";
 
 const TableTitle = ({ title, id }) => {
-  const [targetDepartmentId, setTargetDepartmentId] = useState()
+  const [targetDepartmentId, setTargetDepartmentId] = useState();
   const [isEditTableTitleModalOpen, setIsEditTableTitleModalOpen] =
     useState(false);
   const [isDeleteConfirmModalOpen, setIsDeleteConfirmModalOpen] =
@@ -23,16 +24,16 @@ const TableTitle = ({ title, id }) => {
 
   const handleDeleteClick = () => {
     setIsDeleteConfirmModalOpen(true);
-    setTargetDepartmentId(id)
+    setTargetDepartmentId(id);
   };
   return (
     <>
       <div className="database-operators__table-title__wrapper">
-        <p></p>
+        <AddOperatorBtn />
         <h2 className="database-operators__table-title">{title}</h2>
         <div className="database-operators__table-title__btns">
           <EditBtn img={editBtnWhiteImg} onClick={handleEditBtnClick} />
-          <DeleteBtnWithTrash img={trashImg} onClick={handleDeleteClick}/>
+          <DeleteBtnWithTrash img={trashImg} onClick={handleDeleteClick} />
         </div>
       </div>
       {isEditTableTitleModalOpen ? (
