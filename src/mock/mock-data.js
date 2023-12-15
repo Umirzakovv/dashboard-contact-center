@@ -113,3 +113,72 @@ export const tableBodyData = [
   { id: 1, title: "Toshkent Axborot Texnologiyalari Universiteti" },
   { id: 1, title: "01.11.2022" },
 ];
+
+export const degreeStatusData = [
+  {
+    id: 1,
+    title: "Ma'lumoti",
+    select: "ipsum",
+    options: [
+      { id: 1, value: "", title: "Oliy" },
+      { id: 2, value: "", title: "Tugallanmagan oliy" },
+      { id: 3, value: "", title: "O'rta-maxsus" },
+      { id: 4, value: "", title: "O'rta" },
+    ],
+  },
+];
+
+export const employeeCategory = [
+  {
+    id: 2,
+    title: "Toifasi",
+    select: "ipsum",
+    options: [
+      { id: 1, title: "MBP" },
+      { id: 2, title: "IChP" },
+    ],
+  },
+];
+
+export const jobTitles = [
+  {
+    id: 3,
+    title: "Lavozimi",
+    select: "ipsum",
+    options: [
+      { id: 1, title: "Direktor" },
+      { id: 2, title: "Birinchi o'rinbosar" },
+      { id: 2, title: "Direktor o'rinbosari" },
+      { id: 2, title: "Bosh buxgalter" },
+      { id: 2, title: "Bosh mutaxassis" },
+      { id: 2, title: "Oliy toifali buxgalter" },
+      { id: 2, title: "Xizmat boshlig'i" },
+      { id: 2, title: "Oliy toifali inspektor" },
+      { id: 2, title: "1-toifali inspektor" },
+      { id: 2, title: "Bo'lim boshlig'i" },
+      { id: 2, title: "1-toifali mutaxassis" },
+      { id: 2, title: "2-toifali mutaxassis" },
+      { id: 2, title: "Mutaxassis" },
+      { id: 2, title: "1-toifali muhandis" },
+      { id: 2, title: "Yetakchi muhandis" },
+      { id: 2, title: "1-toifali operator" },
+      { id: 2, title: "2-toifali operator" },
+      { id: 2, title: "Operator" },
+      { id: 2, title: "Guruh boshlig'i" },
+      { id: 2, title: "Ishlab chiqarish xonalari farroshi" },
+      { id: 2, title: "GPX" },
+    ],
+  },
+];
+
+export const gender = [
+  {
+    id: 2,
+    title: "Jinsi",
+    select: "ipsum",
+    options: [
+      { id: 2, title: "Erkak", value: "male" },
+      { id: 3, title: "Ayol", value: "female" },
+    ],
+  },
+];

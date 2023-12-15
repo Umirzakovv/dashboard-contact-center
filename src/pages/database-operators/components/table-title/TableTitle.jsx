@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import EditBtn from "../../../../components/edit-btn/EditBtn";
 import DeleteBtnWithTrash from "../../../../components/delete-btn-with-trash/DeleteBtnWithTrash";
 import editBtnWhiteImg from "../../../../assets/icons/pencil-white.svg";
 import trashImg from "../../../../assets/icons/trash.svg";
-import "./table-title.scss";
-import { useState } from "react";
 import EditTableTitleModal from "../edit-table-title-modal/EditTableTitleModal";
 import Curtain from "../../../../components/curtain/Curtain";
 import DeleteDepartmentAlert from "../delete-department-alert/DeleteDepartmentAlert";
 import AddOperatorBtn from "../add-operator-btn/AddOperatorBtn";
+
+import "./table-title.scss";
 
 const TableTitle = ({ title, id }) => {
   const [targetDepartmentId, setTargetDepartmentId] = useState();

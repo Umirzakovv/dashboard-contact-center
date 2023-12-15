@@ -2,8 +2,8 @@ import { useState } from "react";
 import addImg from "../../../../assets/icons/plus-white.svg";
 
 import "./add-operator-btn.scss";
-import AddOperatorModal from "../add-operator-modal/AddOperatorModal";
 import Curtain from "../../../../components/curtain/Curtain";
+import AddWorkerModal from "../add-worker-modal/AddWorkerModal";
 
 const AddOperatorBtn = () => {
   const [isAddOperatorModalOpen, setisAddOperatorModalOpen] = useState(false);
@@ -18,7 +18,7 @@ const AddOperatorBtn = () => {
         <img src={addImg} alt="add img" />
       </button>
       {isAddOperatorModalOpen ? (
-        <AddOperatorModal
+        <AddWorkerModal
           setisAddOperatorModalOpen={setisAddOperatorModalOpen}
         />
       ) : (

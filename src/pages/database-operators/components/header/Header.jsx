@@ -19,9 +19,7 @@ const excelBtnStyle = {
 const Header = () => {
   const [searchInputValue, setSearchInputValue] = useState();
   const { targetDivisionId } = useContext(DivisionsContext);
-  const { searchResult, setSearchResult } = useContext(DivisionsContext);
-  const { lorem, setLorem } = useContext(DivisionsContext);
-  let newArr = [];
+  const { setSearchResult } = useContext(DivisionsContext);
   const handleInputChange = (e) => {
     setSearchInputValue(e?.target?.value);
   };
@@ -33,15 +31,6 @@ const Header = () => {
     )
       .then((res) => res.json())
       .then((data) => setSearchResult(data));
-    const departments = searchResult?.map((item) => item?.departments);
-    const workers = departments[0]?.map((item) => item?.workers);
-    workers?.forEach((item) => {
-      item?.forEach((i) => {
-        console.log(i);
-        newArr = [...i];
-      });
-      console.log(newArr);
-    });
   };
 
   return (

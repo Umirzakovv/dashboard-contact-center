@@ -14,7 +14,6 @@ const DatabaseOperators = () => {
   const [targetDivisionId, setTargetDivisionId] = useState();
   const [workers, setWorkers] = useState();
   const [searchResult, setSearchResult] = useState([]);
-  const [lorem, setLorem] = useState();
 
   return (
     <DivisionsContext.Provider
@@ -27,8 +26,6 @@ const DatabaseOperators = () => {
         setTargetDivisionId,
         searchResult,
         setSearchResult,
-        lorem,
-        setLorem,
       }}
     >
       <Layout>

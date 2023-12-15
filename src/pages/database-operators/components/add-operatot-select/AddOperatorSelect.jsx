@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import "./select.scss";
+import "./add-operatot-select.scss";
 
-const Select = ({ item }) => {
+const AddOperatorSelect = ({ item }) => {
   return (
-    <div className="extended-filter__select">
-      <p className="extended-filter__select-title">{item?.title}</p>
+    <div className="add-operator__select">
+      <p className="add-operator__select-title">{item?.title}</p>
       <select>
         {item?.options?.map((option) => {
           return (
@@ -18,4 +18,4 @@ const Select = ({ item }) => {
   );
 };
 
-export default Select;
+export default AddOperatorSelect;
