@@ -5,6 +5,7 @@ import Divisions from "./components/divisions/Divisions";
 import Header from "./components/header/Header";
 import Table from "./components/table/Table";
 import "./database-operators.scss";
+import SearchResult from "./components/search-result/SearchResult";
 
 export const DivisionsContext = createContext();
 
@@ -12,6 +13,8 @@ const DatabaseOperators = () => {
   const [divisions, setDivisions] = useState();
   const [targetDivisionId, setTargetDivisionId] = useState();
   const [workers, setWorkers] = useState();
+  const [searchResult, setSearchResult] = useState([]);
+  const [lorem, setLorem] = useState();
 
   return (
     <DivisionsContext.Provider
@@ -22,12 +25,17 @@ const DatabaseOperators = () => {
         setWorkers,
         targetDivisionId,
         setTargetDivisionId,
+        searchResult,
+        setSearchResult,
+        lorem,
+        setLorem,
       }}
     >
       <Layout>
         <CommonStatistics />
         <Divisions />
         <Header />
+        <SearchResult />
         <Table />
       </Layout>
     </DivisionsContext.Provider>

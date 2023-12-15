@@ -5,21 +5,54 @@ import "./header.scss";
 import img from "../../../../assets/icons/search.svg";
 import ExtendedFilterBtn from "../extended-filter-btn/ExtendedFilterBtn";
 import AddDepartmentBtn from "../add-department-btn/AddDepartmentBtn";
+import { useContext, useState } from "react";
+import { DivisionsContext } from "../../DatabaseOperators";
 
+const excelBtnStyle = {
+  padding: "1rem",
+  borderRadius: "4rem",
+  background: "#4DC555",
+  color: "#fff",
+  fontSize: "1.4rem",
+  fontFamily: "Inter",
+};
 const Header = () => {
-  const excelBtnStyle = {
-    padding: "1rem",
-    borderRadius: "4rem",
-    background: "#4DC555",
-    color: "#fff",
-    fontSize: "1.4rem",
-    fontFamily: "Inter",
+  const [searchInputValue, setSearchInputValue] = useState();
+  const { targetDivisionId } = useContext(DivisionsContext);
+  const { searchResult, setSearchResult } = useContext(DivisionsContext);
+  const { lorem, setLorem } = useContext(DivisionsContext);
+  let newArr = [];
+  const handleInputChange = (e) => {
+    setSearchInputValue(e?.target?.value);
+  };
+
+  const handleSearchBarSubmit = (e) => {
+    e.preventDefault();
+    fetch(
+      `http://192.168.61.169:2004/api/v1/division/getfilter/${targetDivisionId}?name=${searchInputValue}&operator_number=null`
+    )
+      .then((res) => res.json())
+      .then((data) => setSearchResult(data));
+    const departments = searchResult?.map((item) => item?.departments);
+    const workers = departments[0]?.map((item) => item?.workers);
+    workers?.forEach((item) => {
+      item?.forEach((i) => {
+        console.log(i);
+        newArr = [...i];
+      });
+      console.log(newArr);
+    });
   };
 
   return (
     <div className="database-operators__header">
       <ExtendedFilterBtn />
-      <SearchBarLayout placeholder="Поиск по Ф.И.О или ID РМО" img={img} />
+      <SearchBarLayout
+        placeholder="Поиск по Ф.И.О или ID РМО"
+        img={img}
+        onChange={handleInputChange}
+        onSubmit={handleSearchBarSubmit}
+      />
       <AddDepartmentBtn />
       <ExcelBtn icon={icon} style={excelBtnStyle} />
     </div>

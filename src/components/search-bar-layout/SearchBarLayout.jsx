@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./search-bar-layout.scss";
+
 const SearchBarLayout = ({
   onSubmit,
   img,

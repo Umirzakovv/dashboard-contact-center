@@ -20,7 +20,6 @@ const AddGroupBtn = () => {
       window.addEventListener("keydown", handleKeyDown);
     }
 
-    // Detach the event listener when the modal is closed
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
