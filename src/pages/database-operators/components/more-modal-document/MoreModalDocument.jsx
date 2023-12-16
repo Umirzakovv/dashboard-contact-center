@@ -1,10 +1,18 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import "./more-modal-document.scss";
 
-const MoreModalDocument = () => {
+const MoreModalDocument = ({ item }) => {
   return (
     <div className="more-modal__document">
-      <h4>Harbiy guvohnoma</h4>
-      <img src="https://picsum.photos/260/260" alt="document img" />
+      <Link to="/" className="more-modal__document-link">
+        {item?.title}
+      </Link>
+      <img
+        style={{ width: "250px", height: "250px" }}
+        src={item?.img}
+        alt="document img"
+      />
     </div>
   );
 };

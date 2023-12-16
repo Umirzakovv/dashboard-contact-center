@@ -1,22 +1,25 @@
 .more-modal__body-wrapper {
-  margin-top: 7rem;
   display: flex;
+  margin-top: 2rem;
+  border: 1px solid red;
 
   .more-modal__single-info__wrapper {
+    border: 1px solid red;
     width: 55%;
+    height: max-content;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+    align-items: start;
     flex-wrap: wrap;
   }
 
   .more-modal__documents-wrapper {
+    border: 1px solid red;
+    width: 45%;
+    height: max-content;
+
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 45%;
-    margin-left: 4rem;
   }
-  
 }

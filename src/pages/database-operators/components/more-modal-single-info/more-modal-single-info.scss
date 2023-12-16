@@ -4,22 +4,25 @@
   align-items: center;
   box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 40rem;
-  margin-bottom: 2rem;
-  
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+
   p {
     width: max-content;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 1rem;
     font-size: 1.6rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: normal;
     background-color: #49acf3;
     color: #fff;
   }
 
   span {
+    width: max-content;
+
     color: rgba(0, 0, 0, 0.5);
     font-size: 1.6rem;
     font-style: normal;

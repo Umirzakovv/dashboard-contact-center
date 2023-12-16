@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
-import MoreInfoWorkerModalBody from "../more-modal-body/MoreModalBody";
+import MoreInfoWorkerModalBody from "../more-info-worker-body/MoreInfoWorkerBody";
 import MoreInfoWorkerHeader from "../more-info-worker-header/MoreInfoWorkerHeader";
 import "./more-info-worker-modal.scss";
 
