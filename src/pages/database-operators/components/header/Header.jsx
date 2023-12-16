@@ -17,7 +17,7 @@ const excelBtnStyle = {
   fontFamily: "Inter",
 };
 const Header = () => {
-  const [searchInputValue, setSearchInputValue] = useState();
+  const [searchInputValue, setSearchInputValue] = useState("");
   const { targetDivisionId } = useContext(DivisionsContext);
   const { setSearchResult } = useContext(DivisionsContext);
   const handleInputChange = (e) => {
@@ -26,11 +26,17 @@ const Header = () => {
 
   const handleSearchBarSubmit = (e) => {
     e.preventDefault();
-    fetch(
-      `http://192.168.61.169:2004/api/v1/division/getfilter/${targetDivisionId}?name=${searchInputValue}&operator_number=null`
-    )
-      .then((res) => res.json())
-      .then((data) => setSearchResult(data));
+
+    if (!searchInputValue.length) {
+      setSearchResult([]);
+    } else {
+      fetch(
+        `http://192.168.61.169:2004/api/v1/division/getfilter/${targetDivisionId}?name=${searchInputValue}&operator_number=null`
+      )
+        .then((res) => res.json())
+        .then((data) => setSearchResult(data))
+        .catch((err) => console.log(err));
+    }
   };
 
   return (

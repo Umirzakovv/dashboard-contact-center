@@ -9,6 +9,7 @@ import "./table.scss";
 const Table = () => {
   const { workers } = useContext(DivisionsContext);
   const departments = workers?.map((i) => i.departments)[0];
+  console.log("okey");
 
   return departments?.map((item) => {
     return (

@@ -2,6 +2,8 @@
 import CancelBtn from "../../../../components/cancel-btn/CancelBtn";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import InputWithTitle from "../input-with-title/InputWithTitle";
+import { Formik, Form, useFormik } from "formik";
+import * as yup from "yup";
 import "./add-worker-modal.scss";
 import {
   degreeStatusData,
@@ -10,24 +12,41 @@ import {
   jobTitles,
 } from "../../../../mock/mock-data";
 import AddOperatorSelect from "../add-operatot-select/AddOperatorSelect";
+import { useContext, useRef, useState } from "react";
+import { DivisionsContext } from "../../DatabaseOperators";
 
 const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    console.log(e);
-  };
+  const createWorkerUrl = "http://192.168.61.169:2004/api/v1/worker/create";
+  const { targetDivisionId } = useContext(DivisionsContext);
+  const [values, setValues] = useState({});
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    console.log(form.elements.namedItem("input1").value);
+
+    fetch(createWorkerUrl, {
+      body: {
+        department_id: targetDivisionId,
+        name: form.elements.namedItem("fullname").value,
+        login: "123",
+        
+      },
+    })
+  };
   const handleCancelClick = (e) => {
     e.preventDefault();
     setisAddOperatorModalOpen(false);
   };
 
   return (
-    <form className="add-operator__modal" onSubmit={handleFormSubmit}>
+    <form className="add-operator__modal" onSubmit={handleSubmit}>
       <h2 className="add-operator__modal-title">Добавить сотрудника</h2>
       <div className="add-operator__modal-inputs">
         <div className="add-operator__modal-left">
           <InputWithTitle
+            name="fullname"
             type="text"
             placeholder="Напишите..."
             title="F.I.SH"
