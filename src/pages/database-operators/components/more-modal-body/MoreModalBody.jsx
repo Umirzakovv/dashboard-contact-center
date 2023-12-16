@@ -25,8 +25,6 @@ const MoreInfoWorkerModalBody = () => {
         <MoreModalDocument />
         <MoreModalDocument />
         <MoreModalDocument />
-
-
       </div>
     </div>
   );

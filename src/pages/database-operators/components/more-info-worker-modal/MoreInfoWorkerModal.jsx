@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
-import "./more-btn-modal.scss";
 import MoreInfoWorkerModalBody from "../more-modal-body/MoreModalBody";
-import MoreInfoWorkerHeader from "../more-modal-header/MoreModalHeader";
+import MoreInfoWorkerHeader from "../more-info-worker-header/MoreInfoWorkerHeader";
+import "./more-info-worker-modal.scss";
 
-const MoreBtnModal = ({ setIsMoreBtnModalOpen }) => {
+const MoreInfoWorkerModal = ({ setIsMoreBtnModalOpen }) => {
   const modalRef = useRef();
 
   useEffect(() => {
@@ -28,4 +28,4 @@ const MoreBtnModal = ({ setIsMoreBtnModalOpen }) => {
   );
 };
 
-export default MoreBtnModal;
+export default MoreInfoWorkerModal;

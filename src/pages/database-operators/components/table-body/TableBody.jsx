@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import MoreBtn from "../../../../components/more-btn/MoreBtn";
-import MoreBtnModal from "../more-btn-modal/MoreBtnModal";
 import EditBtnModal from "../edit-btn-modal/EditBtnModal";
 import Curtain from "../../../../components/curtain/Curtain";
 import EditBtn from "../../../../components/edit-btn/EditBtn";
@@ -9,6 +8,7 @@ import editBlueImg from "../../../../assets/icons/pencil-blue.svg";
 import moreBlueImg from "../../../../assets/icons/eye-blue.svg";
 
 import "./table-body.scss";
+import MoreInfoWorker from "../more-info-worker-modal/MoreInfoWorkerModal";
 
 const TableBody = ({ tableData }) => {
   const [isMoreBtnModalOpen, setIsMoreBtnModalOpen] = useState(false);
@@ -81,7 +81,7 @@ const TableBody = ({ tableData }) => {
 
       {isMoreBtnModalOpen ? (
         <>
-          <MoreBtnModal setIsMoreBtnModalOpen={setIsMoreBtnModalOpen} />
+          <MoreInfoWorker setIsMoreBtnModalOpen={setIsMoreBtnModalOpen} />
           <Curtain />
         </>
       ) : (
