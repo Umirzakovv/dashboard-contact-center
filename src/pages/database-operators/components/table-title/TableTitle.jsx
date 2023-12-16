@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useContext, useState } from "react";
 import EditBtn from "../../../../components/edit-btn/EditBtn";
 import DeleteBtnWithTrash from "../../../../components/delete-btn-with-trash/DeleteBtnWithTrash";
 import editBtnWhiteImg from "../../../../assets/icons/pencil-white.svg";
@@ -10,9 +10,10 @@ import DeleteDepartmentAlert from "../delete-department-alert/DeleteDepartmentAl
 import AddOperatorBtn from "../add-operator-btn/AddOperatorBtn";
 
 import "./table-title.scss";
+import { DivisionsContext } from "../../DatabaseOperators";
 
 const TableTitle = ({ title, id }) => {
-  const [targetDepartmentId, setTargetDepartmentId] = useState();
+  const { setTargetDepartmentId } = useContext(DivisionsContext);
   const [isEditTableTitleModalOpen, setIsEditTableTitleModalOpen] =
     useState(false);
   const [isDeleteConfirmModalOpen, setIsDeleteConfirmModalOpen] =
@@ -39,8 +40,7 @@ const TableTitle = ({ title, id }) => {
       </div>
       {isEditTableTitleModalOpen ? (
         <EditTableTitleModal
-        tableTitle={title}
-          targetDepartmentId={targetDepartmentId}
+          tableTitle={title}
           setIsEditTableTitleModalOpen={setIsEditTableTitleModalOpen}
         />
       ) : (
@@ -51,7 +51,6 @@ const TableTitle = ({ title, id }) => {
       {isDeleteConfirmModalOpen ? (
         <DeleteDepartmentAlert
           setIsDeleteConfirmModalOpen={setIsDeleteConfirmModalOpen}
-          targetDepartmentId={targetDepartmentId}
         />
       ) : (
         ""

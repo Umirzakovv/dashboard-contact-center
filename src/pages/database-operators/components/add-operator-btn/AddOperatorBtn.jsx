@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import addImg from "../../../../assets/icons/plus-white.svg";
 
@@ -7,8 +8,9 @@ import AddWorkerModal from "../add-worker-modal/AddWorkerModal";
 
 const AddOperatorBtn = () => {
   const [isAddOperatorModalOpen, setisAddOperatorModalOpen] = useState(false);
-  const handleBtnClick = () => {
+  const handleBtnClick = (e) => {
     setisAddOperatorModalOpen(true);
+    console.log(e?.target);
   };
 
   return (
@@ -18,9 +20,7 @@ const AddOperatorBtn = () => {
         <img src={addImg} alt="add img" />
       </button>
       {isAddOperatorModalOpen ? (
-        <AddWorkerModal
-          setisAddOperatorModalOpen={setisAddOperatorModalOpen}
-        />
+        <AddWorkerModal setisAddOperatorModalOpen={setisAddOperatorModalOpen} />
       ) : (
         ""
       )}

@@ -5,15 +5,12 @@ import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import { DivisionsContext } from "../../DatabaseOperators";
 import { fetchSingleDivisionData } from "../../../../consts";
 
-const EditTableTitleModal = ({
-  tableTitle,
-  targetDepartmentId,
-  setIsEditTableTitleModalOpen,
-}) => {
+const EditTableTitleModal = ({ tableTitle, setIsEditTableTitleModalOpen }) => {
   const modalRef = useRef();
   const [inputValue, setInputValue] = useState(tableTitle);
   const { targetDivisionId } = useContext(DivisionsContext);
   const { setWorkers } = useContext(DivisionsContext);
+  const { targetDepartmentId } = useContext(DivisionsContext);
 
   const handleInputChange = (e) => {
     setInputValue(e?.target?.value);

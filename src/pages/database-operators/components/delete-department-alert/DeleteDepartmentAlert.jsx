@@ -6,13 +6,11 @@ import "./delete-department-alert.scss";
 import { fetchSingleDivisionData } from "../../../../consts";
 import { DivisionsContext } from "../../DatabaseOperators";
 
-const DeleteDepartmentAlert = ({
-  targetDepartmentId,
-  setIsDeleteConfirmModalOpen,
-}) => {
+const DeleteDepartmentAlert = ({ setIsDeleteConfirmModalOpen }) => {
   const modalRef = useRef();
   const { targetDivisionId } = useContext(DivisionsContext);
   const { setWorkers } = useContext(DivisionsContext);
+  const { targetDepartmentId } = useContext(DivisionsContext);
 
   const handleСonfirmClick = () => {
     fetch(

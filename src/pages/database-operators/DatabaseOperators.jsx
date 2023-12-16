@@ -12,6 +12,7 @@ export const DivisionsContext = createContext();
 const DatabaseOperators = () => {
   const [divisions, setDivisions] = useState();
   const [targetDivisionId, setTargetDivisionId] = useState();
+  const [targetDepartmentId, setTargetDepartmentId] = useState();
   const [workers, setWorkers] = useState();
   const [searchResult, setSearchResult] = useState([]);
 
@@ -22,10 +23,12 @@ const DatabaseOperators = () => {
         setDivisions,
         workers,
         setWorkers,
-        targetDivisionId,
-        setTargetDivisionId,
         searchResult,
         setSearchResult,
+        targetDivisionId,
+        setTargetDivisionId,
+        targetDepartmentId,
+        setTargetDepartmentId,
       }}
     >
       <Layout>
