@@ -13,6 +13,7 @@ import MoreInfoWorker from "../more-info-worker-modal/MoreInfoWorkerModal";
 const TableBody = ({ tableData }) => {
   const [isMoreBtnModalOpen, setIsMoreBtnModalOpen] = useState(false);
   const [isEditBtnModalOpen, setIsEditBtnModalOpen] = useState(false);
+  const [targetWorkerData, setTargetWorkerData] = useState("");
 
   const handleEditBtnClick = () => {
     setIsEditBtnModalOpen(true);
@@ -20,6 +21,10 @@ const TableBody = ({ tableData }) => {
 
   const handleMoreBtnClick = () => {
     setIsMoreBtnModalOpen(true);
+    fetch(`http://192.168.61.169:2004/api/v1/worker/workerOne/${tableData?.id}`)
+      .then((res) => res.json())
+      .then((data) => setTargetWorkerData(data))
+      .catch((err) => console.log(err));
   };
 
   const handleKeyDown = (event) => {
@@ -81,7 +86,10 @@ const TableBody = ({ tableData }) => {
 
       {isMoreBtnModalOpen ? (
         <>
-          <MoreInfoWorker setIsMoreBtnModalOpen={setIsMoreBtnModalOpen} />
+          <MoreInfoWorker
+            setIsMoreBtnModalOpen={setIsMoreBtnModalOpen}
+            targetWorkerData={targetWorkerData}
+          />
           <Curtain />
         </>
       ) : (

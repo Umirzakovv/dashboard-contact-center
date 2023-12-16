@@ -2,15 +2,15 @@
 import { Link } from "react-router-dom";
 import "./more-modal-document.scss";
 
-const MoreModalDocument = ({ item }) => {
+const MoreModalDocument = ({ title, link }) => {
   return (
     <div className="more-modal__document">
-      <Link to="/" className="more-modal__document-link">
-        {item?.title}
+      <Link to={link} target="_blank" className="more-modal__document-link">
+        {title}
       </Link>
       <img
         style={{ width: "250px", height: "250px" }}
-        src={item?.img}
+        src={link}
         alt="document img"
       />
     </div>

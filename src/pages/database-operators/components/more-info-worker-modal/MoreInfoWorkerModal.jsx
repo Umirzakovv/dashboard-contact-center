@@ -4,7 +4,7 @@ import MoreInfoWorkerModalBody from "../more-info-worker-body/MoreInfoWorkerBody
 import MoreInfoWorkerHeader from "../more-info-worker-header/MoreInfoWorkerHeader";
 import "./more-info-worker-modal.scss";
 
-const MoreInfoWorkerModal = ({ setIsMoreBtnModalOpen }) => {
+const MoreInfoWorkerModal = ({ targetWorkerData, setIsMoreBtnModalOpen }) => {
   const modalRef = useRef();
 
   useEffect(() => {
@@ -19,11 +19,12 @@ const MoreInfoWorkerModal = ({ setIsMoreBtnModalOpen }) => {
       document.removeEventListener("mousedown", handler);
     };
   });
+  console.log(targetWorkerData);
 
   return (
     <div className="database-operators__more-btn__modal" ref={modalRef}>
-      <MoreInfoWorkerHeader />
-      <MoreInfoWorkerModalBody />
+      <MoreInfoWorkerHeader targetWorkerData={targetWorkerData} />
+      <MoreInfoWorkerModalBody targetWorkerData={targetWorkerData} />
     </div>
   );
 };

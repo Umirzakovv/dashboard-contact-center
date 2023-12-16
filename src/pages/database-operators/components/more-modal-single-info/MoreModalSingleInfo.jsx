@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import "./more-modal-single-info.scss";
 
-const MoreModalSingleInfo = () => {
+const MoreModalSingleInfo = ({ title, value }) => {
   return (
     <div className="more-modal__single-info">
-      <p>Tug’ilgan sana  sana</p>
-      <span>01.02.1991</span>
+      <p>{title}</p>
+      <span>{value}</span>
     </div>
   );
 };
