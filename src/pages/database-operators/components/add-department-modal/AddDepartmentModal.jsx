@@ -63,6 +63,7 @@ const AddDepartmentModal = ({
         type="text"
         placeholder="Напишите..."
         onChange={handleInputChange}
+        autoFocus={true}
       />
       <SubmitBtn type="submit" title="Добавить" />
     </form>

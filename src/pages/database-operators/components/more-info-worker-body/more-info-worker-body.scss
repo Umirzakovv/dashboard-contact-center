@@ -1,10 +1,8 @@
 .more-modal__body-wrapper {
   display: flex;
   margin-top: 2rem;
-  border: 1px solid red;
 
   .more-modal__single-info__wrapper {
-    border: 1px solid red;
     width: 55%;
     height: max-content;
     display: flex;
@@ -13,7 +11,6 @@
   }
 
   .more-modal__documents-wrapper {
-    border: 1px solid red;
     width: 45%;
     height: max-content;
 

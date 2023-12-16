@@ -70,6 +70,7 @@ const EditDivisionModal = ({
         placeholder="Напишите..."
         value={inputValue}
         onChange={handleInputChange}
+        autoFocus={true}
       />
       <SubmitBtn title="Добавить" />
     </form>

@@ -31,9 +31,8 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
         department_id: targetDivisionId,
         name: form.elements.namedItem("fullname").value,
         login: "123",
-        
       },
-    })
+    });
   };
   const handleCancelClick = (e) => {
     e.preventDefault();
@@ -50,6 +49,7 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
             type="text"
             placeholder="Напишите..."
             title="F.I.SH"
+            autoFocus={true}
           />
           {gender?.map((item) => {
             return <AddOperatorSelect key={item?.id} item={item} />;

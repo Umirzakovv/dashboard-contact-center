@@ -63,6 +63,7 @@ const AddDivisionModal = ({ setIsModalOpen }) => {
         className="add-division__input"
         placeholder="Напишите..."
         onChange={handleFormChange}
+        autoFocus={true}
       />
       <SubmitBtn title="Добавить" setInputValue={setInputValue} />
     </form>

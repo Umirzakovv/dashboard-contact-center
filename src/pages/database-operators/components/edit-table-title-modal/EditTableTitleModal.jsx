@@ -68,6 +68,7 @@ const EditTableTitleModal = ({
         placeholder="Напишите..."
         onChange={handleInputChange}
         value={inputValue}
+        autoFocus={true}
       />
       <SubmitBtn title="Изменить" />
     </form>

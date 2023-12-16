@@ -10,6 +10,7 @@ const InputWithTitle = ({
   required,
   setName,
   name,
+  autoFocus
 }) => {
   return (
     <div className="input-with__title">
@@ -17,7 +18,7 @@ const InputWithTitle = ({
         {title} <span>{required ? "*" : ""}</span>
       </p>
       <label htmlFor={required ? "requiredInput" : ""}>
-        <input name={name} type={type} placeholder={placeholder} />
+        <input autoFocus={autoFocus} name={name} type={type} placeholder={placeholder} />
       </label>
     </div>
   );
