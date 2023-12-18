@@ -6,13 +6,13 @@ import Curtain from "../../../../components/curtain/Curtain";
 import EditBtn from "../../../../components/edit-btn/EditBtn";
 import editBlueImg from "../../../../assets/icons/pencil-blue.svg";
 import moreBlueImg from "../../../../assets/icons/eye-blue.svg";
-
 import "./table-body.scss";
 import MoreInfoWorker from "../more-info-worker-modal/MoreInfoWorkerModal";
 
 const TableBody = ({ tableData }) => {
   const [isMoreBtnModalOpen, setIsMoreBtnModalOpen] = useState(false);
   const [isEditBtnModalOpen, setIsEditBtnModalOpen] = useState(false);
+
   const [targetWorkerData, setTargetWorkerData] = useState("");
 
   const handleEditBtnClick = () => {
@@ -60,7 +60,11 @@ const TableBody = ({ tableData }) => {
         <td>{tableData?.date_of_birth}</td>
         <td>{tableData?.phone_number}</td>
         <td>
-          <img src={tableData?.user_img} alt="user img" />
+          <img
+            src={tableData?.user_img}
+            alt="user img"
+            style={{ width: "25px", height: "25px" }}
+          />
         </td>
         <td>{tableData?.name}</td>
         <td>{tableData?.experience}</td>

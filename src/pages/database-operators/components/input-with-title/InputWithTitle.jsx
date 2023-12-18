@@ -1,26 +1,21 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import "./input-with-title.scss";
-const InputWithTitle = ({
-  title,
-  type,
-  color,
-  placeholder,
-  onChange,
-  required,
-  setName,
-  name,
-  autoFocus
-}) => {
+const InputWithTitle = ({ ...props }) => {
+  console.log(props.touched);
   return (
-    <div className="input-with__title">
-      <p>
-        {title} <span>{required ? "*" : ""}</span>
-      </p>
-      <label htmlFor={required ? "requiredInput" : ""}>
-        <input autoFocus={autoFocus} name={name} type={type} placeholder={placeholder} />
-      </label>
-    </div>
+    <>
+      <div className="input-with__title">
+        <label htmlFor={props?.name}>
+          {props.title} {props.required ? "*" : ""}
+        </label>
+        <input {...props} />
+      </div>
+      {props.error && props.touched ? (
+        <p className={"input-with__title-error"}>{props?.error}</p>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 

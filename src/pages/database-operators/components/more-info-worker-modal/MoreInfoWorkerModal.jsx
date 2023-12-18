@@ -19,7 +19,6 @@ const MoreInfoWorkerModal = ({ targetWorkerData, setIsMoreBtnModalOpen }) => {
       document.removeEventListener("mousedown", handler);
     };
   });
-  console.log(targetWorkerData);
 
   return (
     <div className="database-operators__more-btn__modal" ref={modalRef}>

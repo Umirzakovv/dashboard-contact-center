@@ -7,17 +7,26 @@ import trashImg from "../../../../assets/icons/trash.svg";
 import EditTableTitleModal from "../edit-table-title-modal/EditTableTitleModal";
 import Curtain from "../../../../components/curtain/Curtain";
 import DeleteDepartmentAlert from "../delete-department-alert/DeleteDepartmentAlert";
-import AddOperatorBtn from "../add-operator-btn/AddOperatorBtn";
 
 import "./table-title.scss";
 import { DivisionsContext } from "../../DatabaseOperators";
+import AddWorkerBtn from "../add-worker-btn/AddWorkerBtn";
+import AddWorkerModal from "../add-worker-modal/AddWorkerModal";
 
 const TableTitle = ({ title, id }) => {
-  const { setTargetDepartmentId } = useContext(DivisionsContext);
+  const { setTargetDepartmentId } =
+    useContext(DivisionsContext);
+  const [isAddOperatorModalOpen, setisAddOperatorModalOpen] = useState(false);
+
   const [isEditTableTitleModalOpen, setIsEditTableTitleModalOpen] =
     useState(false);
   const [isDeleteConfirmModalOpen, setIsDeleteConfirmModalOpen] =
     useState(false);
+
+  const handleAddWorkerBtnClick = () => {
+    setisAddOperatorModalOpen(true);
+    setTargetDepartmentId(id);
+  };
 
   const handleEditBtnClick = () => {
     setIsEditTableTitleModalOpen(true);
@@ -31,13 +40,21 @@ const TableTitle = ({ title, id }) => {
   return (
     <>
       <div className="database-operators__table-title__wrapper">
-        <AddOperatorBtn />
+        <AddWorkerBtn onClick={handleAddWorkerBtnClick} />
         <h2 className="database-operators__table-title">{title}</h2>
         <div className="database-operators__table-title__btns">
           <EditBtn img={editBtnWhiteImg} onClick={handleEditBtnClick} />
           <DeleteBtnWithTrash img={trashImg} onClick={handleDeleteClick} />
         </div>
       </div>
+
+      {isAddOperatorModalOpen ? (
+        <AddWorkerModal setisAddOperatorModalOpen={setisAddOperatorModalOpen} />
+      ) : (
+        ""
+      )}
+      {isAddOperatorModalOpen ? <Curtain /> : ""}
+
       {isEditTableTitleModalOpen ? (
         <EditTableTitleModal
           tableTitle={title}

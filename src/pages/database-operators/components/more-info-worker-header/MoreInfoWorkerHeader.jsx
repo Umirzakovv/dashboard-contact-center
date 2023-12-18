@@ -6,7 +6,6 @@ import "./more-info-worker-header.scss";
 
 const MoreInfoWorkerHeader = ({ targetWorkerData }) => {
   const targetWorker = targetWorkerData[0];
-  console.log(targetWorker);
   return (
     <div className="more-modal__header-wrapper">
       <div className="more-modal__header">
