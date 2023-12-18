@@ -8,7 +8,7 @@ import {
   employeeCategory,
   gender,
   jobTitles,
-} from "../../../../mock/mock-data";
+} from "../../../../consts/consts";
 import AddOperatorSelect from "../add-operatot-select/AddOperatorSelect";
 import { useContext, useEffect, useRef, useState } from "react";
 import { DivisionsContext } from "../../DatabaseOperators";

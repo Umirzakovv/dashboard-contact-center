@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import CommonStatistics from "./components/common-statistics/CommonStatistics";
 import Divisions from "./components/divisions/Divisions";

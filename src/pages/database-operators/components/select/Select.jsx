@@ -2,10 +2,14 @@
 import "./select.scss";
 
 const Select = ({ item }) => {
+  const handleSelectChange = (e) => {
+    console.log(e?.target?.value);
+  };
+
   return (
     <div className="extended-filter__select">
       <p className="extended-filter__select-title">{item?.title}</p>
-      <select>
+      <select onChange={handleSelectChange}>
         {item?.options?.map((option) => {
           return (
             <option value={option?.value} key={option?.id}>
