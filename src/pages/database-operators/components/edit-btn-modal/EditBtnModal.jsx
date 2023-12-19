@@ -1,11 +1,42 @@
 /* eslint-disable react/prop-types */
 
-import { useRef } from "react";
-import "./edit-btn-modal.scss";
+import { useContext, useRef } from "react";
 import { useEffect } from "react";
+import CancelBtn from "../../../../components/cancel-btn/CancelBtn";
+import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
+import "./edit-btn-modal.scss";
+import { DivisionsContext } from "../../DatabaseOperators";
+import { fetchSingleDivisionData } from "../../../../consts";
 
 const EditBtnModal = ({ setIsEditBtnModalOpen }) => {
   const modalRef = useRef();
+  const fetchUrl = `http://192.168.61.169:2004/api/v1/worker/update/sdsdsd`;
+
+  const { targetDepartmentId } = useContext(DivisionsContext);
+  const { setWorkers } = useContext(DivisionsContext);
+  const { targetDivisionId } = useContext(DivisionsContext);
+
+  const handleConfirmClick = async () => {
+    try {
+      const response = await fetch(fetchUrl, {
+        method: "PATCH",
+        body: {},
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      } else {
+        fetchSingleDivisionData(targetDivisionId, setWorkers);
+      }
+    } catch (error) {
+      console.log("Error lorem fetching data:", error);
+    } finally {
+      setIsEditBtnModalOpen(false);
+    }
+  };
+  const handleCancelClick = () => {
+    setIsEditBtnModalOpen(false);
+  };
 
   useEffect(() => {
     let handler = (e) => {
@@ -20,11 +51,17 @@ const EditBtnModal = ({ setIsEditBtnModalOpen }) => {
     };
   });
   return (
-    <div className="database-operators__edit-btn__modal" ref={modalRef}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, animi
-      eveniet molestias quo odio perferendis dignissimos quam, delectus aliquid
-      voluptatem inventore praesentium porro impedit unde maxime magnam
-      quibusdam distinctio numquam?
+    <div className="edit-worker__modal" ref={modalRef}>
+      <h2 className="edit-worker__modal-title">Изенить сотрудника</h2>
+      <div className="edit-worker__modal-inputs">
+        <div className="edit-worker__modal-left"></div>
+        <hr />
+        <div className="edit-worker__modal-right"></div>
+      </div>
+      <div className="edit-worker__modal-btns">
+        <CancelBtn title="Отменить" onClick={handleCancelClick} />
+        <SubmitBtn title="Добавить" onClick={handleConfirmClick} />
+      </div>
     </div>
   );
 };

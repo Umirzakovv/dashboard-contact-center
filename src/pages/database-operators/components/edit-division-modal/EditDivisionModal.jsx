@@ -72,7 +72,7 @@ const EditDivisionModal = ({
         onChange={handleInputChange}
         autoFocus={true}
       />
-      <SubmitBtn title="Добавить" />
+      <SubmitBtn type="submit" title="Добавить" />
     </form>
   );
 };

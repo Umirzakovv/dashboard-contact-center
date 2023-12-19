@@ -65,7 +65,7 @@ const AddDivisionModal = ({ setIsModalOpen }) => {
         onChange={handleFormChange}
         autoFocus={true}
       />
-      <SubmitBtn title="Добавить" setInputValue={setInputValue} />
+      <SubmitBtn type="submit" title="Добавить" setInputValue={setInputValue} />
     </form>
   );
 };

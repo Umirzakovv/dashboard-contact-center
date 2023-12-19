@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./submit-btn.scss";
-const SubmitBtn = ({ title, onClick }) => {
+const SubmitBtn = ({ ...props }) => {
   return (
-    <button className="submit-btn" type="submit" onClick={onClick}>
-      {title}
+    <button className="submit-btn" {...props}>
+      {props?.title}
     </button>
   );
 };

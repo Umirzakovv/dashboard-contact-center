@@ -142,7 +142,7 @@ const ExtendedFilterModal = ({ filterModal, setFilterModal }) => {
       <div className="extended-filter__btns">
         <CancelBtn title="Закрыть" onClick={handleModalCloseClick} />
 
-        <SubmitBtn title="Фильтрировать" />
+        <SubmitBtn type="submit" title="Фильтрировать" />
       </div>
     </form>
   );

@@ -1,16 +1,13 @@
 /* eslint-disable react/prop-types */
 import "./add-operatot-select.scss";
 
-const AddOperatorSelect = ({error, item, setState }) => {
-  const handleSelectChange = (e) => {
-    setState(e?.target.value);
-  };
+const AddOperatorSelect = ({ ...props }) => {
   return (
     <>
       <div className="add-operator__select">
-        <p className="add-operator__select-title">{item?.title}</p>
-        <select onChange={handleSelectChange}>
-          {item?.options?.map((option) => {
+        <p className="add-operator__select-title">{props?.item?.title}</p>
+        <select {...props}>
+          {props?.item?.options?.map((option) => {
             return (
               <option value={option?.value} key={option?.id}>
                 {option?.title}
@@ -19,7 +16,7 @@ const AddOperatorSelect = ({error, item, setState }) => {
           })}
         </select>
       </div>
-      <p>{error}</p>
+      <p>{props?.error}</p>
     </>
   );
 };

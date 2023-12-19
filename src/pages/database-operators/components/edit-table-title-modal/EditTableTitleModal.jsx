@@ -67,7 +67,7 @@ const EditTableTitleModal = ({ tableTitle, setIsEditTableTitleModalOpen }) => {
         value={inputValue}
         autoFocus={true}
       />
-      <SubmitBtn title="Изменить" />
+      <SubmitBtn type="submit" title="Изменить" />
     </form>
   );
 };

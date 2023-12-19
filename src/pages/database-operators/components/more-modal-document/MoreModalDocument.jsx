@@ -5,12 +5,16 @@ import "./more-modal-document.scss";
 const MoreModalDocument = ({ title, link }) => {
   return (
     <div className="more-modal__document">
-      <Link to={link} target="_blank" className="more-modal__document-link">
+      <Link
+        to={`http://192.168.42.176:8000/upload/imgs/${link}`}
+        target="_blank"
+        className="more-modal__document-link"
+      >
         {title}
       </Link>
       <img
         style={{ width: "250px", height: "250px" }}
-        src={link}
+        src={`http://192.168.42.176:8000/upload/imgs/${link}`}
         alt="document img"
       />
     </div>

@@ -10,7 +10,7 @@ const MoreInfoWorkerHeader = ({ targetWorkerData }) => {
     <div className="more-modal__header-wrapper">
       <div className="more-modal__header">
         <img
-          src={targetWorker?.user_img}
+          src={`http://192.168.42.176:8000/upload/imgs/${targetWorker?.user_img}`}
           alt="user img"
           className="user-more__info-img"
           style={{ width: "150px", height: "150px" }}

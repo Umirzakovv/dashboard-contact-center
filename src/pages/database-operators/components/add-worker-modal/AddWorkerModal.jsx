@@ -10,7 +10,7 @@ import {
   jobTitles,
 } from "../../../../consts/consts";
 import AddOperatorSelect from "../add-operatot-select/AddOperatorSelect";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { DivisionsContext } from "../../DatabaseOperators";
 import { fetchSingleDivisionData } from "../../../../consts";
 
@@ -32,13 +32,10 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
       document.removeEventListener("mousedown", handler);
     };
   });
+
   const { targetDepartmentId } = useContext(DivisionsContext);
   const { setWorkers } = useContext(DivisionsContext);
   const { targetDivisionId } = useContext(DivisionsContext);
-  const [workerGender, setWorkerGender] = useState("male");
-  const [workerCategory, setWorkerCategory] = useState("MBP");
-  const [workerJobTitle, setWorkerJobTitle] = useState("Direktor");
-  const [degreeStatus, setDegreeStatus] = useState("Oliy");
 
   const onSubmit = async (values) => {
     const fetchUrl = "http://192.168.61.169:2004/api/v1/worker/create";
@@ -74,6 +71,7 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
       formData.append("reference_img", values.reference_img);
       formData.append("military_ID_img", values.military_ID_img);
 
+      console.log(values);
       const response = await fetch(fetchUrl, {
         method: "POST",
         body: formData,
@@ -105,17 +103,17 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
       department_id: targetDepartmentId,
       name: "",
       login: "",
-      employee_category: workerCategory,
+      employee_category: "",
       tariff_discharge: "",
-      job_titles: workerJobTitle,
-      information: degreeStatus,
+      job_titles: "",
+      information: "",
       date_of_birth: "",
       Pasport_id: "",
       pinfl: "",
       date_of_last_change_position: "",
       phone_number: "",
       about_family: "",
-      gender: workerGender,
+      gender: "lorem",
       date_of_acceptance: "",
       address: "",
       name_of_graduate_institution: "",
@@ -168,11 +166,13 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
           {gender?.map((item) => {
             return (
               <AddOperatorSelect
+                id="gender"
+                name="gender"
                 error={errors.gender}
                 touched={touched?.gender}
                 key={item?.id}
                 item={item}
-                setState={setWorkerGender}
+                onChange={handleChange}
               />
             );
           })}
@@ -307,18 +307,22 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
           {degreeStatusData?.map((item) => {
             return (
               <AddOperatorSelect
+                id="information"
+                name="information"
                 key={item?.id}
                 item={item}
-                setState={setDegreeStatus}
+                onChange={handleChange}
               />
             );
           })}
           {employeeCategory?.map((item) => {
             return (
               <AddOperatorSelect
+                id="employee_category"
+                name="employee_category"
                 key={item?.id}
                 item={item}
-                setState={setWorkerCategory}
+                onChange={handleChange}
               />
             );
           })}
@@ -326,9 +330,11 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
           {jobTitles?.map((item) => {
             return (
               <AddOperatorSelect
+                id="job_titles"
+                name="job_titles"
                 key={item?.id}
                 item={item}
-                setState={setWorkerJobTitle}
+                onChange={handleChange}
               />
             );
           })}
@@ -355,7 +361,7 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
       </div>
       <div className="add-operator__modal-btns">
         <CancelBtn title="Отменить" onClick={handleCancelClick} />
-        <SubmitBtn title="Добавить" />
+        <SubmitBtn type="submit" title="Добавить" />
       </div>
     </form>
   );
