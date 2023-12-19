@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useContext, useEffect, useRef, useState } from "react";
-import DeleteBtn from "../../../../components/delete-btn/DeleteBtn";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import "./delete-division-alert.scss";
 import { fetchAllDivisions } from "../../../../consts";
 import { DivisionsContext } from "../../DatabaseOperators";
+import CancelBtn from "../../../../components/cancel-btn/CancelBtn";
 
 const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
   const modalRef = useRef();
@@ -28,7 +28,15 @@ const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
 
       .catch((error) => console.log(error));
     setIsDeleteModalOpen(false);
+
+    if (error) {
+      <p>{error?.message}</p>;
+    }
   };
+
+  const handleCancelClick = () => {
+    setIsDeleteModalOpen(false)
+  }
 
   useEffect(() => {
     let handler = (e) => {
@@ -42,7 +50,7 @@ const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
       document.removeEventListener("mousedown", handler);
     };
   });
-  
+
   return (
     <div className="delete-division__alert" ref={modalRef}>
       <h2>
@@ -50,7 +58,7 @@ const DeleteDivisionAlert = ({ group, setIsDeleteModalOpen }) => {
       </h2>
       <div className="delete-division__alert-btns">
         <SubmitBtn title="Да" onClick={handleСonfirmClick} />
-        <DeleteBtn title="Нет" />
+        <CancelBtn title="Нет" onClick={handleCancelClick}/>
       </div>
     </div>
   );

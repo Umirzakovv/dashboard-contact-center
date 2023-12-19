@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./input-with-title.scss";
 const InputWithTitle = ({ ...props }) => {
-  console.log(props.touched);
   return (
     <>
       <div className="input-with__title">

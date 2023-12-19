@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useContext, useEffect, useRef } from "react";
-import DeleteBtn from "../../../../components/delete-btn/DeleteBtn";
 import SubmitBtn from "../../../../components/submit-btn/SubmitBtn";
 import "./delete-department-alert.scss";
 import { fetchSingleDivisionData } from "../../../../consts";
 import { DivisionsContext } from "../../DatabaseOperators";
+import CancelBtn from "../../../../components/cancel-btn/CancelBtn";
 
 const DeleteDepartmentAlert = ({ setIsDeleteConfirmModalOpen }) => {
   const modalRef = useRef();
@@ -55,7 +55,7 @@ const DeleteDepartmentAlert = ({ setIsDeleteConfirmModalOpen }) => {
       </h2>
       <div className="delete-department__alert-btns">
         <SubmitBtn title="Да" onClick={handleСonfirmClick} />
-        <DeleteBtn title="Нет" onClick={handleCancelClick} />
+        <CancelBtn title="Нет" onClick={handleCancelClick} />
       </div>
     </div>
   );
