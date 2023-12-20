@@ -19,7 +19,6 @@ const Table = () => {
 
   return departments?.map((item) => {
     setTargetDepartmentId(item?.id);
-    console.log(item?.id);
     return (
       <>
         <div className="database-operators__group" key={item?.id}>

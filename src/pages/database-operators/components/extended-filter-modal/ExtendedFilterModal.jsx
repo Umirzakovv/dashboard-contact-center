@@ -7,7 +7,6 @@ import "./extended-filter-modal.scss";
 import {
   degreeStatusData,
   employeeCategory,
-  gender,
   genderData,
   jobTitles,
   tariffDischarge,
@@ -31,26 +30,17 @@ const ExtendedFilterModal = ({ filterModal, setFilterModal }) => {
   const [startValue, setStartValue] = useState("all");
   const [endValue, setEndValue] = useState("all");
 
-  const filterUrl = `http://192.168.61.169:2004/api/v1/division/extendedfilter/${targetDivisionId}?sortName=${nameValue.toLowerCase()}&gender=${genderValue}&job_titles=${jobValue}&tariff_discharge=${disChargeValue}&employee_category=${employeeCategoryValue}&start_experience=${startValue}&end_experience=${endValue}&information=${degreeStatusValue}`;
+  const filterUrl = `http://192.168.61.169:2004/api/v1/division/extendedfilter/${targetDivisionId}?sortName=${nameValue}&gender=${genderValue}&job_titles=${jobValue}&tariff_discharge=${disChargeValue}&employee_category=${employeeCategoryValue}&start_experience=${startValue}&end_experience=${endValue}&information=${degreeStatusValue}`;
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(
-      nameValue,
-      genderValue,
-      jobValue,
-      disChargeValue,
-      degreeStatusValue,
-      employeeCategoryValue,
-      startValue,
-      endValue
-    );
+
     fetch(filterUrl)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setWorkers(data);
       })
+      .catch((err) => console.log(err))
 
       .catch((err) => console.log(err));
     setFilterModal(false);
