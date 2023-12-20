@@ -2,7 +2,7 @@
 import { setSpaceEveryNFromEnd } from "../../consts";
 import "./common-statistics-card.scss";
 
-const CommonStatisticsCard = (props) => {
+const CommonStatisticsCard = ({...props}) => {
   return (
     <div className="common-statistics">
       <div className="common-statistics__icon">{props?.icon}</div>

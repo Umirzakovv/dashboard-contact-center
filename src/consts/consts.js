@@ -1,10 +1,11 @@
 export const titleData = [
   {
     id: 1,
-    title: "FIO",
+    title: "F.I.O",
     options: [
-      { id: 1, value: "A-Z", title: "A-Z" },
-      { id: 2, value: "Z-A", title: "Z-A" },
+      { id: 1, value: "all", title: "Barchasi" },
+      { id: 2, value: "a-z", title: "A-Z" },
+      { id: 3, value: "z-a", title: "Z-A" },
     ],
   },
 ];
@@ -126,6 +127,3 @@ export const employeeCategory = [
     ],
   },
 ];
-
-
-

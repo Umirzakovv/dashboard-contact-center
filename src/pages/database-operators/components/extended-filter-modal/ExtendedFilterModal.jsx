@@ -21,7 +21,7 @@ const ExtendedFilterModal = ({ filterModal, setFilterModal }) => {
   const { targetDivisionId } = useContext(DivisionsContext);
   const { setWorkers } = useContext(DivisionsContext);
 
-  const [nameValue, setNameValue] = useState("A-Z");
+  const [nameValue, setNameValue] = useState("all");
   const [genderValue, setGenderValue] = useState("all");
   const [jobValue, setJobValue] = useState("all");
   const [disChargeValue, setDisChargeValue] = useState("all");
@@ -31,13 +31,27 @@ const ExtendedFilterModal = ({ filterModal, setFilterModal }) => {
   const [startValue, setStartValue] = useState("all");
   const [endValue, setEndValue] = useState("all");
 
-  const filterUrl = `http://192.168.61.169:2004/api/v1/division/extendedfilter/${targetDivisionId}?sortName=${nameValue}&gender=${genderValue}&job_titles=${jobValue}&tariff_discharge=${disChargeValue}&employee_category=${employeeCategoryValue}&start_experience=${startValue}&end_experience=${endValue}&information=${degreeStatusValue}`;
+  const filterUrl = `http://192.168.61.169:2004/api/v1/division/extendedfilter/${targetDivisionId}?sortName=${nameValue.toLowerCase()}&gender=${genderValue}&job_titles=${jobValue}&tariff_discharge=${disChargeValue}&employee_category=${employeeCategoryValue}&start_experience=${startValue}&end_experience=${endValue}&information=${degreeStatusValue}`;
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    console.log(
+      nameValue,
+      genderValue,
+      jobValue,
+      disChargeValue,
+      degreeStatusValue,
+      employeeCategoryValue,
+      startValue,
+      endValue
+    );
     fetch(filterUrl)
       .then((res) => res.json())
-      .then((data) => setWorkers(data))
+      .then((data) => {
+        console.log(data);
+        setWorkers(data);
+      })
+
       .catch((err) => console.log(err));
     setFilterModal(false);
   };

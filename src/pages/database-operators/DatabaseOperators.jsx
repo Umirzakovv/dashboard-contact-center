@@ -15,6 +15,7 @@ const DatabaseOperators = () => {
   const [targetDepartmentId, setTargetDepartmentId] = useState();
   const [workers, setWorkers] = useState();
   const [searchResult, setSearchResult] = useState([]);
+  const [targetWorkerData, setTargetWorkerData] = useState("");
 
   return (
     <DivisionsContext.Provider
@@ -29,6 +30,8 @@ const DatabaseOperators = () => {
         setTargetDivisionId,
         targetDepartmentId,
         setTargetDepartmentId,
+        targetWorkerData,
+        setTargetWorkerData,
       }}
     >
       <Layout>
