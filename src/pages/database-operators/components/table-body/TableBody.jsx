@@ -7,7 +7,8 @@ import editBlueImg from "../../../../assets/icons/pencil-blue.svg";
 import moreBlueImg from "../../../../assets/icons/eye-blue.svg";
 import "./table-body.scss";
 import MoreInfoWorker from "../more-info-worker-modal/MoreInfoWorkerModal";
-import EditBtnModal from "../edit-btn-modal/EditBtnModal";
+import EditWorkerModal from "../edit-worker-modal/EditWorkerModal";
+import { Link } from "react-router-dom";
 
 const TableBody = ({ tableData }) => {
   const [isMoreBtnModalOpen, setIsMoreBtnModalOpen] = useState(false);
@@ -61,11 +62,7 @@ const TableBody = ({ tableData }) => {
           <td>{tableData?.date_of_birth}</td>
           <td>{tableData?.phone_number}</td>
           <td>
-            <img
-              src={tableData?.user_img}
-              alt="user img"
-              style={{ width: "25px", height: "25px" }}
-            />
+            <Link to={`http://192.168.42.176:8000/upload/imgs/${tableData?.user_img}`} target="_blank">Фото</Link>
           </td>
           <td>{tableData?.name}</td>
           <td>{tableData?.experience}</td>
@@ -83,7 +80,10 @@ const TableBody = ({ tableData }) => {
 
       {isEditBtnModalOpen ? (
         <>
-          <EditBtnModal setIsEditBtnModalOpen={setIsEditBtnModalOpen} />
+          <EditWorkerModal
+            setIsEditBtnModalOpen={setIsEditBtnModalOpen}
+            tableData={tableData}
+          />
           <Curtain />
         </>
       ) : (

@@ -31,6 +31,7 @@ const EditDivisionModal = ({
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
+  
   const handleFormSubmit = (e) => {
     e.preventDefault();
     fetch(`http://192.168.61.169:2004/api/v1/division/update/${group?.id}`, {

@@ -3,7 +3,6 @@ import "./select.scss";
 
 const Select = ({ item, value, setSelectValues }) => {
   const handleSelectChange = (e) => {
-    console.log(e);
     setSelectValues(e?.target?.value);
   };
 

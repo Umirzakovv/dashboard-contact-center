@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./delete-btn.scss";
-const DeleteBtn = ({ title, onClick }) => {
+const DeleteBtn = ({ ...props }) => {
   return (
-    <button className="delete-btn" onClick={onClick}>
-      {title}
+    <button className="delete-btn" onClick={props?.onClick}>
+      {props?.title}
     </button>
   );
 };
