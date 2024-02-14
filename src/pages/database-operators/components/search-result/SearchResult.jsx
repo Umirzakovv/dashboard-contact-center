@@ -7,7 +7,6 @@ import TableHead from "../table-head/TableHead";
 
 const SearchResult = () => {
   const { searchResult } = useContext(DivisionsContext);
-  // console.log(searchResult);
   return searchResult.length <= 0 ? null : (
     <div className="search-result">
       <h2>Результат поиска</h2>

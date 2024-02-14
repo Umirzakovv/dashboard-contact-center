@@ -25,10 +25,11 @@ const Table = () => {
           <TableTitle title={item?.title} id={item?.id} />
           <table className="database-operators__table">
             <TableHead />
-            {item?.workers?.map((worker) => {
+            {item?.workers?.map((worker, index) => {
               return (
                 <TableBody
                   key={worker?.id}
+                  index={index}
                   tableData={worker}
                   setTableData={setTableData}
                   setIsMoreBtnModalOpen={setIsMoreBtnModalOpen}

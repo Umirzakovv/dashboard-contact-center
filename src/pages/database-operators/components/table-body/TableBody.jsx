@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { DivisionsContext } from "../../DatabaseOperators";
 
 const TableBody = ({
+  index,
   tableData,
   setTableData,
   setIsMoreBtnModalOpen,
@@ -31,7 +32,7 @@ const TableBody = ({
   return (
     <tbody>
       <tr className="database-operators__table-data">
-        <td>1</td>
+        <td>{index + 1}</td>
         <td className="database-operators__table-data__name">
           {tableData?.name}
         </td>
