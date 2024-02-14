@@ -138,7 +138,6 @@ const AddWorkerModal = ({ setisAddOperatorModalOpen }) => {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    console.log(values);
     setisAddOperatorModalOpen(false);
   };
 

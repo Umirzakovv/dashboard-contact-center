@@ -1,8 +1,4 @@
 .database-operators__table-data {
-  
-  &:hover {
-    background-color: #eeeeee;
-  }
   td {
     border: 1px solid #becadc;
     text-align: center;
@@ -11,10 +7,5 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
   }
-}
-
-.database-operators__table-data__name {
-  text-transform: capitalize;
 }

@@ -1,8 +1,9 @@
 .services {
     display: flex;
-    justify-content: start;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    
+    width: 100%;
     .card {
     margin-top: 3rem;
 

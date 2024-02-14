@@ -24,15 +24,15 @@ const Header = () => {
     setSearchInputValue(e?.target?.value);
   };
 
-  const searchByNameUrl = `http://192.168.61.169:2004/api/v1/division/getfilter/${targetDivisionId}?name=${searchInputValue}&operator_number=null`;
-  const searchByIdUrl = `http://192.168.61.169:2004/api/v1/division/getfilter/${targetDivisionId}?name=null&operator_number=${searchInputValue}`;
   const handleSearchBarSubmit = (e) => {
     e.preventDefault();
-    console.log(targetDivisionId);
+
     if (!searchInputValue.length) {
       setSearchResult([]);
     } else {
-      fetch(isNaN(searchInputValue) ? searchByNameUrl : searchByIdUrl)
+      fetch(
+        `http://192.168.61.169:2004/api/v1/division/getfilter/${targetDivisionId}?name=${searchInputValue}&operator_number=null`
+      )
         .then((res) => res.json())
         .then((data) => setSearchResult(data))
         .catch((err) => console.log(err));

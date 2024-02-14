@@ -5,8 +5,10 @@ import DivisionModal from "../division-modal/DivisionModal";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { DivisionsContext } from "../../DatabaseOperators";
-import { fetchSingleDivisionData } from "../../../../consts/index";
-const Division = ({ ...props }) => {
+import {
+  fetchSingleDivisionData,
+} from "../../../../consts/index";
+const Division = ({ group }) => {
   const { setWorkers } = useContext(DivisionsContext);
   const { setTargetDivisionId } = useContext(DivisionsContext);
 
@@ -32,8 +34,8 @@ const Division = ({ ...props }) => {
   });
 
   const handleDivisionClick = () => {
-    setTargetDivisionId(props?.group?.id);
-    fetchSingleDivisionData(props?.group?.id, setWorkers);
+    setTargetDivisionId(group?.id);
+    fetchSingleDivisionData(group?.id, setWorkers);
   };
 
   return (
@@ -48,15 +50,15 @@ const Division = ({ ...props }) => {
           className="visually-hidden type-filter__radio"
           type="radio"
           name="type"
-          value={props?.group?.value}
-          defaultChecked={props?.group?.defaultChecked}
+          value={group?.value}
+          defaultChecked={group?.defaultChecked}
         />
-        <span className="type-filter__styled-radio">{props?.group?.title}</span>
+        <span className="type-filter__styled-radio">{group?.title}</span>
       </label>
 
       {isDivisionModalOpen ? (
         <DivisionModal
-          group={props?.group}
+          group={group}
           setIsDivisionModalOpen={setIsDivisionModalOpen}
         />
       ) : (

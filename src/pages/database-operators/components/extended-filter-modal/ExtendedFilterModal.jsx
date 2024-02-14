@@ -7,6 +7,7 @@ import "./extended-filter-modal.scss";
 import {
   degreeStatusData,
   employeeCategory,
+  gender,
   genderData,
   jobTitles,
   tariffDischarge,
@@ -20,7 +21,7 @@ const ExtendedFilterModal = ({ filterModal, setFilterModal }) => {
   const { targetDivisionId } = useContext(DivisionsContext);
   const { setWorkers } = useContext(DivisionsContext);
 
-  const [nameValue, setNameValue] = useState("all");
+  const [nameValue, setNameValue] = useState("A-Z");
   const [genderValue, setGenderValue] = useState("all");
   const [jobValue, setJobValue] = useState("all");
   const [disChargeValue, setDisChargeValue] = useState("all");
@@ -34,14 +35,9 @@ const ExtendedFilterModal = ({ filterModal, setFilterModal }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     fetch(filterUrl)
       .then((res) => res.json())
-      .then((data) => {
-        setWorkers(data);
-      })
-      .catch((err) => console.log(err))
-
+      .then((data) => setWorkers(data))
       .catch((err) => console.log(err));
     setFilterModal(false);
   };

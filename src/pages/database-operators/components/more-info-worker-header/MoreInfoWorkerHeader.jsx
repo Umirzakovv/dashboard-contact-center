@@ -1,14 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useContext } from "react";
 import locationImg from "../../../../assets/icons/location.svg";
 import phoneImg from "../../../../assets/icons/phone.svg";
 
 import "./more-info-worker-header.scss";
-import { DivisionsContext } from "../../DatabaseOperators";
 
-const MoreInfoWorkerHeader = () => {
-  const { targetWorkerData } = useContext(DivisionsContext);
-
+const MoreInfoWorkerHeader = ({ targetWorkerData }) => {
   const targetWorker = targetWorkerData[0];
   return (
     <div className="more-modal__header-wrapper">

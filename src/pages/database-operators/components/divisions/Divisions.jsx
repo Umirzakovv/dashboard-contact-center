@@ -11,19 +11,9 @@ import { DivisionsContext } from "../../DatabaseOperators";
 const Divisions = () => {
   const [error, setError] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { divisions, setDivisions } = useContext(DivisionsContext);
-  const deleteGroup = {
-    id: 1,
-    title: "Уволенние соотрудники",
-  };
-
-  // const handleDeleteDivisionClick = () => {
-  //   console.log("ok");
-  //   // fetch("http://192.168.61.169:2004/api/v1/division/deleted")
-  //   //   .then((res) => res.json())
-  //   //   .then((data) => console.log(data))
-  //   //   .catch((error) => console.log(error));
-  // };
+  const { divisions, setDivisions } = useContext(
+    DivisionsContext
+  );
 
   useEffect(() => {
     fetchAllDivisions(setError, setDivisions);
@@ -43,7 +33,6 @@ const Divisions = () => {
         {divisions?.map((group) => {
           return <Division key={group?.id} group={group} id={group?.id} />;
         })}
-        <Division group={deleteGroup}  />
       </div>
       <button className="division-add__btn" onClick={handleAddDivisionClick}>
         <img src={plusImg} alt="add division button" />

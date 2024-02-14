@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useContext } from "react";
 import MoreModalDocument from "../more-modal-document/MoreModalDocument";
 import MoreModalSingleInfo from "../more-modal-single-info/MoreModalSingleInfo";
 import "./more-info-worker-body.scss";
-import { DivisionsContext } from "../../DatabaseOperators";
-const MoreInfoWorkerBody = () => {
-  const { targetWorkerData } = useContext(DivisionsContext);
+const MoreInfoWorkerBody = ({ targetWorkerData }) => {
   const targetWorker = targetWorkerData[0];
 
   return (
@@ -59,10 +56,7 @@ const MoreInfoWorkerBody = () => {
           title={"Объективка"}
           link={targetWorker?.reference_img}
         />
-        <MoreModalDocument
-          title="Военный билет"
-          link={targetWorker?.military_ID_img}
-        />
+        <MoreModalDocument title="Военный билет" link={targetWorker?.military_ID_img} />
       </div>
     </div>
   );

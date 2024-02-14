@@ -3,8 +3,7 @@
   border-radius: 0.8rem;
   padding-bottom: 2.4rem;
   padding: 2.4rem;
-  width: calc((100% - 5rem) / 5);
-  margin-right: 1rem;
+  min-width: 400px;
   cursor: grab;
 
   .card-title {
@@ -64,16 +63,17 @@
 .has-queue {
   color: #fff;
   background-color: #ff000080;
-  animation: pulse 1.2s infinite ease-in-out;
+  animation: pulse 1s 5 ease-in-out;
 
   .card-title {
     color: #fff;
-    
+    animation: textColor 1s 5 ease-in-out;
   }
 
   .card-info {
     .card-info__title {
       color: #fff;
+      animation: textColor 1s 5 ease-in-out;
     }
   }
 }
@@ -81,13 +81,30 @@
 @keyframes pulse {
   0% {
     background-color: #ff000080;
+    color: #fff;
   }
 
   50% {
     background-color: white;
+    color: #000;
   }
 
   100% {
     background-color: #ff000080;
+    color: #fff;
+  }
+}
+
+@keyframes textColor {
+  0% {
+    color: #fff;
+  }
+
+  50% {
+    color: #000;
+  }
+
+  100% {
+    color: #fff;
   }
 }

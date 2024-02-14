@@ -15,9 +15,10 @@ const Card = (props) => {
     >
       <audio ref={audioRef} src={NotificationSound} />
       <h4 className="card-title">
-        {props?.item?.title.length > 15
+        {/* {props?.item?.title.length > 15
           ? props?.item?.title.slice(0, 15) + "..."
-          : props?.item?.title}
+          : props?.item?.title} */}
+          {props?.item?.title}
       </h4>
       <div className="card-info">
         <p className="card-info__title">В очереди</p>
