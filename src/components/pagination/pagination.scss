@@ -1,0 +1,14 @@
+.pagination {
+    border: 1px solid red;
+    display: flex;
+    
+
+    ul {
+        display: flex;
+        li {
+            button {
+                padding: 10px;
+            }
+        }
+    }
+}

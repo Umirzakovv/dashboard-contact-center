@@ -1,10 +1,12 @@
-import { useContext } from "react";
+/* eslint-disable react/display-name */
+import { memo, useContext } from "react";
 import NotificationCard from "../notification-card/NotificationCard";
 import { OverBreakDataContext } from "../layout/Layout";
 import "./sidebar.scss";
 
-const SideBar = () => {
+const SideBar = memo(() => {
   const { overBreakData } = useContext(OverBreakDataContext);
+  console.log("side is rendering");
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -20,6 +22,6 @@ const SideBar = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SideBar;

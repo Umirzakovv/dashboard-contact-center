@@ -10,7 +10,6 @@
     width: 6rem;
     height: 6rem;
     border-radius: 5rem;
-    color: #558eff;
   }
 
   .operator-info {
@@ -38,7 +37,7 @@
       letter-spacing: 0.1px;
     }
   }
-  
+
   .operator-overbreak__info {
     display: flex;
     margin-top: 1rem;
@@ -48,6 +47,10 @@
       align-items: center;
       font-size: 2rem;
       color: #558eff;
+
+      .over-break_arrow-icon {
+        margin: 0 5px;
+      }
     }
 
     .over-break__time {
@@ -55,6 +58,26 @@
       align-items: center;
       font-size: 1.2rem;
       color: #558eff;
+      margin-left: 1rem;
     }
+  }
+}
+
+.notification-card_block {
+  background-color: #ff6760;
+
+  .operator-rmo__id {
+    color: #fff !important;
+  }
+  .operator-title {
+    color: #fff !important;
+  }
+
+  .over-break__icon {
+    color: #fff !important;
+  }
+
+  .over-break__time {
+    color: #fff !important;
   }
 }

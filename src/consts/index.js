@@ -105,6 +105,6 @@ export const fetchSingleDivisionData = async (targetDivisionId, setWorkers) => {
 
 export function formatDateString(originalDateString) {
   const originalDateObject = new Date(originalDateString);
-  const formattedDate = originalDateObject.toISOString().split('T')[0];
+  const formattedDate = originalDateObject.toISOString().split("T")[0];
   return formattedDate;
 }
