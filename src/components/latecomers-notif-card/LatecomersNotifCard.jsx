@@ -11,7 +11,7 @@ const LatecomersNotifCard = ({
   whichFloor,
 }) => {
   return (
-    <div className={`notification-card`}>
+    <div className="latecomers-notif-card">
       <div style={{ display: "flex" }}>
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJTGVnbpOOjFmSSVVujeGD5z859GlOnWz0Pg&usqp=CAU"
