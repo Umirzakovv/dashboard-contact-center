@@ -6,6 +6,7 @@ import Navbar from "../navbar/Navbar";
 import SideBar from "../sidebar/SideBar";
 import "./layout.scss";
 import io from "socket.io-client";
+import LatecomersSidebar from "../latecomers-sidebar/LatecomersSidebar";
 
 const socket = io.connect("http://192.168.42.176:2000");
 
@@ -73,6 +74,7 @@ const Layout = ({ children }) => {
                 <Navbar />
                 <div>{children}</div>
               </div>
+              {isOpen ? <LatecomersSidebar /> : null}
               {isOpen ? <SideBar /> : null}
             </Container>
           </LoadingContext.Provider>

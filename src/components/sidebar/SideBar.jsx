@@ -6,7 +6,6 @@ import "./sidebar.scss";
 
 const SideBar = memo(() => {
   const { overBreakData } = useContext(OverBreakDataContext);
-  console.log("side is rendering");
   return (
     <div className="sidebar">
       <div className="sidebar-header">

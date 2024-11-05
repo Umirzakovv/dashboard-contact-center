@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import "./notification-card.scss";
-// import { AiFillLock } from "react-icons/ai";
 import { formatSecondsToTime } from "../../consts";
 
 import { FaArrowRightLong } from "react-icons/fa6";
