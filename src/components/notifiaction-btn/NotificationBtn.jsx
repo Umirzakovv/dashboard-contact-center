@@ -18,9 +18,9 @@ const NotificationBtn = () => {
   return (
     <div className="notification" onClick={handleNotificationClick}>
       <img src={notificationImg} alt="notification" />
-      <span className="badge">
+      {/* <span className="badge">
         {overBreakData?.length === undefined ? "0" : overBreakData?.length}
-      </span>
+      </span> */}
     </div>
   );
 };
