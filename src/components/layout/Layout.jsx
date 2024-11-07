@@ -24,23 +24,6 @@ const Layout = ({ children }) => {
   const [latecomers, setLatecomers] = useState();
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   socket.emit("agentsLockAtTheMoment", (receivedData) => {
-  //     console.log(receivedData, "one");
-  //     setOverBreakData(receivedData);
-  //   });
-
-  //   setInterval(() => {
-  //   socket.emit("agentsLockAtTheMoment", (receivedData) => {
-  //     console.log(receivedData, "two");
-  //     setOverBreakData(receivedData);
-  //   });
-  //   return () => {
-  //     socket.disconnect();
-  //   };
-  //   }, 7000);
-  // }, []);
-
   useEffect(() => {
     const fetchDataAndSetState = () => {
       socket.emit("agentsLockAtTheMoment", (receivedData) => {
@@ -53,10 +36,6 @@ const Layout = ({ children }) => {
     setInterval(() => {
       fetchDataAndSetState();
     }, 7000);
-
-    // return () => {
-    //   socket.disconnect();
-    // };
   }, []);
 
   return (

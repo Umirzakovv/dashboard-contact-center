@@ -42,7 +42,6 @@ const LatecomersCommonStatistics = () => {
         alignItems: "center",
       }}
     >
-      {/* <CommonStatisticsCard title={data?.allBlockAgents} /> */}
       {data?.map((item) => {
         return (
           <CommonStatisticsCard
