@@ -32,7 +32,7 @@ const LatecomersNotifCard = ({
           <p className="over-break__title">{comingTime}</p>
         </div>
         <p className="over-break__title">
-          {status === "kelmadi" ? "Не пришел(ла)" : "Опоздал(а)"}
+          {status === "kelmadi" ? "Не пришел(а)" : "Опоздал(а)"}
         </p>
       </div>
     </div>

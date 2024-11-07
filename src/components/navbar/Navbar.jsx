@@ -23,11 +23,11 @@ const Navbar = () => {
     //   title: "Статистика сотрудников",
     //   href: "/statistics-employees",
     // },
-    {
-      id: 5,
-      title: "Отчёт по перерывам",
-      href: "/report-latecomers",
-    },
+    // {
+    //   id: 5,
+    //   title: "Отчёт по перерывам",
+    //   href: "/report-latecomers",
+    // },
     // {
     //   id: 6,
     //   title: "База данных сотрудников",
