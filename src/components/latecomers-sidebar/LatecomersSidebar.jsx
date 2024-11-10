@@ -24,7 +24,7 @@ const LatecomersSidebar = () => {
 
   useEffect(() => {
     fetchData();
-    const intervalId = setInterval(fetchData, 300000); // Fetch every 5 minutes (300000 ms)
+    const intervalId = setInterval(fetchData, 3000); // Fetch every 5 minutes (300000 ms)
 
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
