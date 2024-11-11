@@ -13,26 +13,11 @@ const Navbar = () => {
       title: "Услуги",
       href: "/services",
     },
-    // {
-    //   id: 3,
-    //   title: "График работы",
-    //   href: "/schedule",
-    // },
-    // {
-    //   id: 4,
-    //   title: "Статистика сотрудников",
-    //   href: "/statistics-employees",
-    // },
-    // {
-    //   id: 5,
-    //   title: "Отчёт по перерывам",
-    //   href: "/report-latecomers",
-    // },
-    // {
-    //   id: 6,
-    //   title: "База данных сотрудников",
-    //   href: "/database-operators",
-    // },
+    {
+      id: 3,
+      title: "Опаздание",
+      href: "/latecomers",
+    },
   ];
 
   return (

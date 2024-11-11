@@ -3,11 +3,11 @@
   border-radius: 0.5rem;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
   margin: 1rem;
-  background-color: #fffaed;
+  background-color: #fad6d4;
 
   .operators-floor {
     color: #a0a4a8;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2rem; /* 142.857% */
@@ -16,9 +16,11 @@
 
   .operator-img {
     padding: 0.5rem;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 5rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: 20% 0%;
   }
 
   .operator-info {
@@ -29,8 +31,7 @@
 
     .operator-title {
       color: #25282b;
-      width: 18rem;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-style: normal;
       font-weight: 700;
       line-height: 2rem; /* 142.857% */
@@ -70,7 +71,7 @@
 
     .over-break__title {
       color: #ff6760;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 500;
     }
 
