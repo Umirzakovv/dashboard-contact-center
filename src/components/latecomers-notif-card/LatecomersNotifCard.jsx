@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { LuCalendarClock } from "react-icons/lu";
+import { LuCalendarX2 } from "react-icons/lu";
 
 import "./latecomers-notif-card.scss";
 
@@ -9,26 +10,28 @@ const LatecomersNotifCard = ({
   status,
   comingTime,
   whichFloor,
+  imgSrc,
 }) => {
   return (
     <div className="latecomers-notif-card">
-      <div style={{ display: "flex" }}>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJTGVnbpOOjFmSSVVujeGD5z859GlOnWz0Pg&usqp=CAU"
-          alt="user icon"
-          className="operator-img"
-        />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <img src={imgSrc} alt="user icon" className="operator-img" />
         <div className="operator-info">
           <h2 className="operator-title">{fullName}</h2>
           <p className="operator-rmo__id">ID РМО: {idRMO}</p>
+          <p className="operators-floor"> {whichFloor}</p>
         </div>
-        <p className="operators-floor"> {whichFloor}</p>
         <div></div>
       </div>
 
       <div className="operator-overbreak__info">
         <div className="first-content_wrapper">
-          <LuCalendarClock className="over-break__icon" />
+          {status === "kelmadi" ? (
+            <LuCalendarX2 className="over-break__icon" />
+          ) : (
+            <LuCalendarClock className="over-break__icon" />
+          )}
+
           <p className="over-break__title">{comingTime}</p>
         </div>
         <p className="over-break__title">
