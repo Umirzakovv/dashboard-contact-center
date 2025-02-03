@@ -32,7 +32,7 @@ function Login() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (formValues.username === "admin" && formValues.password === "admin") {
+    if (formValues.username === "admin" && formValues.password === "admin_555") {
       localStorage.setItem("dashboard_token", token);
       navigate("/");
     } else {
