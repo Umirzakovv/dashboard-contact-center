@@ -6,7 +6,7 @@ import "./dashboard.scss";
 import { useEffect, useState } from "react";
 import CommonStatisticsDashboard from "../../components/dashboard-common-statistics/CommonStatisticsDashboard";
 
-const socket = io.connect("http://192.168.42.176:2000/");
+const socket = io.connect("http://192.168.42.172:2000/");
 
 const Dashboard = () => {
   const [statistics, setStatistics] = useState();
