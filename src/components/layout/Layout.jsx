@@ -7,7 +7,7 @@ import SideBar from "../sidebar/SideBar";
 import "./layout.scss";
 import io from "socket.io-client";
 
-const socket = io.connect("http://192.168.42.172:2000");
+const socket = io.connect("http://192.168.42.172:2010");
 
 export const NotificationContext = createContext();
 export const OverBreakDataContext = createContext();

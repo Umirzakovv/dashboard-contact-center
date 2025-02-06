@@ -5,7 +5,7 @@ import io from "socket.io-client";
 import "./servives.scss";
 import { useEffect, useState } from "react";
 
-const socket = io.connect("http://192.168.42.172:2000/");
+const socket = io.connect("http://192.168.42.172:2010/");
 
 const Services = () => {
   const [data, setData] = useState();

@@ -8,12 +8,12 @@ const Sorting = () => {
   const { setLoading } = useContext(LoadingContext);
 
   const handleSelect = async (e) => {
-    const sortingUrl = `http://192.168.42.172:2000/api/v1/agents/findByFilter?name=null&operator_number=null&status=${
+    const sortingUrl = `http://192.168.42.172:2010/api/v1/agents/findByFilter?name=null&operator_number=null&status=${
       e?.target?.value === "all" ? null : e?.target?.value
     }`;
 
     // const url =
-    //   "http://192.168.42.172:2000/api/v1/agents/findByFilter?name=null&operator_number=null&status=null";
+    //   "http://192.168.42.172:2010/api/v1/agents/findByFilter?name=null&operator_number=null&status=null";
     setLoading(true);
     const response = await fetch(sortingUrl);
     const data = await response.json();
