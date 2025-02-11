@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./pagination.scss";
 
 const Pagination = () => {
-    const url = `http://192.168.42.172:2010/api/v1/agents/allBlock?pageNumber=1&pageSize=10`
+    const url = `http://192.168.42.176:2010/api/v1/agents/allBlock?pageNumber=1&pageSize=10`
   const [lorem, setLorem] = useState(1);
   const [ipsum, setIpsum] = useState(10);
 

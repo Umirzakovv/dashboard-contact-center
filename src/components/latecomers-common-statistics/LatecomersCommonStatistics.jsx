@@ -8,7 +8,7 @@ const LatecomersCommonStatistics = () => {
   const [commonData, setCommonData] = useState();
 
   useEffect(() => {
-    fetch("http://192.168.42.172:2010/api/v1/agents/allBlock")
+    fetch("http://192.168.42.176:2010/api/v1/agents/allBlock")
       .then((res) => res.json())
       .then((data) => setCommonData(data));
   }, []);
